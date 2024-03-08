@@ -1217,11 +1217,6 @@
     .line 79
     .line 80
     :goto_0
-    const-string p1, "com.miui.gallery"
-
-    .line 81
-    .line 82
-    invoke-virtual {p0, p1}, Landroid/content/Intent;->setPackage(Ljava/lang/String;)Landroid/content/Intent;
 
     .line 83
     .line 84

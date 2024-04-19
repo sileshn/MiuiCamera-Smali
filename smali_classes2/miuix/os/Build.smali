@@ -39,7 +39,7 @@
     .line 12
     .line 13
     .line 14
-    move-result v0
+    const/4 v0, 0x1
 
     .line 15
     sput-boolean v0, Lmiuix/os/Build;->IS_INTERNATIONAL_BUILD:Z

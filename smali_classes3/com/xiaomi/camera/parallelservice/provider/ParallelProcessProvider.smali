@@ -6,7 +6,7 @@
 # static fields
 .field private static final CALLER_GOOGLE_PHOTO:Ljava/lang/String; = "com.google.android.apps.photos"
 
-.field private static final CALLER_MIUI_GALLERY:Ljava/lang/String; = "com.miui.gallery"
+.field private static final CALLER_MIUI_GALLERY:Ljava/lang/String; = "com.google.android.apps.photos"
 
 .field private static final CALLING_SELF:Ljava/lang/String; = "com.android.camera"
 
@@ -188,7 +188,7 @@
     goto :goto_0
 
     :sswitch_2
-    const-string v0, "com.miui.gallery"
+    const-string v0, "com.google.android.apps.photos"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -757,7 +757,7 @@
 
     move-result-object v2
 
-    const-string v3, "com.miui.gallery"
+    const-string v3, "com.google.android.apps.photos"
 
     const/16 v4, 0x80
 

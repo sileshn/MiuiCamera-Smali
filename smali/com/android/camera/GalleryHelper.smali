@@ -338,7 +338,7 @@
 
     move-result-object p0
 
-    const-string p1, "com.miui.gallery"
+    const-string p1, "com.google.android.apps.photos"
 
     invoke-static {p0, p1}, Lcom/android/camera/Util;->isAppLocked(Landroid/content/Context;Ljava/lang/String;)Z
 
@@ -659,7 +659,7 @@
 
     invoke-direct {p0, v0}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    const-string v0, "com.miui.gallery"
+    const-string v0, "com.google.android.apps.photos"
 
     .line 3
     invoke-virtual {p0, v0}, Landroid/content/Intent;->setPackage(Ljava/lang/String;)Landroid/content/Intent;
@@ -1861,7 +1861,7 @@
 
     invoke-direct {v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    const-string v2, "com.miui.gallery"
+    const-string v2, "com.google.android.apps.photos"
 
     .line 6
     invoke-virtual {v1, v2}, Landroid/content/Intent;->setPackage(Ljava/lang/String;)Landroid/content/Intent;

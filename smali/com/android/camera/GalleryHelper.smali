@@ -1076,7 +1076,7 @@
     move-result p0
 
     .line 9
-    const-string v0, "com.android.camera.action.REVIEW"
+    const-string v0, "android.provider.action.REVIEW"
 
     .line 10
     .line 11
@@ -1198,7 +1198,7 @@
 
     .line 69
     .line 70
-    const-string v1, "gotoGallery: com.android.camera.action.REVIEW"
+    const-string v1, "gotoGallery: android.provider.action.REVIEW"
 
     .line 71
     .line 72

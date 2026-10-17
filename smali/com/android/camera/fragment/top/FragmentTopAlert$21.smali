@@ -1,0 +1,107 @@
+.class Lcom/android/camera/fragment/top/FragmentTopAlert$21;
+.super Ljava/lang/Object;
+.source "FragmentTopAlert.java"
+
+# interfaces
+.implements Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/android/camera/fragment/top/FragmentTopAlert;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x1
+    name = null
+.end annotation
+
+
+# instance fields
+.field final synthetic this$0:Lcom/android/camera/fragment/top/FragmentTopAlert;
+
+
+# direct methods
+.method public constructor <init>(Lcom/android/camera/fragment/top/FragmentTopAlert;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/android/camera/fragment/top/FragmentTopAlert$21;->this$0:Lcom/android/camera/fragment/top/FragmentTopAlert;
+
+    .line 2
+    .line 3
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 4
+    .line 5
+    .line 6
+    return-void
+.end method
+
+
+# virtual methods
+.method public onGlobalLayout()V
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/android/camera/fragment/top/FragmentTopAlert$21;->this$0:Lcom/android/camera/fragment/top/FragmentTopAlert;
+
+    .line 2
+    .line 3
+    invoke-static {v0}, Lcom/android/camera/fragment/top/FragmentTopAlert;->access$2600(Lcom/android/camera/fragment/top/FragmentTopAlert;)Landroid/widget/LinearLayout;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object v0
+
+    .line 7
+    invoke-virtual {v0}, Landroid/view/View;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
+
+    .line 8
+    .line 9
+    .line 10
+    move-result-object v0
+
+    .line 11
+    invoke-virtual {v0, p0}, Landroid/view/ViewTreeObserver;->removeOnGlobalLayoutListener(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
+
+    .line 12
+    .line 13
+    .line 14
+    iget-object v0, p0, Lcom/android/camera/fragment/top/FragmentTopAlert$21;->this$0:Lcom/android/camera/fragment/top/FragmentTopAlert;
+
+    .line 15
+    .line 16
+    invoke-virtual {v0}, Landroidx/fragment/app/Fragment;->isAdded()Z
+
+    .line 17
+    .line 18
+    .line 19
+    move-result v0
+
+    .line 20
+    if-eqz v0, :cond_0
+
+    .line 21
+    .line 22
+    iget-object p0, p0, Lcom/android/camera/fragment/top/FragmentTopAlert$21;->this$0:Lcom/android/camera/fragment/top/FragmentTopAlert;
+
+    .line 23
+    .line 24
+    invoke-static {p0}, Lcom/android/camera/fragment/top/FragmentTopAlert;->access$2700(Lcom/android/camera/fragment/top/FragmentTopAlert;)I
+
+    .line 25
+    .line 26
+    .line 27
+    move-result v0
+
+    .line 28
+    invoke-static {p0, v0}, Lcom/android/camera/fragment/top/FragmentTopAlert;->access$2800(Lcom/android/camera/fragment/top/FragmentTopAlert;I)V
+
+    .line 29
+    .line 30
+    .line 31
+    :cond_0
+    return-void
+.end method

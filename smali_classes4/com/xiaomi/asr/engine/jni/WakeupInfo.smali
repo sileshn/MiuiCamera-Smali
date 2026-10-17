@@ -1,0 +1,27 @@
+.class public Lcom/xiaomi/asr/engine/jni/WakeupInfo;
+.super Ljava/lang/Object;
+.source "WakeupInfo.java"
+
+
+# instance fields
+.field public end:I
+
+.field public start:I
+
+.field public text:Ljava/lang/String;
+
+.field public wakeup:I
+
+
+# direct methods
+.method public constructor <init>()V
+    .locals 0
+
+    .line 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 2
+    .line 3
+    .line 4
+    return-void
+.end method

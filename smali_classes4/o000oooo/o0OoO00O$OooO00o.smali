@@ -1,0 +1,52 @@
+.class public interface abstract Lo000oooo/o0OoO00O$OooO00o;
+.super Ljava/lang/Object;
+.source "KProperty.kt"
+
+# interfaces
+.implements Lo000oooo/o0oO0Ooo$OooO00o;
+.implements Lo000oooo/o0O00;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lo000oooo/o0OoO00O;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x609
+    name = "OooO00o"
+.end annotation
+
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "<V:",
+        "Ljava/lang/Object;",
+        ">",
+        "Ljava/lang/Object;",
+        "Lo000oooo/o0oO0Ooo$OooO00o<",
+        "TV;>;",
+        "Lo000oooo/o0O00<",
+        "Lo000Oo0O/oo00oO;",
+        ">;"
+    }
+.end annotation
+
+.annotation runtime Lkotlin/Metadata;
+    d1 = {
+        "\u0000\u0014\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\u0008f\u0018\u0000*\u0004\u0008\u0001\u0010\u00012\u0008\u0012\u0004\u0012\u00028\u00010\u00022\u0008\u0012\u0004\u0012\u00020\u00040\u0003\u00a8\u0006\u0005"
+    }
+    d2 = {
+        "Lo000oooo/o0OoO00O$OooO00o;",
+        "V",
+        "Lo000oooo/o0oO0Ooo$OooO00o;",
+        "Lo000oooo/o0O00;",
+        "Lo000Oo0O/oo00oO;",
+        "kotlin-stdlib"
+    }
+    k = 0x1
+    mv = {
+        0x1,
+        0x7,
+        0x1
+    }
+.end annotation

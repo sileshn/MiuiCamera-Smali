@@ -1,0 +1,6441 @@
+.class public Lorg/openxmlformats/schemas/drawingml/x2006/main/impl/CTShapePropertiesImpl;
+.super Lorg/apache/xmlbeans/impl/values/XmlComplexContentImpl;
+
+# interfaces
+.implements Lorg/openxmlformats/schemas/drawingml/x2006/main/CTShapeProperties;
+
+
+# static fields
+.field private static final BLIPFILL$12:Ljavax/xml/namespace/QName;
+
+.field private static final BWMODE$30:Ljavax/xml/namespace/QName;
+
+.field private static final CUSTGEOM$2:Ljavax/xml/namespace/QName;
+
+.field private static final EFFECTDAG$22:Ljavax/xml/namespace/QName;
+
+.field private static final EFFECTLST$20:Ljavax/xml/namespace/QName;
+
+.field private static final EXTLST$28:Ljavax/xml/namespace/QName;
+
+.field private static final GRADFILL$10:Ljavax/xml/namespace/QName;
+
+.field private static final GRPFILL$16:Ljavax/xml/namespace/QName;
+
+.field private static final LN$18:Ljavax/xml/namespace/QName;
+
+.field private static final NOFILL$6:Ljavax/xml/namespace/QName;
+
+.field private static final PATTFILL$14:Ljavax/xml/namespace/QName;
+
+.field private static final PRSTGEOM$4:Ljavax/xml/namespace/QName;
+
+.field private static final SCENE3D$24:Ljavax/xml/namespace/QName;
+
+.field private static final SOLIDFILL$8:Ljavax/xml/namespace/QName;
+
+.field private static final SP3D$26:Ljavax/xml/namespace/QName;
+
+.field private static final XFRM$0:Ljavax/xml/namespace/QName;
+
+
+# direct methods
+.method public static constructor <clinit>()V
+    .locals 3
+
+    .line 1
+    new-instance v0, Ljavax/xml/namespace/QName;
+
+    .line 2
+    .line 3
+    const-string v1, "xfrm"
+
+    .line 4
+    .line 5
+    const-string v2, "http://schemas.openxmlformats.org/drawingml/2006/main"
+
+    .line 6
+    .line 7
+    invoke-direct {v0, v2, v1}, Ljavax/xml/namespace/QName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 8
+    .line 9
+    .line 10
+    sput-object v0, Lorg/openxmlformats/schemas/drawingml/x2006/main/impl/CTShapePropertiesImpl;->XFRM$0:Ljavax/xml/namespace/QName;
+
+    .line 11
+    .line 12
+    new-instance v0, Ljavax/xml/namespace/QName;
+
+    .line 13
+    .line 14
+    const-string v1, "custGeom"
+
+    .line 15
+    .line 16
+    invoke-direct {v0, v2, v1}, Ljavax/xml/namespace/QName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 17
+    .line 18
+    .line 19
+    sput-object v0, Lorg/openxmlformats/schemas/drawingml/x2006/main/impl/CTShapePropertiesImpl;->CUSTGEOM$2:Ljavax/xml/namespace/QName;
+
+    .line 20
+    .line 21
+    new-instance v0, Ljavax/xml/namespace/QName;
+
+    .line 22
+    .line 23
+    const-string v1, "prstGeom"
+
+    .line 24
+    .line 25
+    invoke-direct {v0, v2, v1}, Ljavax/xml/namespace/QName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 26
+    .line 27
+    .line 28
+    sput-object v0, Lorg/openxmlformats/schemas/drawingml/x2006/main/impl/CTShapePropertiesImpl;->PRSTGEOM$4:Ljavax/xml/namespace/QName;
+
+    .line 29
+    .line 30
+    new-instance v0, Ljavax/xml/namespace/QName;
+
+    .line 31
+    .line 32
+    const-string v1, "noFill"
+
+    .line 33
+    .line 34
+    invoke-direct {v0, v2, v1}, Ljavax/xml/namespace/QName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 35
+    .line 36
+    .line 37
+    sput-object v0, Lorg/openxmlformats/schemas/drawingml/x2006/main/impl/CTShapePropertiesImpl;->NOFILL$6:Ljavax/xml/namespace/QName;
+
+    .line 38
+    .line 39
+    new-instance v0, Ljavax/xml/namespace/QName;
+
+    .line 40
+    .line 41
+    const-string v1, "solidFill"
+
+    .line 42
+    .line 43
+    invoke-direct {v0, v2, v1}, Ljavax/xml/namespace/QName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 44
+    .line 45
+    .line 46
+    sput-object v0, Lorg/openxmlformats/schemas/drawingml/x2006/main/impl/CTShapePropertiesImpl;->SOLIDFILL$8:Ljavax/xml/namespace/QName;
+
+    .line 47
+    .line 48
+    new-instance v0, Ljavax/xml/namespace/QName;
+
+    .line 49
+    .line 50
+    const-string v1, "gradFill"
+
+    .line 51
+    .line 52
+    invoke-direct {v0, v2, v1}, Ljavax/xml/namespace/QName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 53
+    .line 54
+    .line 55
+    sput-object v0, Lorg/openxmlformats/schemas/drawingml/x2006/main/impl/CTShapePropertiesImpl;->GRADFILL$10:Ljavax/xml/namespace/QName;
+
+    .line 56
+    .line 57
+    new-instance v0, Ljavax/xml/namespace/QName;
+
+    .line 58
+    .line 59
+    const-string v1, "blipFill"
+
+    .line 60
+    .line 61
+    invoke-direct {v0, v2, v1}, Ljavax/xml/namespace/QName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 62
+    .line 63
+    .line 64
+    sput-object v0, Lorg/openxmlformats/schemas/drawingml/x2006/main/impl/CTShapePropertiesImpl;->BLIPFILL$12:Ljavax/xml/namespace/QName;
+
+    .line 65
+    .line 66
+    new-instance v0, Ljavax/xml/namespace/QName;
+
+    .line 67
+    .line 68
+    const-string v1, "pattFill"
+
+    .line 69
+    .line 70
+    invoke-direct {v0, v2, v1}, Ljavax/xml/namespace/QName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 71
+    .line 72
+    .line 73
+    sput-object v0, Lorg/openxmlformats/schemas/drawingml/x2006/main/impl/CTShapePropertiesImpl;->PATTFILL$14:Ljavax/xml/namespace/QName;
+
+    .line 74
+    .line 75
+    new-instance v0, Ljavax/xml/namespace/QName;
+
+    .line 76
+    .line 77
+    const-string v1, "grpFill"
+
+    .line 78
+    .line 79
+    invoke-direct {v0, v2, v1}, Ljavax/xml/namespace/QName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 80
+    .line 81
+    .line 82
+    sput-object v0, Lorg/openxmlformats/schemas/drawingml/x2006/main/impl/CTShapePropertiesImpl;->GRPFILL$16:Ljavax/xml/namespace/QName;
+
+    .line 83
+    .line 84
+    new-instance v0, Ljavax/xml/namespace/QName;
+
+    .line 85
+    .line 86
+    const-string v1, "ln"
+
+    .line 87
+    .line 88
+    invoke-direct {v0, v2, v1}, Ljavax/xml/namespace/QName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 89
+    .line 90
+    .line 91
+    sput-object v0, Lorg/openxmlformats/schemas/drawingml/x2006/main/impl/CTShapePropertiesImpl;->LN$18:Ljavax/xml/namespace/QName;
+
+    .line 92
+    .line 93
+    new-instance v0, Ljavax/xml/namespace/QName;
+
+    .line 94
+    .line 95
+    const-string v1, "effectLst"
+
+    .line 96
+    .line 97
+    invoke-direct {v0, v2, v1}, Ljavax/xml/namespace/QName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 98
+    .line 99
+    .line 100
+    sput-object v0, Lorg/openxmlformats/schemas/drawingml/x2006/main/impl/CTShapePropertiesImpl;->EFFECTLST$20:Ljavax/xml/namespace/QName;
+
+    .line 101
+    .line 102
+    new-instance v0, Ljavax/xml/namespace/QName;
+
+    .line 103
+    .line 104
+    const-string v1, "effectDag"
+
+    .line 105
+    .line 106
+    invoke-direct {v0, v2, v1}, Ljavax/xml/namespace/QName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 107
+    .line 108
+    .line 109
+    sput-object v0, Lorg/openxmlformats/schemas/drawingml/x2006/main/impl/CTShapePropertiesImpl;->EFFECTDAG$22:Ljavax/xml/namespace/QName;
+
+    .line 110
+    .line 111
+    new-instance v0, Ljavax/xml/namespace/QName;
+
+    .line 112
+    .line 113
+    const-string v1, "scene3d"
+
+    .line 114
+    .line 115
+    invoke-direct {v0, v2, v1}, Ljavax/xml/namespace/QName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 116
+    .line 117
+    .line 118
+    sput-object v0, Lorg/openxmlformats/schemas/drawingml/x2006/main/impl/CTShapePropertiesImpl;->SCENE3D$24:Ljavax/xml/namespace/QName;
+
+    .line 119
+    .line 120
+    new-instance v0, Ljavax/xml/namespace/QName;
+
+    .line 121
+    .line 122
+    const-string v1, "sp3d"
+
+    .line 123
+    .line 124
+    invoke-direct {v0, v2, v1}, Ljavax/xml/namespace/QName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 125
+    .line 126
+    .line 127
+    sput-object v0, Lorg/openxmlformats/schemas/drawingml/x2006/main/impl/CTShapePropertiesImpl;->SP3D$26:Ljavax/xml/namespace/QName;
+
+    .line 128
+    .line 129
+    new-instance v0, Ljavax/xml/namespace/QName;
+
+    .line 130
+    .line 131
+    const-string v1, "extLst"
+
+    .line 132
+    .line 133
+    invoke-direct {v0, v2, v1}, Ljavax/xml/namespace/QName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 134
+    .line 135
+    .line 136
+    sput-object v0, Lorg/openxmlformats/schemas/drawingml/x2006/main/impl/CTShapePropertiesImpl;->EXTLST$28:Ljavax/xml/namespace/QName;
+
+    .line 137
+    .line 138
+    new-instance v0, Ljavax/xml/namespace/QName;
+
+    .line 139
+    .line 140
+    const-string v1, ""
+
+    .line 141
+    .line 142
+    const-string v2, "bwMode"
+
+    .line 143
+    .line 144
+    invoke-direct {v0, v1, v2}, Ljavax/xml/namespace/QName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 145
+    .line 146
+    .line 147
+    sput-object v0, Lorg/openxmlformats/schemas/drawingml/x2006/main/impl/CTShapePropertiesImpl;->BWMODE$30:Ljavax/xml/namespace/QName;
+
+    .line 148
+    .line 149
+    return-void
+.end method
+
+.method public constructor <init>(Lorg/apache/xmlbeans/SchemaType;)V
+    .locals 0
+
+    .line 1
+    invoke-direct {p0, p1}, Lorg/apache/xmlbeans/impl/values/XmlComplexContentImpl;-><init>(Lorg/apache/xmlbeans/SchemaType;)V
+
+    .line 2
+    .line 3
+    .line 4
+    return-void
+.end method
+
+
+# virtual methods
+.method public addNewBlipFill()Lorg/openxmlformats/schemas/drawingml/x2006/main/CTBlipFillProperties;
+    .locals 2
+
+    .line 1
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->monitor()Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    monitor-enter v0
+
+    .line 6
+    :try_start_0
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->check_orphaned()V
+
+    .line 7
+    .line 8
+    .line 9
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->get_store()Lorg/apache/xmlbeans/impl/values/TypeStore;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object p0
+
+    .line 13
+    sget-object v1, Lorg/openxmlformats/schemas/drawingml/x2006/main/impl/CTShapePropertiesImpl;->BLIPFILL$12:Ljavax/xml/namespace/QName;
+
+    .line 14
+    .line 15
+    invoke-interface {p0, v1}, Lorg/apache/xmlbeans/impl/values/TypeStore;->add_element_user(Ljavax/xml/namespace/QName;)Lorg/apache/xmlbeans/impl/values/TypeStoreUser;
+
+    .line 16
+    .line 17
+    .line 18
+    move-result-object p0
+
+    .line 19
+    check-cast p0, Lorg/openxmlformats/schemas/drawingml/x2006/main/CTBlipFillProperties;
+
+    .line 20
+    .line 21
+    monitor-exit v0
+
+    .line 22
+    return-object p0
+
+    .line 23
+    :catchall_0
+    move-exception p0
+
+    .line 24
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 25
+    throw p0
+.end method
+
+.method public addNewCustGeom()Lorg/openxmlformats/schemas/drawingml/x2006/main/CTCustomGeometry2D;
+    .locals 2
+
+    .line 1
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->monitor()Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    monitor-enter v0
+
+    .line 6
+    :try_start_0
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->check_orphaned()V
+
+    .line 7
+    .line 8
+    .line 9
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->get_store()Lorg/apache/xmlbeans/impl/values/TypeStore;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object p0
+
+    .line 13
+    sget-object v1, Lorg/openxmlformats/schemas/drawingml/x2006/main/impl/CTShapePropertiesImpl;->CUSTGEOM$2:Ljavax/xml/namespace/QName;
+
+    .line 14
+    .line 15
+    invoke-interface {p0, v1}, Lorg/apache/xmlbeans/impl/values/TypeStore;->add_element_user(Ljavax/xml/namespace/QName;)Lorg/apache/xmlbeans/impl/values/TypeStoreUser;
+
+    .line 16
+    .line 17
+    .line 18
+    move-result-object p0
+
+    .line 19
+    check-cast p0, Lorg/openxmlformats/schemas/drawingml/x2006/main/CTCustomGeometry2D;
+
+    .line 20
+    .line 21
+    monitor-exit v0
+
+    .line 22
+    return-object p0
+
+    .line 23
+    :catchall_0
+    move-exception p0
+
+    .line 24
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 25
+    throw p0
+.end method
+
+.method public addNewEffectDag()Lorg/openxmlformats/schemas/drawingml/x2006/main/CTEffectContainer;
+    .locals 2
+
+    .line 1
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->monitor()Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    monitor-enter v0
+
+    .line 6
+    :try_start_0
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->check_orphaned()V
+
+    .line 7
+    .line 8
+    .line 9
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->get_store()Lorg/apache/xmlbeans/impl/values/TypeStore;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object p0
+
+    .line 13
+    sget-object v1, Lorg/openxmlformats/schemas/drawingml/x2006/main/impl/CTShapePropertiesImpl;->EFFECTDAG$22:Ljavax/xml/namespace/QName;
+
+    .line 14
+    .line 15
+    invoke-interface {p0, v1}, Lorg/apache/xmlbeans/impl/values/TypeStore;->add_element_user(Ljavax/xml/namespace/QName;)Lorg/apache/xmlbeans/impl/values/TypeStoreUser;
+
+    .line 16
+    .line 17
+    .line 18
+    move-result-object p0
+
+    .line 19
+    check-cast p0, Lorg/openxmlformats/schemas/drawingml/x2006/main/CTEffectContainer;
+
+    .line 20
+    .line 21
+    monitor-exit v0
+
+    .line 22
+    return-object p0
+
+    .line 23
+    :catchall_0
+    move-exception p0
+
+    .line 24
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 25
+    throw p0
+.end method
+
+.method public addNewEffectLst()Lorg/openxmlformats/schemas/drawingml/x2006/main/CTEffectList;
+    .locals 2
+
+    .line 1
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->monitor()Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    monitor-enter v0
+
+    .line 6
+    :try_start_0
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->check_orphaned()V
+
+    .line 7
+    .line 8
+    .line 9
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->get_store()Lorg/apache/xmlbeans/impl/values/TypeStore;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object p0
+
+    .line 13
+    sget-object v1, Lorg/openxmlformats/schemas/drawingml/x2006/main/impl/CTShapePropertiesImpl;->EFFECTLST$20:Ljavax/xml/namespace/QName;
+
+    .line 14
+    .line 15
+    invoke-interface {p0, v1}, Lorg/apache/xmlbeans/impl/values/TypeStore;->add_element_user(Ljavax/xml/namespace/QName;)Lorg/apache/xmlbeans/impl/values/TypeStoreUser;
+
+    .line 16
+    .line 17
+    .line 18
+    move-result-object p0
+
+    .line 19
+    check-cast p0, Lorg/openxmlformats/schemas/drawingml/x2006/main/CTEffectList;
+
+    .line 20
+    .line 21
+    monitor-exit v0
+
+    .line 22
+    return-object p0
+
+    .line 23
+    :catchall_0
+    move-exception p0
+
+    .line 24
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 25
+    throw p0
+.end method
+
+.method public addNewExtLst()Lorg/openxmlformats/schemas/drawingml/x2006/main/CTOfficeArtExtensionList;
+    .locals 2
+
+    .line 1
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->monitor()Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    monitor-enter v0
+
+    .line 6
+    :try_start_0
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->check_orphaned()V
+
+    .line 7
+    .line 8
+    .line 9
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->get_store()Lorg/apache/xmlbeans/impl/values/TypeStore;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object p0
+
+    .line 13
+    sget-object v1, Lorg/openxmlformats/schemas/drawingml/x2006/main/impl/CTShapePropertiesImpl;->EXTLST$28:Ljavax/xml/namespace/QName;
+
+    .line 14
+    .line 15
+    invoke-interface {p0, v1}, Lorg/apache/xmlbeans/impl/values/TypeStore;->add_element_user(Ljavax/xml/namespace/QName;)Lorg/apache/xmlbeans/impl/values/TypeStoreUser;
+
+    .line 16
+    .line 17
+    .line 18
+    move-result-object p0
+
+    .line 19
+    check-cast p0, Lorg/openxmlformats/schemas/drawingml/x2006/main/CTOfficeArtExtensionList;
+
+    .line 20
+    .line 21
+    monitor-exit v0
+
+    .line 22
+    return-object p0
+
+    .line 23
+    :catchall_0
+    move-exception p0
+
+    .line 24
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 25
+    throw p0
+.end method
+
+.method public addNewGradFill()Lorg/openxmlformats/schemas/drawingml/x2006/main/CTGradientFillProperties;
+    .locals 2
+
+    .line 1
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->monitor()Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    monitor-enter v0
+
+    .line 6
+    :try_start_0
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->check_orphaned()V
+
+    .line 7
+    .line 8
+    .line 9
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->get_store()Lorg/apache/xmlbeans/impl/values/TypeStore;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object p0
+
+    .line 13
+    sget-object v1, Lorg/openxmlformats/schemas/drawingml/x2006/main/impl/CTShapePropertiesImpl;->GRADFILL$10:Ljavax/xml/namespace/QName;
+
+    .line 14
+    .line 15
+    invoke-interface {p0, v1}, Lorg/apache/xmlbeans/impl/values/TypeStore;->add_element_user(Ljavax/xml/namespace/QName;)Lorg/apache/xmlbeans/impl/values/TypeStoreUser;
+
+    .line 16
+    .line 17
+    .line 18
+    move-result-object p0
+
+    .line 19
+    check-cast p0, Lorg/openxmlformats/schemas/drawingml/x2006/main/CTGradientFillProperties;
+
+    .line 20
+    .line 21
+    monitor-exit v0
+
+    .line 22
+    return-object p0
+
+    .line 23
+    :catchall_0
+    move-exception p0
+
+    .line 24
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 25
+    throw p0
+.end method
+
+.method public addNewGrpFill()Lorg/openxmlformats/schemas/drawingml/x2006/main/CTGroupFillProperties;
+    .locals 2
+
+    .line 1
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->monitor()Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    monitor-enter v0
+
+    .line 6
+    :try_start_0
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->check_orphaned()V
+
+    .line 7
+    .line 8
+    .line 9
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->get_store()Lorg/apache/xmlbeans/impl/values/TypeStore;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object p0
+
+    .line 13
+    sget-object v1, Lorg/openxmlformats/schemas/drawingml/x2006/main/impl/CTShapePropertiesImpl;->GRPFILL$16:Ljavax/xml/namespace/QName;
+
+    .line 14
+    .line 15
+    invoke-interface {p0, v1}, Lorg/apache/xmlbeans/impl/values/TypeStore;->add_element_user(Ljavax/xml/namespace/QName;)Lorg/apache/xmlbeans/impl/values/TypeStoreUser;
+
+    .line 16
+    .line 17
+    .line 18
+    move-result-object p0
+
+    .line 19
+    check-cast p0, Lorg/openxmlformats/schemas/drawingml/x2006/main/CTGroupFillProperties;
+
+    .line 20
+    .line 21
+    monitor-exit v0
+
+    .line 22
+    return-object p0
+
+    .line 23
+    :catchall_0
+    move-exception p0
+
+    .line 24
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 25
+    throw p0
+.end method
+
+.method public addNewLn()Lorg/openxmlformats/schemas/drawingml/x2006/main/CTLineProperties;
+    .locals 2
+
+    .line 1
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->monitor()Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    monitor-enter v0
+
+    .line 6
+    :try_start_0
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->check_orphaned()V
+
+    .line 7
+    .line 8
+    .line 9
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->get_store()Lorg/apache/xmlbeans/impl/values/TypeStore;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object p0
+
+    .line 13
+    sget-object v1, Lorg/openxmlformats/schemas/drawingml/x2006/main/impl/CTShapePropertiesImpl;->LN$18:Ljavax/xml/namespace/QName;
+
+    .line 14
+    .line 15
+    invoke-interface {p0, v1}, Lorg/apache/xmlbeans/impl/values/TypeStore;->add_element_user(Ljavax/xml/namespace/QName;)Lorg/apache/xmlbeans/impl/values/TypeStoreUser;
+
+    .line 16
+    .line 17
+    .line 18
+    move-result-object p0
+
+    .line 19
+    check-cast p0, Lorg/openxmlformats/schemas/drawingml/x2006/main/CTLineProperties;
+
+    .line 20
+    .line 21
+    monitor-exit v0
+
+    .line 22
+    return-object p0
+
+    .line 23
+    :catchall_0
+    move-exception p0
+
+    .line 24
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 25
+    throw p0
+.end method
+
+.method public addNewNoFill()Lorg/openxmlformats/schemas/drawingml/x2006/main/CTNoFillProperties;
+    .locals 2
+
+    .line 1
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->monitor()Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    monitor-enter v0
+
+    .line 6
+    :try_start_0
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->check_orphaned()V
+
+    .line 7
+    .line 8
+    .line 9
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->get_store()Lorg/apache/xmlbeans/impl/values/TypeStore;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object p0
+
+    .line 13
+    sget-object v1, Lorg/openxmlformats/schemas/drawingml/x2006/main/impl/CTShapePropertiesImpl;->NOFILL$6:Ljavax/xml/namespace/QName;
+
+    .line 14
+    .line 15
+    invoke-interface {p0, v1}, Lorg/apache/xmlbeans/impl/values/TypeStore;->add_element_user(Ljavax/xml/namespace/QName;)Lorg/apache/xmlbeans/impl/values/TypeStoreUser;
+
+    .line 16
+    .line 17
+    .line 18
+    move-result-object p0
+
+    .line 19
+    check-cast p0, Lorg/openxmlformats/schemas/drawingml/x2006/main/CTNoFillProperties;
+
+    .line 20
+    .line 21
+    monitor-exit v0
+
+    .line 22
+    return-object p0
+
+    .line 23
+    :catchall_0
+    move-exception p0
+
+    .line 24
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 25
+    throw p0
+.end method
+
+.method public addNewPattFill()Lorg/openxmlformats/schemas/drawingml/x2006/main/CTPatternFillProperties;
+    .locals 2
+
+    .line 1
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->monitor()Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    monitor-enter v0
+
+    .line 6
+    :try_start_0
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->check_orphaned()V
+
+    .line 7
+    .line 8
+    .line 9
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->get_store()Lorg/apache/xmlbeans/impl/values/TypeStore;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object p0
+
+    .line 13
+    sget-object v1, Lorg/openxmlformats/schemas/drawingml/x2006/main/impl/CTShapePropertiesImpl;->PATTFILL$14:Ljavax/xml/namespace/QName;
+
+    .line 14
+    .line 15
+    invoke-interface {p0, v1}, Lorg/apache/xmlbeans/impl/values/TypeStore;->add_element_user(Ljavax/xml/namespace/QName;)Lorg/apache/xmlbeans/impl/values/TypeStoreUser;
+
+    .line 16
+    .line 17
+    .line 18
+    move-result-object p0
+
+    .line 19
+    check-cast p0, Lorg/openxmlformats/schemas/drawingml/x2006/main/CTPatternFillProperties;
+
+    .line 20
+    .line 21
+    monitor-exit v0
+
+    .line 22
+    return-object p0
+
+    .line 23
+    :catchall_0
+    move-exception p0
+
+    .line 24
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 25
+    throw p0
+.end method
+
+.method public addNewPrstGeom()Lorg/openxmlformats/schemas/drawingml/x2006/main/CTPresetGeometry2D;
+    .locals 2
+
+    .line 1
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->monitor()Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    monitor-enter v0
+
+    .line 6
+    :try_start_0
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->check_orphaned()V
+
+    .line 7
+    .line 8
+    .line 9
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->get_store()Lorg/apache/xmlbeans/impl/values/TypeStore;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object p0
+
+    .line 13
+    sget-object v1, Lorg/openxmlformats/schemas/drawingml/x2006/main/impl/CTShapePropertiesImpl;->PRSTGEOM$4:Ljavax/xml/namespace/QName;
+
+    .line 14
+    .line 15
+    invoke-interface {p0, v1}, Lorg/apache/xmlbeans/impl/values/TypeStore;->add_element_user(Ljavax/xml/namespace/QName;)Lorg/apache/xmlbeans/impl/values/TypeStoreUser;
+
+    .line 16
+    .line 17
+    .line 18
+    move-result-object p0
+
+    .line 19
+    check-cast p0, Lorg/openxmlformats/schemas/drawingml/x2006/main/CTPresetGeometry2D;
+
+    .line 20
+    .line 21
+    monitor-exit v0
+
+    .line 22
+    return-object p0
+
+    .line 23
+    :catchall_0
+    move-exception p0
+
+    .line 24
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 25
+    throw p0
+.end method
+
+.method public addNewScene3D()Lorg/openxmlformats/schemas/drawingml/x2006/main/CTScene3D;
+    .locals 2
+
+    .line 1
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->monitor()Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    monitor-enter v0
+
+    .line 6
+    :try_start_0
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->check_orphaned()V
+
+    .line 7
+    .line 8
+    .line 9
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->get_store()Lorg/apache/xmlbeans/impl/values/TypeStore;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object p0
+
+    .line 13
+    sget-object v1, Lorg/openxmlformats/schemas/drawingml/x2006/main/impl/CTShapePropertiesImpl;->SCENE3D$24:Ljavax/xml/namespace/QName;
+
+    .line 14
+    .line 15
+    invoke-interface {p0, v1}, Lorg/apache/xmlbeans/impl/values/TypeStore;->add_element_user(Ljavax/xml/namespace/QName;)Lorg/apache/xmlbeans/impl/values/TypeStoreUser;
+
+    .line 16
+    .line 17
+    .line 18
+    move-result-object p0
+
+    .line 19
+    check-cast p0, Lorg/openxmlformats/schemas/drawingml/x2006/main/CTScene3D;
+
+    .line 20
+    .line 21
+    monitor-exit v0
+
+    .line 22
+    return-object p0
+
+    .line 23
+    :catchall_0
+    move-exception p0
+
+    .line 24
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 25
+    throw p0
+.end method
+
+.method public addNewSolidFill()Lorg/openxmlformats/schemas/drawingml/x2006/main/CTSolidColorFillProperties;
+    .locals 2
+
+    .line 1
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->monitor()Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    monitor-enter v0
+
+    .line 6
+    :try_start_0
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->check_orphaned()V
+
+    .line 7
+    .line 8
+    .line 9
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->get_store()Lorg/apache/xmlbeans/impl/values/TypeStore;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object p0
+
+    .line 13
+    sget-object v1, Lorg/openxmlformats/schemas/drawingml/x2006/main/impl/CTShapePropertiesImpl;->SOLIDFILL$8:Ljavax/xml/namespace/QName;
+
+    .line 14
+    .line 15
+    invoke-interface {p0, v1}, Lorg/apache/xmlbeans/impl/values/TypeStore;->add_element_user(Ljavax/xml/namespace/QName;)Lorg/apache/xmlbeans/impl/values/TypeStoreUser;
+
+    .line 16
+    .line 17
+    .line 18
+    move-result-object p0
+
+    .line 19
+    check-cast p0, Lorg/openxmlformats/schemas/drawingml/x2006/main/CTSolidColorFillProperties;
+
+    .line 20
+    .line 21
+    monitor-exit v0
+
+    .line 22
+    return-object p0
+
+    .line 23
+    :catchall_0
+    move-exception p0
+
+    .line 24
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 25
+    throw p0
+.end method
+
+.method public addNewSp3D()Lorg/openxmlformats/schemas/drawingml/x2006/main/CTShape3D;
+    .locals 2
+
+    .line 1
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->monitor()Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    monitor-enter v0
+
+    .line 6
+    :try_start_0
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->check_orphaned()V
+
+    .line 7
+    .line 8
+    .line 9
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->get_store()Lorg/apache/xmlbeans/impl/values/TypeStore;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object p0
+
+    .line 13
+    sget-object v1, Lorg/openxmlformats/schemas/drawingml/x2006/main/impl/CTShapePropertiesImpl;->SP3D$26:Ljavax/xml/namespace/QName;
+
+    .line 14
+    .line 15
+    invoke-interface {p0, v1}, Lorg/apache/xmlbeans/impl/values/TypeStore;->add_element_user(Ljavax/xml/namespace/QName;)Lorg/apache/xmlbeans/impl/values/TypeStoreUser;
+
+    .line 16
+    .line 17
+    .line 18
+    move-result-object p0
+
+    .line 19
+    check-cast p0, Lorg/openxmlformats/schemas/drawingml/x2006/main/CTShape3D;
+
+    .line 20
+    .line 21
+    monitor-exit v0
+
+    .line 22
+    return-object p0
+
+    .line 23
+    :catchall_0
+    move-exception p0
+
+    .line 24
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 25
+    throw p0
+.end method
+
+.method public addNewXfrm()Lorg/openxmlformats/schemas/drawingml/x2006/main/CTTransform2D;
+    .locals 2
+
+    .line 1
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->monitor()Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    monitor-enter v0
+
+    .line 6
+    :try_start_0
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->check_orphaned()V
+
+    .line 7
+    .line 8
+    .line 9
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->get_store()Lorg/apache/xmlbeans/impl/values/TypeStore;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object p0
+
+    .line 13
+    sget-object v1, Lorg/openxmlformats/schemas/drawingml/x2006/main/impl/CTShapePropertiesImpl;->XFRM$0:Ljavax/xml/namespace/QName;
+
+    .line 14
+    .line 15
+    invoke-interface {p0, v1}, Lorg/apache/xmlbeans/impl/values/TypeStore;->add_element_user(Ljavax/xml/namespace/QName;)Lorg/apache/xmlbeans/impl/values/TypeStoreUser;
+
+    .line 16
+    .line 17
+    .line 18
+    move-result-object p0
+
+    .line 19
+    check-cast p0, Lorg/openxmlformats/schemas/drawingml/x2006/main/CTTransform2D;
+
+    .line 20
+    .line 21
+    monitor-exit v0
+
+    .line 22
+    return-object p0
+
+    .line 23
+    :catchall_0
+    move-exception p0
+
+    .line 24
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 25
+    throw p0
+.end method
+
+.method public getBlipFill()Lorg/openxmlformats/schemas/drawingml/x2006/main/CTBlipFillProperties;
+    .locals 3
+
+    .line 1
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->monitor()Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    monitor-enter v0
+
+    .line 6
+    :try_start_0
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->check_orphaned()V
+
+    .line 7
+    .line 8
+    .line 9
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->get_store()Lorg/apache/xmlbeans/impl/values/TypeStore;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object p0
+
+    .line 13
+    sget-object v1, Lorg/openxmlformats/schemas/drawingml/x2006/main/impl/CTShapePropertiesImpl;->BLIPFILL$12:Ljavax/xml/namespace/QName;
+
+    .line 14
+    .line 15
+    const/4 v2, 0x0
+
+    .line 16
+    invoke-interface {p0, v1, v2}, Lorg/apache/xmlbeans/impl/values/TypeStore;->find_element_user(Ljavax/xml/namespace/QName;I)Lorg/apache/xmlbeans/impl/values/TypeStoreUser;
+
+    .line 17
+    .line 18
+    .line 19
+    move-result-object p0
+
+    .line 20
+    check-cast p0, Lorg/openxmlformats/schemas/drawingml/x2006/main/CTBlipFillProperties;
+
+    .line 21
+    .line 22
+    if-nez p0, :cond_0
+
+    .line 23
+    .line 24
+    monitor-exit v0
+
+    .line 25
+    const/4 p0, 0x0
+
+    .line 26
+    return-object p0
+
+    .line 27
+    :cond_0
+    monitor-exit v0
+
+    .line 28
+    return-object p0
+
+    .line 29
+    :catchall_0
+    move-exception p0
+
+    .line 30
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 31
+    throw p0
+.end method
+
+.method public getBwMode()Lorg/openxmlformats/schemas/drawingml/x2006/main/STBlackWhiteMode$Enum;
+    .locals 2
+
+    .line 1
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->monitor()Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    monitor-enter v0
+
+    .line 6
+    :try_start_0
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->check_orphaned()V
+
+    .line 7
+    .line 8
+    .line 9
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->get_store()Lorg/apache/xmlbeans/impl/values/TypeStore;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object p0
+
+    .line 13
+    sget-object v1, Lorg/openxmlformats/schemas/drawingml/x2006/main/impl/CTShapePropertiesImpl;->BWMODE$30:Ljavax/xml/namespace/QName;
+
+    .line 14
+    .line 15
+    invoke-interface {p0, v1}, Lorg/apache/xmlbeans/impl/values/TypeStore;->find_attribute_user(Ljavax/xml/namespace/QName;)Lorg/apache/xmlbeans/impl/values/TypeStoreUser;
+
+    .line 16
+    .line 17
+    .line 18
+    move-result-object p0
+
+    .line 19
+    check-cast p0, Lorg/apache/xmlbeans/SimpleValue;
+
+    .line 20
+    .line 21
+    if-nez p0, :cond_0
+
+    .line 22
+    .line 23
+    monitor-exit v0
+
+    .line 24
+    const/4 p0, 0x0
+
+    .line 25
+    return-object p0
+
+    .line 26
+    :cond_0
+    invoke-interface {p0}, Lorg/apache/xmlbeans/SimpleValue;->getEnumValue()Lorg/apache/xmlbeans/StringEnumAbstractBase;
+
+    .line 27
+    .line 28
+    .line 29
+    move-result-object p0
+
+    .line 30
+    check-cast p0, Lorg/openxmlformats/schemas/drawingml/x2006/main/STBlackWhiteMode$Enum;
+
+    .line 31
+    .line 32
+    monitor-exit v0
+
+    .line 33
+    return-object p0
+
+    .line 34
+    :catchall_0
+    move-exception p0
+
+    .line 35
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 36
+    throw p0
+.end method
+
+.method public getCustGeom()Lorg/openxmlformats/schemas/drawingml/x2006/main/CTCustomGeometry2D;
+    .locals 3
+
+    .line 1
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->monitor()Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    monitor-enter v0
+
+    .line 6
+    :try_start_0
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->check_orphaned()V
+
+    .line 7
+    .line 8
+    .line 9
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->get_store()Lorg/apache/xmlbeans/impl/values/TypeStore;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object p0
+
+    .line 13
+    sget-object v1, Lorg/openxmlformats/schemas/drawingml/x2006/main/impl/CTShapePropertiesImpl;->CUSTGEOM$2:Ljavax/xml/namespace/QName;
+
+    .line 14
+    .line 15
+    const/4 v2, 0x0
+
+    .line 16
+    invoke-interface {p0, v1, v2}, Lorg/apache/xmlbeans/impl/values/TypeStore;->find_element_user(Ljavax/xml/namespace/QName;I)Lorg/apache/xmlbeans/impl/values/TypeStoreUser;
+
+    .line 17
+    .line 18
+    .line 19
+    move-result-object p0
+
+    .line 20
+    check-cast p0, Lorg/openxmlformats/schemas/drawingml/x2006/main/CTCustomGeometry2D;
+
+    .line 21
+    .line 22
+    if-nez p0, :cond_0
+
+    .line 23
+    .line 24
+    monitor-exit v0
+
+    .line 25
+    const/4 p0, 0x0
+
+    .line 26
+    return-object p0
+
+    .line 27
+    :cond_0
+    monitor-exit v0
+
+    .line 28
+    return-object p0
+
+    .line 29
+    :catchall_0
+    move-exception p0
+
+    .line 30
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 31
+    throw p0
+.end method
+
+.method public getEffectDag()Lorg/openxmlformats/schemas/drawingml/x2006/main/CTEffectContainer;
+    .locals 3
+
+    .line 1
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->monitor()Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    monitor-enter v0
+
+    .line 6
+    :try_start_0
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->check_orphaned()V
+
+    .line 7
+    .line 8
+    .line 9
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->get_store()Lorg/apache/xmlbeans/impl/values/TypeStore;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object p0
+
+    .line 13
+    sget-object v1, Lorg/openxmlformats/schemas/drawingml/x2006/main/impl/CTShapePropertiesImpl;->EFFECTDAG$22:Ljavax/xml/namespace/QName;
+
+    .line 14
+    .line 15
+    const/4 v2, 0x0
+
+    .line 16
+    invoke-interface {p0, v1, v2}, Lorg/apache/xmlbeans/impl/values/TypeStore;->find_element_user(Ljavax/xml/namespace/QName;I)Lorg/apache/xmlbeans/impl/values/TypeStoreUser;
+
+    .line 17
+    .line 18
+    .line 19
+    move-result-object p0
+
+    .line 20
+    check-cast p0, Lorg/openxmlformats/schemas/drawingml/x2006/main/CTEffectContainer;
+
+    .line 21
+    .line 22
+    if-nez p0, :cond_0
+
+    .line 23
+    .line 24
+    monitor-exit v0
+
+    .line 25
+    const/4 p0, 0x0
+
+    .line 26
+    return-object p0
+
+    .line 27
+    :cond_0
+    monitor-exit v0
+
+    .line 28
+    return-object p0
+
+    .line 29
+    :catchall_0
+    move-exception p0
+
+    .line 30
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 31
+    throw p0
+.end method
+
+.method public getEffectLst()Lorg/openxmlformats/schemas/drawingml/x2006/main/CTEffectList;
+    .locals 3
+
+    .line 1
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->monitor()Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    monitor-enter v0
+
+    .line 6
+    :try_start_0
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->check_orphaned()V
+
+    .line 7
+    .line 8
+    .line 9
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->get_store()Lorg/apache/xmlbeans/impl/values/TypeStore;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object p0
+
+    .line 13
+    sget-object v1, Lorg/openxmlformats/schemas/drawingml/x2006/main/impl/CTShapePropertiesImpl;->EFFECTLST$20:Ljavax/xml/namespace/QName;
+
+    .line 14
+    .line 15
+    const/4 v2, 0x0
+
+    .line 16
+    invoke-interface {p0, v1, v2}, Lorg/apache/xmlbeans/impl/values/TypeStore;->find_element_user(Ljavax/xml/namespace/QName;I)Lorg/apache/xmlbeans/impl/values/TypeStoreUser;
+
+    .line 17
+    .line 18
+    .line 19
+    move-result-object p0
+
+    .line 20
+    check-cast p0, Lorg/openxmlformats/schemas/drawingml/x2006/main/CTEffectList;
+
+    .line 21
+    .line 22
+    if-nez p0, :cond_0
+
+    .line 23
+    .line 24
+    monitor-exit v0
+
+    .line 25
+    const/4 p0, 0x0
+
+    .line 26
+    return-object p0
+
+    .line 27
+    :cond_0
+    monitor-exit v0
+
+    .line 28
+    return-object p0
+
+    .line 29
+    :catchall_0
+    move-exception p0
+
+    .line 30
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 31
+    throw p0
+.end method
+
+.method public getExtLst()Lorg/openxmlformats/schemas/drawingml/x2006/main/CTOfficeArtExtensionList;
+    .locals 3
+
+    .line 1
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->monitor()Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    monitor-enter v0
+
+    .line 6
+    :try_start_0
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->check_orphaned()V
+
+    .line 7
+    .line 8
+    .line 9
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->get_store()Lorg/apache/xmlbeans/impl/values/TypeStore;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object p0
+
+    .line 13
+    sget-object v1, Lorg/openxmlformats/schemas/drawingml/x2006/main/impl/CTShapePropertiesImpl;->EXTLST$28:Ljavax/xml/namespace/QName;
+
+    .line 14
+    .line 15
+    const/4 v2, 0x0
+
+    .line 16
+    invoke-interface {p0, v1, v2}, Lorg/apache/xmlbeans/impl/values/TypeStore;->find_element_user(Ljavax/xml/namespace/QName;I)Lorg/apache/xmlbeans/impl/values/TypeStoreUser;
+
+    .line 17
+    .line 18
+    .line 19
+    move-result-object p0
+
+    .line 20
+    check-cast p0, Lorg/openxmlformats/schemas/drawingml/x2006/main/CTOfficeArtExtensionList;
+
+    .line 21
+    .line 22
+    if-nez p0, :cond_0
+
+    .line 23
+    .line 24
+    monitor-exit v0
+
+    .line 25
+    const/4 p0, 0x0
+
+    .line 26
+    return-object p0
+
+    .line 27
+    :cond_0
+    monitor-exit v0
+
+    .line 28
+    return-object p0
+
+    .line 29
+    :catchall_0
+    move-exception p0
+
+    .line 30
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 31
+    throw p0
+.end method
+
+.method public getGradFill()Lorg/openxmlformats/schemas/drawingml/x2006/main/CTGradientFillProperties;
+    .locals 3
+
+    .line 1
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->monitor()Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    monitor-enter v0
+
+    .line 6
+    :try_start_0
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->check_orphaned()V
+
+    .line 7
+    .line 8
+    .line 9
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->get_store()Lorg/apache/xmlbeans/impl/values/TypeStore;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object p0
+
+    .line 13
+    sget-object v1, Lorg/openxmlformats/schemas/drawingml/x2006/main/impl/CTShapePropertiesImpl;->GRADFILL$10:Ljavax/xml/namespace/QName;
+
+    .line 14
+    .line 15
+    const/4 v2, 0x0
+
+    .line 16
+    invoke-interface {p0, v1, v2}, Lorg/apache/xmlbeans/impl/values/TypeStore;->find_element_user(Ljavax/xml/namespace/QName;I)Lorg/apache/xmlbeans/impl/values/TypeStoreUser;
+
+    .line 17
+    .line 18
+    .line 19
+    move-result-object p0
+
+    .line 20
+    check-cast p0, Lorg/openxmlformats/schemas/drawingml/x2006/main/CTGradientFillProperties;
+
+    .line 21
+    .line 22
+    if-nez p0, :cond_0
+
+    .line 23
+    .line 24
+    monitor-exit v0
+
+    .line 25
+    const/4 p0, 0x0
+
+    .line 26
+    return-object p0
+
+    .line 27
+    :cond_0
+    monitor-exit v0
+
+    .line 28
+    return-object p0
+
+    .line 29
+    :catchall_0
+    move-exception p0
+
+    .line 30
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 31
+    throw p0
+.end method
+
+.method public getGrpFill()Lorg/openxmlformats/schemas/drawingml/x2006/main/CTGroupFillProperties;
+    .locals 3
+
+    .line 1
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->monitor()Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    monitor-enter v0
+
+    .line 6
+    :try_start_0
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->check_orphaned()V
+
+    .line 7
+    .line 8
+    .line 9
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->get_store()Lorg/apache/xmlbeans/impl/values/TypeStore;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object p0
+
+    .line 13
+    sget-object v1, Lorg/openxmlformats/schemas/drawingml/x2006/main/impl/CTShapePropertiesImpl;->GRPFILL$16:Ljavax/xml/namespace/QName;
+
+    .line 14
+    .line 15
+    const/4 v2, 0x0
+
+    .line 16
+    invoke-interface {p0, v1, v2}, Lorg/apache/xmlbeans/impl/values/TypeStore;->find_element_user(Ljavax/xml/namespace/QName;I)Lorg/apache/xmlbeans/impl/values/TypeStoreUser;
+
+    .line 17
+    .line 18
+    .line 19
+    move-result-object p0
+
+    .line 20
+    check-cast p0, Lorg/openxmlformats/schemas/drawingml/x2006/main/CTGroupFillProperties;
+
+    .line 21
+    .line 22
+    if-nez p0, :cond_0
+
+    .line 23
+    .line 24
+    monitor-exit v0
+
+    .line 25
+    const/4 p0, 0x0
+
+    .line 26
+    return-object p0
+
+    .line 27
+    :cond_0
+    monitor-exit v0
+
+    .line 28
+    return-object p0
+
+    .line 29
+    :catchall_0
+    move-exception p0
+
+    .line 30
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 31
+    throw p0
+.end method
+
+.method public getLn()Lorg/openxmlformats/schemas/drawingml/x2006/main/CTLineProperties;
+    .locals 3
+
+    .line 1
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->monitor()Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    monitor-enter v0
+
+    .line 6
+    :try_start_0
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->check_orphaned()V
+
+    .line 7
+    .line 8
+    .line 9
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->get_store()Lorg/apache/xmlbeans/impl/values/TypeStore;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object p0
+
+    .line 13
+    sget-object v1, Lorg/openxmlformats/schemas/drawingml/x2006/main/impl/CTShapePropertiesImpl;->LN$18:Ljavax/xml/namespace/QName;
+
+    .line 14
+    .line 15
+    const/4 v2, 0x0
+
+    .line 16
+    invoke-interface {p0, v1, v2}, Lorg/apache/xmlbeans/impl/values/TypeStore;->find_element_user(Ljavax/xml/namespace/QName;I)Lorg/apache/xmlbeans/impl/values/TypeStoreUser;
+
+    .line 17
+    .line 18
+    .line 19
+    move-result-object p0
+
+    .line 20
+    check-cast p0, Lorg/openxmlformats/schemas/drawingml/x2006/main/CTLineProperties;
+
+    .line 21
+    .line 22
+    if-nez p0, :cond_0
+
+    .line 23
+    .line 24
+    monitor-exit v0
+
+    .line 25
+    const/4 p0, 0x0
+
+    .line 26
+    return-object p0
+
+    .line 27
+    :cond_0
+    monitor-exit v0
+
+    .line 28
+    return-object p0
+
+    .line 29
+    :catchall_0
+    move-exception p0
+
+    .line 30
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 31
+    throw p0
+.end method
+
+.method public getNoFill()Lorg/openxmlformats/schemas/drawingml/x2006/main/CTNoFillProperties;
+    .locals 3
+
+    .line 1
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->monitor()Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    monitor-enter v0
+
+    .line 6
+    :try_start_0
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->check_orphaned()V
+
+    .line 7
+    .line 8
+    .line 9
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->get_store()Lorg/apache/xmlbeans/impl/values/TypeStore;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object p0
+
+    .line 13
+    sget-object v1, Lorg/openxmlformats/schemas/drawingml/x2006/main/impl/CTShapePropertiesImpl;->NOFILL$6:Ljavax/xml/namespace/QName;
+
+    .line 14
+    .line 15
+    const/4 v2, 0x0
+
+    .line 16
+    invoke-interface {p0, v1, v2}, Lorg/apache/xmlbeans/impl/values/TypeStore;->find_element_user(Ljavax/xml/namespace/QName;I)Lorg/apache/xmlbeans/impl/values/TypeStoreUser;
+
+    .line 17
+    .line 18
+    .line 19
+    move-result-object p0
+
+    .line 20
+    check-cast p0, Lorg/openxmlformats/schemas/drawingml/x2006/main/CTNoFillProperties;
+
+    .line 21
+    .line 22
+    if-nez p0, :cond_0
+
+    .line 23
+    .line 24
+    monitor-exit v0
+
+    .line 25
+    const/4 p0, 0x0
+
+    .line 26
+    return-object p0
+
+    .line 27
+    :cond_0
+    monitor-exit v0
+
+    .line 28
+    return-object p0
+
+    .line 29
+    :catchall_0
+    move-exception p0
+
+    .line 30
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 31
+    throw p0
+.end method
+
+.method public getPattFill()Lorg/openxmlformats/schemas/drawingml/x2006/main/CTPatternFillProperties;
+    .locals 3
+
+    .line 1
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->monitor()Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    monitor-enter v0
+
+    .line 6
+    :try_start_0
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->check_orphaned()V
+
+    .line 7
+    .line 8
+    .line 9
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->get_store()Lorg/apache/xmlbeans/impl/values/TypeStore;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object p0
+
+    .line 13
+    sget-object v1, Lorg/openxmlformats/schemas/drawingml/x2006/main/impl/CTShapePropertiesImpl;->PATTFILL$14:Ljavax/xml/namespace/QName;
+
+    .line 14
+    .line 15
+    const/4 v2, 0x0
+
+    .line 16
+    invoke-interface {p0, v1, v2}, Lorg/apache/xmlbeans/impl/values/TypeStore;->find_element_user(Ljavax/xml/namespace/QName;I)Lorg/apache/xmlbeans/impl/values/TypeStoreUser;
+
+    .line 17
+    .line 18
+    .line 19
+    move-result-object p0
+
+    .line 20
+    check-cast p0, Lorg/openxmlformats/schemas/drawingml/x2006/main/CTPatternFillProperties;
+
+    .line 21
+    .line 22
+    if-nez p0, :cond_0
+
+    .line 23
+    .line 24
+    monitor-exit v0
+
+    .line 25
+    const/4 p0, 0x0
+
+    .line 26
+    return-object p0
+
+    .line 27
+    :cond_0
+    monitor-exit v0
+
+    .line 28
+    return-object p0
+
+    .line 29
+    :catchall_0
+    move-exception p0
+
+    .line 30
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 31
+    throw p0
+.end method
+
+.method public getPrstGeom()Lorg/openxmlformats/schemas/drawingml/x2006/main/CTPresetGeometry2D;
+    .locals 3
+
+    .line 1
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->monitor()Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    monitor-enter v0
+
+    .line 6
+    :try_start_0
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->check_orphaned()V
+
+    .line 7
+    .line 8
+    .line 9
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->get_store()Lorg/apache/xmlbeans/impl/values/TypeStore;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object p0
+
+    .line 13
+    sget-object v1, Lorg/openxmlformats/schemas/drawingml/x2006/main/impl/CTShapePropertiesImpl;->PRSTGEOM$4:Ljavax/xml/namespace/QName;
+
+    .line 14
+    .line 15
+    const/4 v2, 0x0
+
+    .line 16
+    invoke-interface {p0, v1, v2}, Lorg/apache/xmlbeans/impl/values/TypeStore;->find_element_user(Ljavax/xml/namespace/QName;I)Lorg/apache/xmlbeans/impl/values/TypeStoreUser;
+
+    .line 17
+    .line 18
+    .line 19
+    move-result-object p0
+
+    .line 20
+    check-cast p0, Lorg/openxmlformats/schemas/drawingml/x2006/main/CTPresetGeometry2D;
+
+    .line 21
+    .line 22
+    if-nez p0, :cond_0
+
+    .line 23
+    .line 24
+    monitor-exit v0
+
+    .line 25
+    const/4 p0, 0x0
+
+    .line 26
+    return-object p0
+
+    .line 27
+    :cond_0
+    monitor-exit v0
+
+    .line 28
+    return-object p0
+
+    .line 29
+    :catchall_0
+    move-exception p0
+
+    .line 30
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 31
+    throw p0
+.end method
+
+.method public getScene3D()Lorg/openxmlformats/schemas/drawingml/x2006/main/CTScene3D;
+    .locals 3
+
+    .line 1
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->monitor()Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    monitor-enter v0
+
+    .line 6
+    :try_start_0
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->check_orphaned()V
+
+    .line 7
+    .line 8
+    .line 9
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->get_store()Lorg/apache/xmlbeans/impl/values/TypeStore;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object p0
+
+    .line 13
+    sget-object v1, Lorg/openxmlformats/schemas/drawingml/x2006/main/impl/CTShapePropertiesImpl;->SCENE3D$24:Ljavax/xml/namespace/QName;
+
+    .line 14
+    .line 15
+    const/4 v2, 0x0
+
+    .line 16
+    invoke-interface {p0, v1, v2}, Lorg/apache/xmlbeans/impl/values/TypeStore;->find_element_user(Ljavax/xml/namespace/QName;I)Lorg/apache/xmlbeans/impl/values/TypeStoreUser;
+
+    .line 17
+    .line 18
+    .line 19
+    move-result-object p0
+
+    .line 20
+    check-cast p0, Lorg/openxmlformats/schemas/drawingml/x2006/main/CTScene3D;
+
+    .line 21
+    .line 22
+    if-nez p0, :cond_0
+
+    .line 23
+    .line 24
+    monitor-exit v0
+
+    .line 25
+    const/4 p0, 0x0
+
+    .line 26
+    return-object p0
+
+    .line 27
+    :cond_0
+    monitor-exit v0
+
+    .line 28
+    return-object p0
+
+    .line 29
+    :catchall_0
+    move-exception p0
+
+    .line 30
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 31
+    throw p0
+.end method
+
+.method public getSolidFill()Lorg/openxmlformats/schemas/drawingml/x2006/main/CTSolidColorFillProperties;
+    .locals 3
+
+    .line 1
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->monitor()Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    monitor-enter v0
+
+    .line 6
+    :try_start_0
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->check_orphaned()V
+
+    .line 7
+    .line 8
+    .line 9
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->get_store()Lorg/apache/xmlbeans/impl/values/TypeStore;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object p0
+
+    .line 13
+    sget-object v1, Lorg/openxmlformats/schemas/drawingml/x2006/main/impl/CTShapePropertiesImpl;->SOLIDFILL$8:Ljavax/xml/namespace/QName;
+
+    .line 14
+    .line 15
+    const/4 v2, 0x0
+
+    .line 16
+    invoke-interface {p0, v1, v2}, Lorg/apache/xmlbeans/impl/values/TypeStore;->find_element_user(Ljavax/xml/namespace/QName;I)Lorg/apache/xmlbeans/impl/values/TypeStoreUser;
+
+    .line 17
+    .line 18
+    .line 19
+    move-result-object p0
+
+    .line 20
+    check-cast p0, Lorg/openxmlformats/schemas/drawingml/x2006/main/CTSolidColorFillProperties;
+
+    .line 21
+    .line 22
+    if-nez p0, :cond_0
+
+    .line 23
+    .line 24
+    monitor-exit v0
+
+    .line 25
+    const/4 p0, 0x0
+
+    .line 26
+    return-object p0
+
+    .line 27
+    :cond_0
+    monitor-exit v0
+
+    .line 28
+    return-object p0
+
+    .line 29
+    :catchall_0
+    move-exception p0
+
+    .line 30
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 31
+    throw p0
+.end method
+
+.method public getSp3D()Lorg/openxmlformats/schemas/drawingml/x2006/main/CTShape3D;
+    .locals 3
+
+    .line 1
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->monitor()Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    monitor-enter v0
+
+    .line 6
+    :try_start_0
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->check_orphaned()V
+
+    .line 7
+    .line 8
+    .line 9
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->get_store()Lorg/apache/xmlbeans/impl/values/TypeStore;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object p0
+
+    .line 13
+    sget-object v1, Lorg/openxmlformats/schemas/drawingml/x2006/main/impl/CTShapePropertiesImpl;->SP3D$26:Ljavax/xml/namespace/QName;
+
+    .line 14
+    .line 15
+    const/4 v2, 0x0
+
+    .line 16
+    invoke-interface {p0, v1, v2}, Lorg/apache/xmlbeans/impl/values/TypeStore;->find_element_user(Ljavax/xml/namespace/QName;I)Lorg/apache/xmlbeans/impl/values/TypeStoreUser;
+
+    .line 17
+    .line 18
+    .line 19
+    move-result-object p0
+
+    .line 20
+    check-cast p0, Lorg/openxmlformats/schemas/drawingml/x2006/main/CTShape3D;
+
+    .line 21
+    .line 22
+    if-nez p0, :cond_0
+
+    .line 23
+    .line 24
+    monitor-exit v0
+
+    .line 25
+    const/4 p0, 0x0
+
+    .line 26
+    return-object p0
+
+    .line 27
+    :cond_0
+    monitor-exit v0
+
+    .line 28
+    return-object p0
+
+    .line 29
+    :catchall_0
+    move-exception p0
+
+    .line 30
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 31
+    throw p0
+.end method
+
+.method public getXfrm()Lorg/openxmlformats/schemas/drawingml/x2006/main/CTTransform2D;
+    .locals 3
+
+    .line 1
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->monitor()Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    monitor-enter v0
+
+    .line 6
+    :try_start_0
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->check_orphaned()V
+
+    .line 7
+    .line 8
+    .line 9
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->get_store()Lorg/apache/xmlbeans/impl/values/TypeStore;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object p0
+
+    .line 13
+    sget-object v1, Lorg/openxmlformats/schemas/drawingml/x2006/main/impl/CTShapePropertiesImpl;->XFRM$0:Ljavax/xml/namespace/QName;
+
+    .line 14
+    .line 15
+    const/4 v2, 0x0
+
+    .line 16
+    invoke-interface {p0, v1, v2}, Lorg/apache/xmlbeans/impl/values/TypeStore;->find_element_user(Ljavax/xml/namespace/QName;I)Lorg/apache/xmlbeans/impl/values/TypeStoreUser;
+
+    .line 17
+    .line 18
+    .line 19
+    move-result-object p0
+
+    .line 20
+    check-cast p0, Lorg/openxmlformats/schemas/drawingml/x2006/main/CTTransform2D;
+
+    .line 21
+    .line 22
+    if-nez p0, :cond_0
+
+    .line 23
+    .line 24
+    monitor-exit v0
+
+    .line 25
+    const/4 p0, 0x0
+
+    .line 26
+    return-object p0
+
+    .line 27
+    :cond_0
+    monitor-exit v0
+
+    .line 28
+    return-object p0
+
+    .line 29
+    :catchall_0
+    move-exception p0
+
+    .line 30
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 31
+    throw p0
+.end method
+
+.method public isSetBlipFill()Z
+    .locals 2
+
+    .line 1
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->monitor()Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    monitor-enter v0
+
+    .line 6
+    :try_start_0
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->check_orphaned()V
+
+    .line 7
+    .line 8
+    .line 9
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->get_store()Lorg/apache/xmlbeans/impl/values/TypeStore;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object p0
+
+    .line 13
+    sget-object v1, Lorg/openxmlformats/schemas/drawingml/x2006/main/impl/CTShapePropertiesImpl;->BLIPFILL$12:Ljavax/xml/namespace/QName;
+
+    .line 14
+    .line 15
+    invoke-interface {p0, v1}, Lorg/apache/xmlbeans/impl/values/TypeStore;->count_elements(Ljavax/xml/namespace/QName;)I
+
+    .line 16
+    .line 17
+    .line 18
+    move-result p0
+
+    .line 19
+    if-eqz p0, :cond_0
+
+    .line 20
+    .line 21
+    const/4 p0, 0x1
+
+    .line 22
+    goto :goto_0
+
+    .line 23
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 24
+    :goto_0
+    monitor-exit v0
+
+    .line 25
+    return p0
+
+    .line 26
+    :catchall_0
+    move-exception p0
+
+    .line 27
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 28
+    throw p0
+.end method
+
+.method public isSetBwMode()Z
+    .locals 2
+
+    .line 1
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->monitor()Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    monitor-enter v0
+
+    .line 6
+    :try_start_0
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->check_orphaned()V
+
+    .line 7
+    .line 8
+    .line 9
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->get_store()Lorg/apache/xmlbeans/impl/values/TypeStore;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object p0
+
+    .line 13
+    sget-object v1, Lorg/openxmlformats/schemas/drawingml/x2006/main/impl/CTShapePropertiesImpl;->BWMODE$30:Ljavax/xml/namespace/QName;
+
+    .line 14
+    .line 15
+    invoke-interface {p0, v1}, Lorg/apache/xmlbeans/impl/values/TypeStore;->find_attribute_user(Ljavax/xml/namespace/QName;)Lorg/apache/xmlbeans/impl/values/TypeStoreUser;
+
+    .line 16
+    .line 17
+    .line 18
+    move-result-object p0
+
+    .line 19
+    if-eqz p0, :cond_0
+
+    .line 20
+    .line 21
+    const/4 p0, 0x1
+
+    .line 22
+    goto :goto_0
+
+    .line 23
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 24
+    :goto_0
+    monitor-exit v0
+
+    .line 25
+    return p0
+
+    .line 26
+    :catchall_0
+    move-exception p0
+
+    .line 27
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 28
+    throw p0
+.end method
+
+.method public isSetCustGeom()Z
+    .locals 2
+
+    .line 1
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->monitor()Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    monitor-enter v0
+
+    .line 6
+    :try_start_0
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->check_orphaned()V
+
+    .line 7
+    .line 8
+    .line 9
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->get_store()Lorg/apache/xmlbeans/impl/values/TypeStore;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object p0
+
+    .line 13
+    sget-object v1, Lorg/openxmlformats/schemas/drawingml/x2006/main/impl/CTShapePropertiesImpl;->CUSTGEOM$2:Ljavax/xml/namespace/QName;
+
+    .line 14
+    .line 15
+    invoke-interface {p0, v1}, Lorg/apache/xmlbeans/impl/values/TypeStore;->count_elements(Ljavax/xml/namespace/QName;)I
+
+    .line 16
+    .line 17
+    .line 18
+    move-result p0
+
+    .line 19
+    if-eqz p0, :cond_0
+
+    .line 20
+    .line 21
+    const/4 p0, 0x1
+
+    .line 22
+    goto :goto_0
+
+    .line 23
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 24
+    :goto_0
+    monitor-exit v0
+
+    .line 25
+    return p0
+
+    .line 26
+    :catchall_0
+    move-exception p0
+
+    .line 27
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 28
+    throw p0
+.end method
+
+.method public isSetEffectDag()Z
+    .locals 2
+
+    .line 1
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->monitor()Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    monitor-enter v0
+
+    .line 6
+    :try_start_0
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->check_orphaned()V
+
+    .line 7
+    .line 8
+    .line 9
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->get_store()Lorg/apache/xmlbeans/impl/values/TypeStore;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object p0
+
+    .line 13
+    sget-object v1, Lorg/openxmlformats/schemas/drawingml/x2006/main/impl/CTShapePropertiesImpl;->EFFECTDAG$22:Ljavax/xml/namespace/QName;
+
+    .line 14
+    .line 15
+    invoke-interface {p0, v1}, Lorg/apache/xmlbeans/impl/values/TypeStore;->count_elements(Ljavax/xml/namespace/QName;)I
+
+    .line 16
+    .line 17
+    .line 18
+    move-result p0
+
+    .line 19
+    if-eqz p0, :cond_0
+
+    .line 20
+    .line 21
+    const/4 p0, 0x1
+
+    .line 22
+    goto :goto_0
+
+    .line 23
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 24
+    :goto_0
+    monitor-exit v0
+
+    .line 25
+    return p0
+
+    .line 26
+    :catchall_0
+    move-exception p0
+
+    .line 27
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 28
+    throw p0
+.end method
+
+.method public isSetEffectLst()Z
+    .locals 2
+
+    .line 1
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->monitor()Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    monitor-enter v0
+
+    .line 6
+    :try_start_0
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->check_orphaned()V
+
+    .line 7
+    .line 8
+    .line 9
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->get_store()Lorg/apache/xmlbeans/impl/values/TypeStore;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object p0
+
+    .line 13
+    sget-object v1, Lorg/openxmlformats/schemas/drawingml/x2006/main/impl/CTShapePropertiesImpl;->EFFECTLST$20:Ljavax/xml/namespace/QName;
+
+    .line 14
+    .line 15
+    invoke-interface {p0, v1}, Lorg/apache/xmlbeans/impl/values/TypeStore;->count_elements(Ljavax/xml/namespace/QName;)I
+
+    .line 16
+    .line 17
+    .line 18
+    move-result p0
+
+    .line 19
+    if-eqz p0, :cond_0
+
+    .line 20
+    .line 21
+    const/4 p0, 0x1
+
+    .line 22
+    goto :goto_0
+
+    .line 23
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 24
+    :goto_0
+    monitor-exit v0
+
+    .line 25
+    return p0
+
+    .line 26
+    :catchall_0
+    move-exception p0
+
+    .line 27
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 28
+    throw p0
+.end method
+
+.method public isSetExtLst()Z
+    .locals 2
+
+    .line 1
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->monitor()Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    monitor-enter v0
+
+    .line 6
+    :try_start_0
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->check_orphaned()V
+
+    .line 7
+    .line 8
+    .line 9
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->get_store()Lorg/apache/xmlbeans/impl/values/TypeStore;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object p0
+
+    .line 13
+    sget-object v1, Lorg/openxmlformats/schemas/drawingml/x2006/main/impl/CTShapePropertiesImpl;->EXTLST$28:Ljavax/xml/namespace/QName;
+
+    .line 14
+    .line 15
+    invoke-interface {p0, v1}, Lorg/apache/xmlbeans/impl/values/TypeStore;->count_elements(Ljavax/xml/namespace/QName;)I
+
+    .line 16
+    .line 17
+    .line 18
+    move-result p0
+
+    .line 19
+    if-eqz p0, :cond_0
+
+    .line 20
+    .line 21
+    const/4 p0, 0x1
+
+    .line 22
+    goto :goto_0
+
+    .line 23
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 24
+    :goto_0
+    monitor-exit v0
+
+    .line 25
+    return p0
+
+    .line 26
+    :catchall_0
+    move-exception p0
+
+    .line 27
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 28
+    throw p0
+.end method
+
+.method public isSetGradFill()Z
+    .locals 2
+
+    .line 1
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->monitor()Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    monitor-enter v0
+
+    .line 6
+    :try_start_0
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->check_orphaned()V
+
+    .line 7
+    .line 8
+    .line 9
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->get_store()Lorg/apache/xmlbeans/impl/values/TypeStore;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object p0
+
+    .line 13
+    sget-object v1, Lorg/openxmlformats/schemas/drawingml/x2006/main/impl/CTShapePropertiesImpl;->GRADFILL$10:Ljavax/xml/namespace/QName;
+
+    .line 14
+    .line 15
+    invoke-interface {p0, v1}, Lorg/apache/xmlbeans/impl/values/TypeStore;->count_elements(Ljavax/xml/namespace/QName;)I
+
+    .line 16
+    .line 17
+    .line 18
+    move-result p0
+
+    .line 19
+    if-eqz p0, :cond_0
+
+    .line 20
+    .line 21
+    const/4 p0, 0x1
+
+    .line 22
+    goto :goto_0
+
+    .line 23
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 24
+    :goto_0
+    monitor-exit v0
+
+    .line 25
+    return p0
+
+    .line 26
+    :catchall_0
+    move-exception p0
+
+    .line 27
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 28
+    throw p0
+.end method
+
+.method public isSetGrpFill()Z
+    .locals 2
+
+    .line 1
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->monitor()Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    monitor-enter v0
+
+    .line 6
+    :try_start_0
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->check_orphaned()V
+
+    .line 7
+    .line 8
+    .line 9
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->get_store()Lorg/apache/xmlbeans/impl/values/TypeStore;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object p0
+
+    .line 13
+    sget-object v1, Lorg/openxmlformats/schemas/drawingml/x2006/main/impl/CTShapePropertiesImpl;->GRPFILL$16:Ljavax/xml/namespace/QName;
+
+    .line 14
+    .line 15
+    invoke-interface {p0, v1}, Lorg/apache/xmlbeans/impl/values/TypeStore;->count_elements(Ljavax/xml/namespace/QName;)I
+
+    .line 16
+    .line 17
+    .line 18
+    move-result p0
+
+    .line 19
+    if-eqz p0, :cond_0
+
+    .line 20
+    .line 21
+    const/4 p0, 0x1
+
+    .line 22
+    goto :goto_0
+
+    .line 23
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 24
+    :goto_0
+    monitor-exit v0
+
+    .line 25
+    return p0
+
+    .line 26
+    :catchall_0
+    move-exception p0
+
+    .line 27
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 28
+    throw p0
+.end method
+
+.method public isSetLn()Z
+    .locals 2
+
+    .line 1
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->monitor()Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    monitor-enter v0
+
+    .line 6
+    :try_start_0
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->check_orphaned()V
+
+    .line 7
+    .line 8
+    .line 9
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->get_store()Lorg/apache/xmlbeans/impl/values/TypeStore;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object p0
+
+    .line 13
+    sget-object v1, Lorg/openxmlformats/schemas/drawingml/x2006/main/impl/CTShapePropertiesImpl;->LN$18:Ljavax/xml/namespace/QName;
+
+    .line 14
+    .line 15
+    invoke-interface {p0, v1}, Lorg/apache/xmlbeans/impl/values/TypeStore;->count_elements(Ljavax/xml/namespace/QName;)I
+
+    .line 16
+    .line 17
+    .line 18
+    move-result p0
+
+    .line 19
+    if-eqz p0, :cond_0
+
+    .line 20
+    .line 21
+    const/4 p0, 0x1
+
+    .line 22
+    goto :goto_0
+
+    .line 23
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 24
+    :goto_0
+    monitor-exit v0
+
+    .line 25
+    return p0
+
+    .line 26
+    :catchall_0
+    move-exception p0
+
+    .line 27
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 28
+    throw p0
+.end method
+
+.method public isSetNoFill()Z
+    .locals 2
+
+    .line 1
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->monitor()Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    monitor-enter v0
+
+    .line 6
+    :try_start_0
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->check_orphaned()V
+
+    .line 7
+    .line 8
+    .line 9
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->get_store()Lorg/apache/xmlbeans/impl/values/TypeStore;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object p0
+
+    .line 13
+    sget-object v1, Lorg/openxmlformats/schemas/drawingml/x2006/main/impl/CTShapePropertiesImpl;->NOFILL$6:Ljavax/xml/namespace/QName;
+
+    .line 14
+    .line 15
+    invoke-interface {p0, v1}, Lorg/apache/xmlbeans/impl/values/TypeStore;->count_elements(Ljavax/xml/namespace/QName;)I
+
+    .line 16
+    .line 17
+    .line 18
+    move-result p0
+
+    .line 19
+    if-eqz p0, :cond_0
+
+    .line 20
+    .line 21
+    const/4 p0, 0x1
+
+    .line 22
+    goto :goto_0
+
+    .line 23
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 24
+    :goto_0
+    monitor-exit v0
+
+    .line 25
+    return p0
+
+    .line 26
+    :catchall_0
+    move-exception p0
+
+    .line 27
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 28
+    throw p0
+.end method
+
+.method public isSetPattFill()Z
+    .locals 2
+
+    .line 1
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->monitor()Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    monitor-enter v0
+
+    .line 6
+    :try_start_0
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->check_orphaned()V
+
+    .line 7
+    .line 8
+    .line 9
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->get_store()Lorg/apache/xmlbeans/impl/values/TypeStore;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object p0
+
+    .line 13
+    sget-object v1, Lorg/openxmlformats/schemas/drawingml/x2006/main/impl/CTShapePropertiesImpl;->PATTFILL$14:Ljavax/xml/namespace/QName;
+
+    .line 14
+    .line 15
+    invoke-interface {p0, v1}, Lorg/apache/xmlbeans/impl/values/TypeStore;->count_elements(Ljavax/xml/namespace/QName;)I
+
+    .line 16
+    .line 17
+    .line 18
+    move-result p0
+
+    .line 19
+    if-eqz p0, :cond_0
+
+    .line 20
+    .line 21
+    const/4 p0, 0x1
+
+    .line 22
+    goto :goto_0
+
+    .line 23
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 24
+    :goto_0
+    monitor-exit v0
+
+    .line 25
+    return p0
+
+    .line 26
+    :catchall_0
+    move-exception p0
+
+    .line 27
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 28
+    throw p0
+.end method
+
+.method public isSetPrstGeom()Z
+    .locals 2
+
+    .line 1
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->monitor()Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    monitor-enter v0
+
+    .line 6
+    :try_start_0
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->check_orphaned()V
+
+    .line 7
+    .line 8
+    .line 9
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->get_store()Lorg/apache/xmlbeans/impl/values/TypeStore;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object p0
+
+    .line 13
+    sget-object v1, Lorg/openxmlformats/schemas/drawingml/x2006/main/impl/CTShapePropertiesImpl;->PRSTGEOM$4:Ljavax/xml/namespace/QName;
+
+    .line 14
+    .line 15
+    invoke-interface {p0, v1}, Lorg/apache/xmlbeans/impl/values/TypeStore;->count_elements(Ljavax/xml/namespace/QName;)I
+
+    .line 16
+    .line 17
+    .line 18
+    move-result p0
+
+    .line 19
+    if-eqz p0, :cond_0
+
+    .line 20
+    .line 21
+    const/4 p0, 0x1
+
+    .line 22
+    goto :goto_0
+
+    .line 23
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 24
+    :goto_0
+    monitor-exit v0
+
+    .line 25
+    return p0
+
+    .line 26
+    :catchall_0
+    move-exception p0
+
+    .line 27
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 28
+    throw p0
+.end method
+
+.method public isSetScene3D()Z
+    .locals 2
+
+    .line 1
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->monitor()Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    monitor-enter v0
+
+    .line 6
+    :try_start_0
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->check_orphaned()V
+
+    .line 7
+    .line 8
+    .line 9
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->get_store()Lorg/apache/xmlbeans/impl/values/TypeStore;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object p0
+
+    .line 13
+    sget-object v1, Lorg/openxmlformats/schemas/drawingml/x2006/main/impl/CTShapePropertiesImpl;->SCENE3D$24:Ljavax/xml/namespace/QName;
+
+    .line 14
+    .line 15
+    invoke-interface {p0, v1}, Lorg/apache/xmlbeans/impl/values/TypeStore;->count_elements(Ljavax/xml/namespace/QName;)I
+
+    .line 16
+    .line 17
+    .line 18
+    move-result p0
+
+    .line 19
+    if-eqz p0, :cond_0
+
+    .line 20
+    .line 21
+    const/4 p0, 0x1
+
+    .line 22
+    goto :goto_0
+
+    .line 23
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 24
+    :goto_0
+    monitor-exit v0
+
+    .line 25
+    return p0
+
+    .line 26
+    :catchall_0
+    move-exception p0
+
+    .line 27
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 28
+    throw p0
+.end method
+
+.method public isSetSolidFill()Z
+    .locals 2
+
+    .line 1
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->monitor()Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    monitor-enter v0
+
+    .line 6
+    :try_start_0
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->check_orphaned()V
+
+    .line 7
+    .line 8
+    .line 9
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->get_store()Lorg/apache/xmlbeans/impl/values/TypeStore;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object p0
+
+    .line 13
+    sget-object v1, Lorg/openxmlformats/schemas/drawingml/x2006/main/impl/CTShapePropertiesImpl;->SOLIDFILL$8:Ljavax/xml/namespace/QName;
+
+    .line 14
+    .line 15
+    invoke-interface {p0, v1}, Lorg/apache/xmlbeans/impl/values/TypeStore;->count_elements(Ljavax/xml/namespace/QName;)I
+
+    .line 16
+    .line 17
+    .line 18
+    move-result p0
+
+    .line 19
+    if-eqz p0, :cond_0
+
+    .line 20
+    .line 21
+    const/4 p0, 0x1
+
+    .line 22
+    goto :goto_0
+
+    .line 23
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 24
+    :goto_0
+    monitor-exit v0
+
+    .line 25
+    return p0
+
+    .line 26
+    :catchall_0
+    move-exception p0
+
+    .line 27
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 28
+    throw p0
+.end method
+
+.method public isSetSp3D()Z
+    .locals 2
+
+    .line 1
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->monitor()Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    monitor-enter v0
+
+    .line 6
+    :try_start_0
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->check_orphaned()V
+
+    .line 7
+    .line 8
+    .line 9
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->get_store()Lorg/apache/xmlbeans/impl/values/TypeStore;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object p0
+
+    .line 13
+    sget-object v1, Lorg/openxmlformats/schemas/drawingml/x2006/main/impl/CTShapePropertiesImpl;->SP3D$26:Ljavax/xml/namespace/QName;
+
+    .line 14
+    .line 15
+    invoke-interface {p0, v1}, Lorg/apache/xmlbeans/impl/values/TypeStore;->count_elements(Ljavax/xml/namespace/QName;)I
+
+    .line 16
+    .line 17
+    .line 18
+    move-result p0
+
+    .line 19
+    if-eqz p0, :cond_0
+
+    .line 20
+    .line 21
+    const/4 p0, 0x1
+
+    .line 22
+    goto :goto_0
+
+    .line 23
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 24
+    :goto_0
+    monitor-exit v0
+
+    .line 25
+    return p0
+
+    .line 26
+    :catchall_0
+    move-exception p0
+
+    .line 27
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 28
+    throw p0
+.end method
+
+.method public isSetXfrm()Z
+    .locals 2
+
+    .line 1
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->monitor()Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    monitor-enter v0
+
+    .line 6
+    :try_start_0
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->check_orphaned()V
+
+    .line 7
+    .line 8
+    .line 9
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->get_store()Lorg/apache/xmlbeans/impl/values/TypeStore;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object p0
+
+    .line 13
+    sget-object v1, Lorg/openxmlformats/schemas/drawingml/x2006/main/impl/CTShapePropertiesImpl;->XFRM$0:Ljavax/xml/namespace/QName;
+
+    .line 14
+    .line 15
+    invoke-interface {p0, v1}, Lorg/apache/xmlbeans/impl/values/TypeStore;->count_elements(Ljavax/xml/namespace/QName;)I
+
+    .line 16
+    .line 17
+    .line 18
+    move-result p0
+
+    .line 19
+    if-eqz p0, :cond_0
+
+    .line 20
+    .line 21
+    const/4 p0, 0x1
+
+    .line 22
+    goto :goto_0
+
+    .line 23
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 24
+    :goto_0
+    monitor-exit v0
+
+    .line 25
+    return p0
+
+    .line 26
+    :catchall_0
+    move-exception p0
+
+    .line 27
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 28
+    throw p0
+.end method
+
+.method public setBlipFill(Lorg/openxmlformats/schemas/drawingml/x2006/main/CTBlipFillProperties;)V
+    .locals 4
+
+    .line 1
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->monitor()Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    monitor-enter v0
+
+    .line 6
+    :try_start_0
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->check_orphaned()V
+
+    .line 7
+    .line 8
+    .line 9
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->get_store()Lorg/apache/xmlbeans/impl/values/TypeStore;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object v1
+
+    .line 13
+    sget-object v2, Lorg/openxmlformats/schemas/drawingml/x2006/main/impl/CTShapePropertiesImpl;->BLIPFILL$12:Ljavax/xml/namespace/QName;
+
+    .line 14
+    .line 15
+    const/4 v3, 0x0
+
+    .line 16
+    invoke-interface {v1, v2, v3}, Lorg/apache/xmlbeans/impl/values/TypeStore;->find_element_user(Ljavax/xml/namespace/QName;I)Lorg/apache/xmlbeans/impl/values/TypeStoreUser;
+
+    .line 17
+    .line 18
+    .line 19
+    move-result-object v1
+
+    .line 20
+    check-cast v1, Lorg/openxmlformats/schemas/drawingml/x2006/main/CTBlipFillProperties;
+
+    .line 21
+    .line 22
+    if-nez v1, :cond_0
+
+    .line 23
+    .line 24
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->get_store()Lorg/apache/xmlbeans/impl/values/TypeStore;
+
+    .line 25
+    .line 26
+    .line 27
+    move-result-object p0
+
+    .line 28
+    invoke-interface {p0, v2}, Lorg/apache/xmlbeans/impl/values/TypeStore;->add_element_user(Ljavax/xml/namespace/QName;)Lorg/apache/xmlbeans/impl/values/TypeStoreUser;
+
+    .line 29
+    .line 30
+    .line 31
+    move-result-object p0
+
+    .line 32
+    move-object v1, p0
+
+    .line 33
+    check-cast v1, Lorg/openxmlformats/schemas/drawingml/x2006/main/CTBlipFillProperties;
+
+    .line 34
+    .line 35
+    :cond_0
+    invoke-interface {v1, p1}, Lorg/apache/xmlbeans/XmlObject;->set(Lorg/apache/xmlbeans/XmlObject;)Lorg/apache/xmlbeans/XmlObject;
+
+    .line 36
+    .line 37
+    .line 38
+    monitor-exit v0
+
+    .line 39
+    return-void
+
+    .line 40
+    :catchall_0
+    move-exception p0
+
+    .line 41
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 42
+    throw p0
+.end method
+
+.method public setBwMode(Lorg/openxmlformats/schemas/drawingml/x2006/main/STBlackWhiteMode$Enum;)V
+    .locals 3
+
+    .line 1
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->monitor()Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    monitor-enter v0
+
+    .line 6
+    :try_start_0
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->check_orphaned()V
+
+    .line 7
+    .line 8
+    .line 9
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->get_store()Lorg/apache/xmlbeans/impl/values/TypeStore;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object v1
+
+    .line 13
+    sget-object v2, Lorg/openxmlformats/schemas/drawingml/x2006/main/impl/CTShapePropertiesImpl;->BWMODE$30:Ljavax/xml/namespace/QName;
+
+    .line 14
+    .line 15
+    invoke-interface {v1, v2}, Lorg/apache/xmlbeans/impl/values/TypeStore;->find_attribute_user(Ljavax/xml/namespace/QName;)Lorg/apache/xmlbeans/impl/values/TypeStoreUser;
+
+    .line 16
+    .line 17
+    .line 18
+    move-result-object v1
+
+    .line 19
+    check-cast v1, Lorg/apache/xmlbeans/SimpleValue;
+
+    .line 20
+    .line 21
+    if-nez v1, :cond_0
+
+    .line 22
+    .line 23
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->get_store()Lorg/apache/xmlbeans/impl/values/TypeStore;
+
+    .line 24
+    .line 25
+    .line 26
+    move-result-object p0
+
+    .line 27
+    invoke-interface {p0, v2}, Lorg/apache/xmlbeans/impl/values/TypeStore;->add_attribute_user(Ljavax/xml/namespace/QName;)Lorg/apache/xmlbeans/impl/values/TypeStoreUser;
+
+    .line 28
+    .line 29
+    .line 30
+    move-result-object p0
+
+    .line 31
+    move-object v1, p0
+
+    .line 32
+    check-cast v1, Lorg/apache/xmlbeans/SimpleValue;
+
+    .line 33
+    .line 34
+    :cond_0
+    invoke-interface {v1, p1}, Lorg/apache/xmlbeans/SimpleValue;->setEnumValue(Lorg/apache/xmlbeans/StringEnumAbstractBase;)V
+
+    .line 35
+    .line 36
+    .line 37
+    monitor-exit v0
+
+    .line 38
+    return-void
+
+    .line 39
+    :catchall_0
+    move-exception p0
+
+    .line 40
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 41
+    throw p0
+.end method
+
+.method public setCustGeom(Lorg/openxmlformats/schemas/drawingml/x2006/main/CTCustomGeometry2D;)V
+    .locals 4
+
+    .line 1
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->monitor()Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    monitor-enter v0
+
+    .line 6
+    :try_start_0
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->check_orphaned()V
+
+    .line 7
+    .line 8
+    .line 9
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->get_store()Lorg/apache/xmlbeans/impl/values/TypeStore;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object v1
+
+    .line 13
+    sget-object v2, Lorg/openxmlformats/schemas/drawingml/x2006/main/impl/CTShapePropertiesImpl;->CUSTGEOM$2:Ljavax/xml/namespace/QName;
+
+    .line 14
+    .line 15
+    const/4 v3, 0x0
+
+    .line 16
+    invoke-interface {v1, v2, v3}, Lorg/apache/xmlbeans/impl/values/TypeStore;->find_element_user(Ljavax/xml/namespace/QName;I)Lorg/apache/xmlbeans/impl/values/TypeStoreUser;
+
+    .line 17
+    .line 18
+    .line 19
+    move-result-object v1
+
+    .line 20
+    check-cast v1, Lorg/openxmlformats/schemas/drawingml/x2006/main/CTCustomGeometry2D;
+
+    .line 21
+    .line 22
+    if-nez v1, :cond_0
+
+    .line 23
+    .line 24
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->get_store()Lorg/apache/xmlbeans/impl/values/TypeStore;
+
+    .line 25
+    .line 26
+    .line 27
+    move-result-object p0
+
+    .line 28
+    invoke-interface {p0, v2}, Lorg/apache/xmlbeans/impl/values/TypeStore;->add_element_user(Ljavax/xml/namespace/QName;)Lorg/apache/xmlbeans/impl/values/TypeStoreUser;
+
+    .line 29
+    .line 30
+    .line 31
+    move-result-object p0
+
+    .line 32
+    move-object v1, p0
+
+    .line 33
+    check-cast v1, Lorg/openxmlformats/schemas/drawingml/x2006/main/CTCustomGeometry2D;
+
+    .line 34
+    .line 35
+    :cond_0
+    invoke-interface {v1, p1}, Lorg/apache/xmlbeans/XmlObject;->set(Lorg/apache/xmlbeans/XmlObject;)Lorg/apache/xmlbeans/XmlObject;
+
+    .line 36
+    .line 37
+    .line 38
+    monitor-exit v0
+
+    .line 39
+    return-void
+
+    .line 40
+    :catchall_0
+    move-exception p0
+
+    .line 41
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 42
+    throw p0
+.end method
+
+.method public setEffectDag(Lorg/openxmlformats/schemas/drawingml/x2006/main/CTEffectContainer;)V
+    .locals 4
+
+    .line 1
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->monitor()Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    monitor-enter v0
+
+    .line 6
+    :try_start_0
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->check_orphaned()V
+
+    .line 7
+    .line 8
+    .line 9
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->get_store()Lorg/apache/xmlbeans/impl/values/TypeStore;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object v1
+
+    .line 13
+    sget-object v2, Lorg/openxmlformats/schemas/drawingml/x2006/main/impl/CTShapePropertiesImpl;->EFFECTDAG$22:Ljavax/xml/namespace/QName;
+
+    .line 14
+    .line 15
+    const/4 v3, 0x0
+
+    .line 16
+    invoke-interface {v1, v2, v3}, Lorg/apache/xmlbeans/impl/values/TypeStore;->find_element_user(Ljavax/xml/namespace/QName;I)Lorg/apache/xmlbeans/impl/values/TypeStoreUser;
+
+    .line 17
+    .line 18
+    .line 19
+    move-result-object v1
+
+    .line 20
+    check-cast v1, Lorg/openxmlformats/schemas/drawingml/x2006/main/CTEffectContainer;
+
+    .line 21
+    .line 22
+    if-nez v1, :cond_0
+
+    .line 23
+    .line 24
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->get_store()Lorg/apache/xmlbeans/impl/values/TypeStore;
+
+    .line 25
+    .line 26
+    .line 27
+    move-result-object p0
+
+    .line 28
+    invoke-interface {p0, v2}, Lorg/apache/xmlbeans/impl/values/TypeStore;->add_element_user(Ljavax/xml/namespace/QName;)Lorg/apache/xmlbeans/impl/values/TypeStoreUser;
+
+    .line 29
+    .line 30
+    .line 31
+    move-result-object p0
+
+    .line 32
+    move-object v1, p0
+
+    .line 33
+    check-cast v1, Lorg/openxmlformats/schemas/drawingml/x2006/main/CTEffectContainer;
+
+    .line 34
+    .line 35
+    :cond_0
+    invoke-interface {v1, p1}, Lorg/openxmlformats/schemas/drawingml/x2006/main/CTEffectContainer;->set(Lorg/apache/xmlbeans/XmlObject;)Lorg/apache/xmlbeans/XmlObject;
+
+    .line 36
+    .line 37
+    .line 38
+    monitor-exit v0
+
+    .line 39
+    return-void
+
+    .line 40
+    :catchall_0
+    move-exception p0
+
+    .line 41
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 42
+    throw p0
+.end method
+
+.method public setEffectLst(Lorg/openxmlformats/schemas/drawingml/x2006/main/CTEffectList;)V
+    .locals 4
+
+    .line 1
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->monitor()Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    monitor-enter v0
+
+    .line 6
+    :try_start_0
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->check_orphaned()V
+
+    .line 7
+    .line 8
+    .line 9
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->get_store()Lorg/apache/xmlbeans/impl/values/TypeStore;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object v1
+
+    .line 13
+    sget-object v2, Lorg/openxmlformats/schemas/drawingml/x2006/main/impl/CTShapePropertiesImpl;->EFFECTLST$20:Ljavax/xml/namespace/QName;
+
+    .line 14
+    .line 15
+    const/4 v3, 0x0
+
+    .line 16
+    invoke-interface {v1, v2, v3}, Lorg/apache/xmlbeans/impl/values/TypeStore;->find_element_user(Ljavax/xml/namespace/QName;I)Lorg/apache/xmlbeans/impl/values/TypeStoreUser;
+
+    .line 17
+    .line 18
+    .line 19
+    move-result-object v1
+
+    .line 20
+    check-cast v1, Lorg/openxmlformats/schemas/drawingml/x2006/main/CTEffectList;
+
+    .line 21
+    .line 22
+    if-nez v1, :cond_0
+
+    .line 23
+    .line 24
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->get_store()Lorg/apache/xmlbeans/impl/values/TypeStore;
+
+    .line 25
+    .line 26
+    .line 27
+    move-result-object p0
+
+    .line 28
+    invoke-interface {p0, v2}, Lorg/apache/xmlbeans/impl/values/TypeStore;->add_element_user(Ljavax/xml/namespace/QName;)Lorg/apache/xmlbeans/impl/values/TypeStoreUser;
+
+    .line 29
+    .line 30
+    .line 31
+    move-result-object p0
+
+    .line 32
+    move-object v1, p0
+
+    .line 33
+    check-cast v1, Lorg/openxmlformats/schemas/drawingml/x2006/main/CTEffectList;
+
+    .line 34
+    .line 35
+    :cond_0
+    invoke-interface {v1, p1}, Lorg/apache/xmlbeans/XmlObject;->set(Lorg/apache/xmlbeans/XmlObject;)Lorg/apache/xmlbeans/XmlObject;
+
+    .line 36
+    .line 37
+    .line 38
+    monitor-exit v0
+
+    .line 39
+    return-void
+
+    .line 40
+    :catchall_0
+    move-exception p0
+
+    .line 41
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 42
+    throw p0
+.end method
+
+.method public setExtLst(Lorg/openxmlformats/schemas/drawingml/x2006/main/CTOfficeArtExtensionList;)V
+    .locals 4
+
+    .line 1
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->monitor()Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    monitor-enter v0
+
+    .line 6
+    :try_start_0
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->check_orphaned()V
+
+    .line 7
+    .line 8
+    .line 9
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->get_store()Lorg/apache/xmlbeans/impl/values/TypeStore;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object v1
+
+    .line 13
+    sget-object v2, Lorg/openxmlformats/schemas/drawingml/x2006/main/impl/CTShapePropertiesImpl;->EXTLST$28:Ljavax/xml/namespace/QName;
+
+    .line 14
+    .line 15
+    const/4 v3, 0x0
+
+    .line 16
+    invoke-interface {v1, v2, v3}, Lorg/apache/xmlbeans/impl/values/TypeStore;->find_element_user(Ljavax/xml/namespace/QName;I)Lorg/apache/xmlbeans/impl/values/TypeStoreUser;
+
+    .line 17
+    .line 18
+    .line 19
+    move-result-object v1
+
+    .line 20
+    check-cast v1, Lorg/openxmlformats/schemas/drawingml/x2006/main/CTOfficeArtExtensionList;
+
+    .line 21
+    .line 22
+    if-nez v1, :cond_0
+
+    .line 23
+    .line 24
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->get_store()Lorg/apache/xmlbeans/impl/values/TypeStore;
+
+    .line 25
+    .line 26
+    .line 27
+    move-result-object p0
+
+    .line 28
+    invoke-interface {p0, v2}, Lorg/apache/xmlbeans/impl/values/TypeStore;->add_element_user(Ljavax/xml/namespace/QName;)Lorg/apache/xmlbeans/impl/values/TypeStoreUser;
+
+    .line 29
+    .line 30
+    .line 31
+    move-result-object p0
+
+    .line 32
+    move-object v1, p0
+
+    .line 33
+    check-cast v1, Lorg/openxmlformats/schemas/drawingml/x2006/main/CTOfficeArtExtensionList;
+
+    .line 34
+    .line 35
+    :cond_0
+    invoke-interface {v1, p1}, Lorg/openxmlformats/schemas/drawingml/x2006/main/CTOfficeArtExtensionList;->set(Lorg/apache/xmlbeans/XmlObject;)Lorg/apache/xmlbeans/XmlObject;
+
+    .line 36
+    .line 37
+    .line 38
+    monitor-exit v0
+
+    .line 39
+    return-void
+
+    .line 40
+    :catchall_0
+    move-exception p0
+
+    .line 41
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 42
+    throw p0
+.end method
+
+.method public setGradFill(Lorg/openxmlformats/schemas/drawingml/x2006/main/CTGradientFillProperties;)V
+    .locals 4
+
+    .line 1
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->monitor()Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    monitor-enter v0
+
+    .line 6
+    :try_start_0
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->check_orphaned()V
+
+    .line 7
+    .line 8
+    .line 9
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->get_store()Lorg/apache/xmlbeans/impl/values/TypeStore;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object v1
+
+    .line 13
+    sget-object v2, Lorg/openxmlformats/schemas/drawingml/x2006/main/impl/CTShapePropertiesImpl;->GRADFILL$10:Ljavax/xml/namespace/QName;
+
+    .line 14
+    .line 15
+    const/4 v3, 0x0
+
+    .line 16
+    invoke-interface {v1, v2, v3}, Lorg/apache/xmlbeans/impl/values/TypeStore;->find_element_user(Ljavax/xml/namespace/QName;I)Lorg/apache/xmlbeans/impl/values/TypeStoreUser;
+
+    .line 17
+    .line 18
+    .line 19
+    move-result-object v1
+
+    .line 20
+    check-cast v1, Lorg/openxmlformats/schemas/drawingml/x2006/main/CTGradientFillProperties;
+
+    .line 21
+    .line 22
+    if-nez v1, :cond_0
+
+    .line 23
+    .line 24
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->get_store()Lorg/apache/xmlbeans/impl/values/TypeStore;
+
+    .line 25
+    .line 26
+    .line 27
+    move-result-object p0
+
+    .line 28
+    invoke-interface {p0, v2}, Lorg/apache/xmlbeans/impl/values/TypeStore;->add_element_user(Ljavax/xml/namespace/QName;)Lorg/apache/xmlbeans/impl/values/TypeStoreUser;
+
+    .line 29
+    .line 30
+    .line 31
+    move-result-object p0
+
+    .line 32
+    move-object v1, p0
+
+    .line 33
+    check-cast v1, Lorg/openxmlformats/schemas/drawingml/x2006/main/CTGradientFillProperties;
+
+    .line 34
+    .line 35
+    :cond_0
+    invoke-interface {v1, p1}, Lorg/apache/xmlbeans/XmlObject;->set(Lorg/apache/xmlbeans/XmlObject;)Lorg/apache/xmlbeans/XmlObject;
+
+    .line 36
+    .line 37
+    .line 38
+    monitor-exit v0
+
+    .line 39
+    return-void
+
+    .line 40
+    :catchall_0
+    move-exception p0
+
+    .line 41
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 42
+    throw p0
+.end method
+
+.method public setGrpFill(Lorg/openxmlformats/schemas/drawingml/x2006/main/CTGroupFillProperties;)V
+    .locals 4
+
+    .line 1
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->monitor()Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    monitor-enter v0
+
+    .line 6
+    :try_start_0
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->check_orphaned()V
+
+    .line 7
+    .line 8
+    .line 9
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->get_store()Lorg/apache/xmlbeans/impl/values/TypeStore;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object v1
+
+    .line 13
+    sget-object v2, Lorg/openxmlformats/schemas/drawingml/x2006/main/impl/CTShapePropertiesImpl;->GRPFILL$16:Ljavax/xml/namespace/QName;
+
+    .line 14
+    .line 15
+    const/4 v3, 0x0
+
+    .line 16
+    invoke-interface {v1, v2, v3}, Lorg/apache/xmlbeans/impl/values/TypeStore;->find_element_user(Ljavax/xml/namespace/QName;I)Lorg/apache/xmlbeans/impl/values/TypeStoreUser;
+
+    .line 17
+    .line 18
+    .line 19
+    move-result-object v1
+
+    .line 20
+    check-cast v1, Lorg/openxmlformats/schemas/drawingml/x2006/main/CTGroupFillProperties;
+
+    .line 21
+    .line 22
+    if-nez v1, :cond_0
+
+    .line 23
+    .line 24
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->get_store()Lorg/apache/xmlbeans/impl/values/TypeStore;
+
+    .line 25
+    .line 26
+    .line 27
+    move-result-object p0
+
+    .line 28
+    invoke-interface {p0, v2}, Lorg/apache/xmlbeans/impl/values/TypeStore;->add_element_user(Ljavax/xml/namespace/QName;)Lorg/apache/xmlbeans/impl/values/TypeStoreUser;
+
+    .line 29
+    .line 30
+    .line 31
+    move-result-object p0
+
+    .line 32
+    move-object v1, p0
+
+    .line 33
+    check-cast v1, Lorg/openxmlformats/schemas/drawingml/x2006/main/CTGroupFillProperties;
+
+    .line 34
+    .line 35
+    :cond_0
+    invoke-interface {v1, p1}, Lorg/openxmlformats/schemas/drawingml/x2006/main/CTGroupFillProperties;->set(Lorg/apache/xmlbeans/XmlObject;)Lorg/apache/xmlbeans/XmlObject;
+
+    .line 36
+    .line 37
+    .line 38
+    monitor-exit v0
+
+    .line 39
+    return-void
+
+    .line 40
+    :catchall_0
+    move-exception p0
+
+    .line 41
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 42
+    throw p0
+.end method
+
+.method public setLn(Lorg/openxmlformats/schemas/drawingml/x2006/main/CTLineProperties;)V
+    .locals 4
+
+    .line 1
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->monitor()Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    monitor-enter v0
+
+    .line 6
+    :try_start_0
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->check_orphaned()V
+
+    .line 7
+    .line 8
+    .line 9
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->get_store()Lorg/apache/xmlbeans/impl/values/TypeStore;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object v1
+
+    .line 13
+    sget-object v2, Lorg/openxmlformats/schemas/drawingml/x2006/main/impl/CTShapePropertiesImpl;->LN$18:Ljavax/xml/namespace/QName;
+
+    .line 14
+    .line 15
+    const/4 v3, 0x0
+
+    .line 16
+    invoke-interface {v1, v2, v3}, Lorg/apache/xmlbeans/impl/values/TypeStore;->find_element_user(Ljavax/xml/namespace/QName;I)Lorg/apache/xmlbeans/impl/values/TypeStoreUser;
+
+    .line 17
+    .line 18
+    .line 19
+    move-result-object v1
+
+    .line 20
+    check-cast v1, Lorg/openxmlformats/schemas/drawingml/x2006/main/CTLineProperties;
+
+    .line 21
+    .line 22
+    if-nez v1, :cond_0
+
+    .line 23
+    .line 24
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->get_store()Lorg/apache/xmlbeans/impl/values/TypeStore;
+
+    .line 25
+    .line 26
+    .line 27
+    move-result-object p0
+
+    .line 28
+    invoke-interface {p0, v2}, Lorg/apache/xmlbeans/impl/values/TypeStore;->add_element_user(Ljavax/xml/namespace/QName;)Lorg/apache/xmlbeans/impl/values/TypeStoreUser;
+
+    .line 29
+    .line 30
+    .line 31
+    move-result-object p0
+
+    .line 32
+    move-object v1, p0
+
+    .line 33
+    check-cast v1, Lorg/openxmlformats/schemas/drawingml/x2006/main/CTLineProperties;
+
+    .line 34
+    .line 35
+    :cond_0
+    invoke-interface {v1, p1}, Lorg/apache/xmlbeans/XmlObject;->set(Lorg/apache/xmlbeans/XmlObject;)Lorg/apache/xmlbeans/XmlObject;
+
+    .line 36
+    .line 37
+    .line 38
+    monitor-exit v0
+
+    .line 39
+    return-void
+
+    .line 40
+    :catchall_0
+    move-exception p0
+
+    .line 41
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 42
+    throw p0
+.end method
+
+.method public setNoFill(Lorg/openxmlformats/schemas/drawingml/x2006/main/CTNoFillProperties;)V
+    .locals 4
+
+    .line 1
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->monitor()Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    monitor-enter v0
+
+    .line 6
+    :try_start_0
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->check_orphaned()V
+
+    .line 7
+    .line 8
+    .line 9
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->get_store()Lorg/apache/xmlbeans/impl/values/TypeStore;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object v1
+
+    .line 13
+    sget-object v2, Lorg/openxmlformats/schemas/drawingml/x2006/main/impl/CTShapePropertiesImpl;->NOFILL$6:Ljavax/xml/namespace/QName;
+
+    .line 14
+    .line 15
+    const/4 v3, 0x0
+
+    .line 16
+    invoke-interface {v1, v2, v3}, Lorg/apache/xmlbeans/impl/values/TypeStore;->find_element_user(Ljavax/xml/namespace/QName;I)Lorg/apache/xmlbeans/impl/values/TypeStoreUser;
+
+    .line 17
+    .line 18
+    .line 19
+    move-result-object v1
+
+    .line 20
+    check-cast v1, Lorg/openxmlformats/schemas/drawingml/x2006/main/CTNoFillProperties;
+
+    .line 21
+    .line 22
+    if-nez v1, :cond_0
+
+    .line 23
+    .line 24
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->get_store()Lorg/apache/xmlbeans/impl/values/TypeStore;
+
+    .line 25
+    .line 26
+    .line 27
+    move-result-object p0
+
+    .line 28
+    invoke-interface {p0, v2}, Lorg/apache/xmlbeans/impl/values/TypeStore;->add_element_user(Ljavax/xml/namespace/QName;)Lorg/apache/xmlbeans/impl/values/TypeStoreUser;
+
+    .line 29
+    .line 30
+    .line 31
+    move-result-object p0
+
+    .line 32
+    move-object v1, p0
+
+    .line 33
+    check-cast v1, Lorg/openxmlformats/schemas/drawingml/x2006/main/CTNoFillProperties;
+
+    .line 34
+    .line 35
+    :cond_0
+    invoke-interface {v1, p1}, Lorg/apache/xmlbeans/XmlObject;->set(Lorg/apache/xmlbeans/XmlObject;)Lorg/apache/xmlbeans/XmlObject;
+
+    .line 36
+    .line 37
+    .line 38
+    monitor-exit v0
+
+    .line 39
+    return-void
+
+    .line 40
+    :catchall_0
+    move-exception p0
+
+    .line 41
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 42
+    throw p0
+.end method
+
+.method public setPattFill(Lorg/openxmlformats/schemas/drawingml/x2006/main/CTPatternFillProperties;)V
+    .locals 4
+
+    .line 1
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->monitor()Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    monitor-enter v0
+
+    .line 6
+    :try_start_0
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->check_orphaned()V
+
+    .line 7
+    .line 8
+    .line 9
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->get_store()Lorg/apache/xmlbeans/impl/values/TypeStore;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object v1
+
+    .line 13
+    sget-object v2, Lorg/openxmlformats/schemas/drawingml/x2006/main/impl/CTShapePropertiesImpl;->PATTFILL$14:Ljavax/xml/namespace/QName;
+
+    .line 14
+    .line 15
+    const/4 v3, 0x0
+
+    .line 16
+    invoke-interface {v1, v2, v3}, Lorg/apache/xmlbeans/impl/values/TypeStore;->find_element_user(Ljavax/xml/namespace/QName;I)Lorg/apache/xmlbeans/impl/values/TypeStoreUser;
+
+    .line 17
+    .line 18
+    .line 19
+    move-result-object v1
+
+    .line 20
+    check-cast v1, Lorg/openxmlformats/schemas/drawingml/x2006/main/CTPatternFillProperties;
+
+    .line 21
+    .line 22
+    if-nez v1, :cond_0
+
+    .line 23
+    .line 24
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->get_store()Lorg/apache/xmlbeans/impl/values/TypeStore;
+
+    .line 25
+    .line 26
+    .line 27
+    move-result-object p0
+
+    .line 28
+    invoke-interface {p0, v2}, Lorg/apache/xmlbeans/impl/values/TypeStore;->add_element_user(Ljavax/xml/namespace/QName;)Lorg/apache/xmlbeans/impl/values/TypeStoreUser;
+
+    .line 29
+    .line 30
+    .line 31
+    move-result-object p0
+
+    .line 32
+    move-object v1, p0
+
+    .line 33
+    check-cast v1, Lorg/openxmlformats/schemas/drawingml/x2006/main/CTPatternFillProperties;
+
+    .line 34
+    .line 35
+    :cond_0
+    invoke-interface {v1, p1}, Lorg/openxmlformats/schemas/drawingml/x2006/main/CTPatternFillProperties;->set(Lorg/apache/xmlbeans/XmlObject;)Lorg/apache/xmlbeans/XmlObject;
+
+    .line 36
+    .line 37
+    .line 38
+    monitor-exit v0
+
+    .line 39
+    return-void
+
+    .line 40
+    :catchall_0
+    move-exception p0
+
+    .line 41
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 42
+    throw p0
+.end method
+
+.method public setPrstGeom(Lorg/openxmlformats/schemas/drawingml/x2006/main/CTPresetGeometry2D;)V
+    .locals 4
+
+    .line 1
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->monitor()Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    monitor-enter v0
+
+    .line 6
+    :try_start_0
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->check_orphaned()V
+
+    .line 7
+    .line 8
+    .line 9
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->get_store()Lorg/apache/xmlbeans/impl/values/TypeStore;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object v1
+
+    .line 13
+    sget-object v2, Lorg/openxmlformats/schemas/drawingml/x2006/main/impl/CTShapePropertiesImpl;->PRSTGEOM$4:Ljavax/xml/namespace/QName;
+
+    .line 14
+    .line 15
+    const/4 v3, 0x0
+
+    .line 16
+    invoke-interface {v1, v2, v3}, Lorg/apache/xmlbeans/impl/values/TypeStore;->find_element_user(Ljavax/xml/namespace/QName;I)Lorg/apache/xmlbeans/impl/values/TypeStoreUser;
+
+    .line 17
+    .line 18
+    .line 19
+    move-result-object v1
+
+    .line 20
+    check-cast v1, Lorg/openxmlformats/schemas/drawingml/x2006/main/CTPresetGeometry2D;
+
+    .line 21
+    .line 22
+    if-nez v1, :cond_0
+
+    .line 23
+    .line 24
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->get_store()Lorg/apache/xmlbeans/impl/values/TypeStore;
+
+    .line 25
+    .line 26
+    .line 27
+    move-result-object p0
+
+    .line 28
+    invoke-interface {p0, v2}, Lorg/apache/xmlbeans/impl/values/TypeStore;->add_element_user(Ljavax/xml/namespace/QName;)Lorg/apache/xmlbeans/impl/values/TypeStoreUser;
+
+    .line 29
+    .line 30
+    .line 31
+    move-result-object p0
+
+    .line 32
+    move-object v1, p0
+
+    .line 33
+    check-cast v1, Lorg/openxmlformats/schemas/drawingml/x2006/main/CTPresetGeometry2D;
+
+    .line 34
+    .line 35
+    :cond_0
+    invoke-interface {v1, p1}, Lorg/apache/xmlbeans/XmlObject;->set(Lorg/apache/xmlbeans/XmlObject;)Lorg/apache/xmlbeans/XmlObject;
+
+    .line 36
+    .line 37
+    .line 38
+    monitor-exit v0
+
+    .line 39
+    return-void
+
+    .line 40
+    :catchall_0
+    move-exception p0
+
+    .line 41
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 42
+    throw p0
+.end method
+
+.method public setScene3D(Lorg/openxmlformats/schemas/drawingml/x2006/main/CTScene3D;)V
+    .locals 4
+
+    .line 1
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->monitor()Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    monitor-enter v0
+
+    .line 6
+    :try_start_0
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->check_orphaned()V
+
+    .line 7
+    .line 8
+    .line 9
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->get_store()Lorg/apache/xmlbeans/impl/values/TypeStore;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object v1
+
+    .line 13
+    sget-object v2, Lorg/openxmlformats/schemas/drawingml/x2006/main/impl/CTShapePropertiesImpl;->SCENE3D$24:Ljavax/xml/namespace/QName;
+
+    .line 14
+    .line 15
+    const/4 v3, 0x0
+
+    .line 16
+    invoke-interface {v1, v2, v3}, Lorg/apache/xmlbeans/impl/values/TypeStore;->find_element_user(Ljavax/xml/namespace/QName;I)Lorg/apache/xmlbeans/impl/values/TypeStoreUser;
+
+    .line 17
+    .line 18
+    .line 19
+    move-result-object v1
+
+    .line 20
+    check-cast v1, Lorg/openxmlformats/schemas/drawingml/x2006/main/CTScene3D;
+
+    .line 21
+    .line 22
+    if-nez v1, :cond_0
+
+    .line 23
+    .line 24
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->get_store()Lorg/apache/xmlbeans/impl/values/TypeStore;
+
+    .line 25
+    .line 26
+    .line 27
+    move-result-object p0
+
+    .line 28
+    invoke-interface {p0, v2}, Lorg/apache/xmlbeans/impl/values/TypeStore;->add_element_user(Ljavax/xml/namespace/QName;)Lorg/apache/xmlbeans/impl/values/TypeStoreUser;
+
+    .line 29
+    .line 30
+    .line 31
+    move-result-object p0
+
+    .line 32
+    move-object v1, p0
+
+    .line 33
+    check-cast v1, Lorg/openxmlformats/schemas/drawingml/x2006/main/CTScene3D;
+
+    .line 34
+    .line 35
+    :cond_0
+    invoke-interface {v1, p1}, Lorg/openxmlformats/schemas/drawingml/x2006/main/CTScene3D;->set(Lorg/apache/xmlbeans/XmlObject;)Lorg/apache/xmlbeans/XmlObject;
+
+    .line 36
+    .line 37
+    .line 38
+    monitor-exit v0
+
+    .line 39
+    return-void
+
+    .line 40
+    :catchall_0
+    move-exception p0
+
+    .line 41
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 42
+    throw p0
+.end method
+
+.method public setSolidFill(Lorg/openxmlformats/schemas/drawingml/x2006/main/CTSolidColorFillProperties;)V
+    .locals 4
+
+    .line 1
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->monitor()Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    monitor-enter v0
+
+    .line 6
+    :try_start_0
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->check_orphaned()V
+
+    .line 7
+    .line 8
+    .line 9
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->get_store()Lorg/apache/xmlbeans/impl/values/TypeStore;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object v1
+
+    .line 13
+    sget-object v2, Lorg/openxmlformats/schemas/drawingml/x2006/main/impl/CTShapePropertiesImpl;->SOLIDFILL$8:Ljavax/xml/namespace/QName;
+
+    .line 14
+    .line 15
+    const/4 v3, 0x0
+
+    .line 16
+    invoke-interface {v1, v2, v3}, Lorg/apache/xmlbeans/impl/values/TypeStore;->find_element_user(Ljavax/xml/namespace/QName;I)Lorg/apache/xmlbeans/impl/values/TypeStoreUser;
+
+    .line 17
+    .line 18
+    .line 19
+    move-result-object v1
+
+    .line 20
+    check-cast v1, Lorg/openxmlformats/schemas/drawingml/x2006/main/CTSolidColorFillProperties;
+
+    .line 21
+    .line 22
+    if-nez v1, :cond_0
+
+    .line 23
+    .line 24
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->get_store()Lorg/apache/xmlbeans/impl/values/TypeStore;
+
+    .line 25
+    .line 26
+    .line 27
+    move-result-object p0
+
+    .line 28
+    invoke-interface {p0, v2}, Lorg/apache/xmlbeans/impl/values/TypeStore;->add_element_user(Ljavax/xml/namespace/QName;)Lorg/apache/xmlbeans/impl/values/TypeStoreUser;
+
+    .line 29
+    .line 30
+    .line 31
+    move-result-object p0
+
+    .line 32
+    move-object v1, p0
+
+    .line 33
+    check-cast v1, Lorg/openxmlformats/schemas/drawingml/x2006/main/CTSolidColorFillProperties;
+
+    .line 34
+    .line 35
+    :cond_0
+    invoke-interface {v1, p1}, Lorg/apache/xmlbeans/XmlObject;->set(Lorg/apache/xmlbeans/XmlObject;)Lorg/apache/xmlbeans/XmlObject;
+
+    .line 36
+    .line 37
+    .line 38
+    monitor-exit v0
+
+    .line 39
+    return-void
+
+    .line 40
+    :catchall_0
+    move-exception p0
+
+    .line 41
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 42
+    throw p0
+.end method
+
+.method public setSp3D(Lorg/openxmlformats/schemas/drawingml/x2006/main/CTShape3D;)V
+    .locals 4
+
+    .line 1
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->monitor()Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    monitor-enter v0
+
+    .line 6
+    :try_start_0
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->check_orphaned()V
+
+    .line 7
+    .line 8
+    .line 9
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->get_store()Lorg/apache/xmlbeans/impl/values/TypeStore;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object v1
+
+    .line 13
+    sget-object v2, Lorg/openxmlformats/schemas/drawingml/x2006/main/impl/CTShapePropertiesImpl;->SP3D$26:Ljavax/xml/namespace/QName;
+
+    .line 14
+    .line 15
+    const/4 v3, 0x0
+
+    .line 16
+    invoke-interface {v1, v2, v3}, Lorg/apache/xmlbeans/impl/values/TypeStore;->find_element_user(Ljavax/xml/namespace/QName;I)Lorg/apache/xmlbeans/impl/values/TypeStoreUser;
+
+    .line 17
+    .line 18
+    .line 19
+    move-result-object v1
+
+    .line 20
+    check-cast v1, Lorg/openxmlformats/schemas/drawingml/x2006/main/CTShape3D;
+
+    .line 21
+    .line 22
+    if-nez v1, :cond_0
+
+    .line 23
+    .line 24
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->get_store()Lorg/apache/xmlbeans/impl/values/TypeStore;
+
+    .line 25
+    .line 26
+    .line 27
+    move-result-object p0
+
+    .line 28
+    invoke-interface {p0, v2}, Lorg/apache/xmlbeans/impl/values/TypeStore;->add_element_user(Ljavax/xml/namespace/QName;)Lorg/apache/xmlbeans/impl/values/TypeStoreUser;
+
+    .line 29
+    .line 30
+    .line 31
+    move-result-object p0
+
+    .line 32
+    move-object v1, p0
+
+    .line 33
+    check-cast v1, Lorg/openxmlformats/schemas/drawingml/x2006/main/CTShape3D;
+
+    .line 34
+    .line 35
+    :cond_0
+    invoke-interface {v1, p1}, Lorg/openxmlformats/schemas/drawingml/x2006/main/CTShape3D;->set(Lorg/apache/xmlbeans/XmlObject;)Lorg/apache/xmlbeans/XmlObject;
+
+    .line 36
+    .line 37
+    .line 38
+    monitor-exit v0
+
+    .line 39
+    return-void
+
+    .line 40
+    :catchall_0
+    move-exception p0
+
+    .line 41
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 42
+    throw p0
+.end method
+
+.method public setXfrm(Lorg/openxmlformats/schemas/drawingml/x2006/main/CTTransform2D;)V
+    .locals 4
+
+    .line 1
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->monitor()Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    monitor-enter v0
+
+    .line 6
+    :try_start_0
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->check_orphaned()V
+
+    .line 7
+    .line 8
+    .line 9
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->get_store()Lorg/apache/xmlbeans/impl/values/TypeStore;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object v1
+
+    .line 13
+    sget-object v2, Lorg/openxmlformats/schemas/drawingml/x2006/main/impl/CTShapePropertiesImpl;->XFRM$0:Ljavax/xml/namespace/QName;
+
+    .line 14
+    .line 15
+    const/4 v3, 0x0
+
+    .line 16
+    invoke-interface {v1, v2, v3}, Lorg/apache/xmlbeans/impl/values/TypeStore;->find_element_user(Ljavax/xml/namespace/QName;I)Lorg/apache/xmlbeans/impl/values/TypeStoreUser;
+
+    .line 17
+    .line 18
+    .line 19
+    move-result-object v1
+
+    .line 20
+    check-cast v1, Lorg/openxmlformats/schemas/drawingml/x2006/main/CTTransform2D;
+
+    .line 21
+    .line 22
+    if-nez v1, :cond_0
+
+    .line 23
+    .line 24
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->get_store()Lorg/apache/xmlbeans/impl/values/TypeStore;
+
+    .line 25
+    .line 26
+    .line 27
+    move-result-object p0
+
+    .line 28
+    invoke-interface {p0, v2}, Lorg/apache/xmlbeans/impl/values/TypeStore;->add_element_user(Ljavax/xml/namespace/QName;)Lorg/apache/xmlbeans/impl/values/TypeStoreUser;
+
+    .line 29
+    .line 30
+    .line 31
+    move-result-object p0
+
+    .line 32
+    move-object v1, p0
+
+    .line 33
+    check-cast v1, Lorg/openxmlformats/schemas/drawingml/x2006/main/CTTransform2D;
+
+    .line 34
+    .line 35
+    :cond_0
+    invoke-interface {v1, p1}, Lorg/apache/xmlbeans/XmlObject;->set(Lorg/apache/xmlbeans/XmlObject;)Lorg/apache/xmlbeans/XmlObject;
+
+    .line 36
+    .line 37
+    .line 38
+    monitor-exit v0
+
+    .line 39
+    return-void
+
+    .line 40
+    :catchall_0
+    move-exception p0
+
+    .line 41
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 42
+    throw p0
+.end method
+
+.method public unsetBlipFill()V
+    .locals 3
+
+    .line 1
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->monitor()Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    monitor-enter v0
+
+    .line 6
+    :try_start_0
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->check_orphaned()V
+
+    .line 7
+    .line 8
+    .line 9
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->get_store()Lorg/apache/xmlbeans/impl/values/TypeStore;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object p0
+
+    .line 13
+    sget-object v1, Lorg/openxmlformats/schemas/drawingml/x2006/main/impl/CTShapePropertiesImpl;->BLIPFILL$12:Ljavax/xml/namespace/QName;
+
+    .line 14
+    .line 15
+    const/4 v2, 0x0
+
+    .line 16
+    invoke-interface {p0, v1, v2}, Lorg/apache/xmlbeans/impl/values/TypeStore;->remove_element(Ljavax/xml/namespace/QName;I)V
+
+    .line 17
+    .line 18
+    .line 19
+    monitor-exit v0
+
+    .line 20
+    return-void
+
+    .line 21
+    :catchall_0
+    move-exception p0
+
+    .line 22
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 23
+    throw p0
+.end method
+
+.method public unsetBwMode()V
+    .locals 2
+
+    .line 1
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->monitor()Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    monitor-enter v0
+
+    .line 6
+    :try_start_0
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->check_orphaned()V
+
+    .line 7
+    .line 8
+    .line 9
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->get_store()Lorg/apache/xmlbeans/impl/values/TypeStore;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object p0
+
+    .line 13
+    sget-object v1, Lorg/openxmlformats/schemas/drawingml/x2006/main/impl/CTShapePropertiesImpl;->BWMODE$30:Ljavax/xml/namespace/QName;
+
+    .line 14
+    .line 15
+    invoke-interface {p0, v1}, Lorg/apache/xmlbeans/impl/values/TypeStore;->remove_attribute(Ljavax/xml/namespace/QName;)V
+
+    .line 16
+    .line 17
+    .line 18
+    monitor-exit v0
+
+    .line 19
+    return-void
+
+    .line 20
+    :catchall_0
+    move-exception p0
+
+    .line 21
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 22
+    throw p0
+.end method
+
+.method public unsetCustGeom()V
+    .locals 3
+
+    .line 1
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->monitor()Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    monitor-enter v0
+
+    .line 6
+    :try_start_0
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->check_orphaned()V
+
+    .line 7
+    .line 8
+    .line 9
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->get_store()Lorg/apache/xmlbeans/impl/values/TypeStore;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object p0
+
+    .line 13
+    sget-object v1, Lorg/openxmlformats/schemas/drawingml/x2006/main/impl/CTShapePropertiesImpl;->CUSTGEOM$2:Ljavax/xml/namespace/QName;
+
+    .line 14
+    .line 15
+    const/4 v2, 0x0
+
+    .line 16
+    invoke-interface {p0, v1, v2}, Lorg/apache/xmlbeans/impl/values/TypeStore;->remove_element(Ljavax/xml/namespace/QName;I)V
+
+    .line 17
+    .line 18
+    .line 19
+    monitor-exit v0
+
+    .line 20
+    return-void
+
+    .line 21
+    :catchall_0
+    move-exception p0
+
+    .line 22
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 23
+    throw p0
+.end method
+
+.method public unsetEffectDag()V
+    .locals 3
+
+    .line 1
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->monitor()Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    monitor-enter v0
+
+    .line 6
+    :try_start_0
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->check_orphaned()V
+
+    .line 7
+    .line 8
+    .line 9
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->get_store()Lorg/apache/xmlbeans/impl/values/TypeStore;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object p0
+
+    .line 13
+    sget-object v1, Lorg/openxmlformats/schemas/drawingml/x2006/main/impl/CTShapePropertiesImpl;->EFFECTDAG$22:Ljavax/xml/namespace/QName;
+
+    .line 14
+    .line 15
+    const/4 v2, 0x0
+
+    .line 16
+    invoke-interface {p0, v1, v2}, Lorg/apache/xmlbeans/impl/values/TypeStore;->remove_element(Ljavax/xml/namespace/QName;I)V
+
+    .line 17
+    .line 18
+    .line 19
+    monitor-exit v0
+
+    .line 20
+    return-void
+
+    .line 21
+    :catchall_0
+    move-exception p0
+
+    .line 22
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 23
+    throw p0
+.end method
+
+.method public unsetEffectLst()V
+    .locals 3
+
+    .line 1
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->monitor()Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    monitor-enter v0
+
+    .line 6
+    :try_start_0
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->check_orphaned()V
+
+    .line 7
+    .line 8
+    .line 9
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->get_store()Lorg/apache/xmlbeans/impl/values/TypeStore;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object p0
+
+    .line 13
+    sget-object v1, Lorg/openxmlformats/schemas/drawingml/x2006/main/impl/CTShapePropertiesImpl;->EFFECTLST$20:Ljavax/xml/namespace/QName;
+
+    .line 14
+    .line 15
+    const/4 v2, 0x0
+
+    .line 16
+    invoke-interface {p0, v1, v2}, Lorg/apache/xmlbeans/impl/values/TypeStore;->remove_element(Ljavax/xml/namespace/QName;I)V
+
+    .line 17
+    .line 18
+    .line 19
+    monitor-exit v0
+
+    .line 20
+    return-void
+
+    .line 21
+    :catchall_0
+    move-exception p0
+
+    .line 22
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 23
+    throw p0
+.end method
+
+.method public unsetExtLst()V
+    .locals 3
+
+    .line 1
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->monitor()Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    monitor-enter v0
+
+    .line 6
+    :try_start_0
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->check_orphaned()V
+
+    .line 7
+    .line 8
+    .line 9
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->get_store()Lorg/apache/xmlbeans/impl/values/TypeStore;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object p0
+
+    .line 13
+    sget-object v1, Lorg/openxmlformats/schemas/drawingml/x2006/main/impl/CTShapePropertiesImpl;->EXTLST$28:Ljavax/xml/namespace/QName;
+
+    .line 14
+    .line 15
+    const/4 v2, 0x0
+
+    .line 16
+    invoke-interface {p0, v1, v2}, Lorg/apache/xmlbeans/impl/values/TypeStore;->remove_element(Ljavax/xml/namespace/QName;I)V
+
+    .line 17
+    .line 18
+    .line 19
+    monitor-exit v0
+
+    .line 20
+    return-void
+
+    .line 21
+    :catchall_0
+    move-exception p0
+
+    .line 22
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 23
+    throw p0
+.end method
+
+.method public unsetGradFill()V
+    .locals 3
+
+    .line 1
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->monitor()Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    monitor-enter v0
+
+    .line 6
+    :try_start_0
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->check_orphaned()V
+
+    .line 7
+    .line 8
+    .line 9
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->get_store()Lorg/apache/xmlbeans/impl/values/TypeStore;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object p0
+
+    .line 13
+    sget-object v1, Lorg/openxmlformats/schemas/drawingml/x2006/main/impl/CTShapePropertiesImpl;->GRADFILL$10:Ljavax/xml/namespace/QName;
+
+    .line 14
+    .line 15
+    const/4 v2, 0x0
+
+    .line 16
+    invoke-interface {p0, v1, v2}, Lorg/apache/xmlbeans/impl/values/TypeStore;->remove_element(Ljavax/xml/namespace/QName;I)V
+
+    .line 17
+    .line 18
+    .line 19
+    monitor-exit v0
+
+    .line 20
+    return-void
+
+    .line 21
+    :catchall_0
+    move-exception p0
+
+    .line 22
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 23
+    throw p0
+.end method
+
+.method public unsetGrpFill()V
+    .locals 3
+
+    .line 1
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->monitor()Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    monitor-enter v0
+
+    .line 6
+    :try_start_0
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->check_orphaned()V
+
+    .line 7
+    .line 8
+    .line 9
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->get_store()Lorg/apache/xmlbeans/impl/values/TypeStore;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object p0
+
+    .line 13
+    sget-object v1, Lorg/openxmlformats/schemas/drawingml/x2006/main/impl/CTShapePropertiesImpl;->GRPFILL$16:Ljavax/xml/namespace/QName;
+
+    .line 14
+    .line 15
+    const/4 v2, 0x0
+
+    .line 16
+    invoke-interface {p0, v1, v2}, Lorg/apache/xmlbeans/impl/values/TypeStore;->remove_element(Ljavax/xml/namespace/QName;I)V
+
+    .line 17
+    .line 18
+    .line 19
+    monitor-exit v0
+
+    .line 20
+    return-void
+
+    .line 21
+    :catchall_0
+    move-exception p0
+
+    .line 22
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 23
+    throw p0
+.end method
+
+.method public unsetLn()V
+    .locals 3
+
+    .line 1
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->monitor()Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    monitor-enter v0
+
+    .line 6
+    :try_start_0
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->check_orphaned()V
+
+    .line 7
+    .line 8
+    .line 9
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->get_store()Lorg/apache/xmlbeans/impl/values/TypeStore;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object p0
+
+    .line 13
+    sget-object v1, Lorg/openxmlformats/schemas/drawingml/x2006/main/impl/CTShapePropertiesImpl;->LN$18:Ljavax/xml/namespace/QName;
+
+    .line 14
+    .line 15
+    const/4 v2, 0x0
+
+    .line 16
+    invoke-interface {p0, v1, v2}, Lorg/apache/xmlbeans/impl/values/TypeStore;->remove_element(Ljavax/xml/namespace/QName;I)V
+
+    .line 17
+    .line 18
+    .line 19
+    monitor-exit v0
+
+    .line 20
+    return-void
+
+    .line 21
+    :catchall_0
+    move-exception p0
+
+    .line 22
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 23
+    throw p0
+.end method
+
+.method public unsetNoFill()V
+    .locals 3
+
+    .line 1
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->monitor()Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    monitor-enter v0
+
+    .line 6
+    :try_start_0
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->check_orphaned()V
+
+    .line 7
+    .line 8
+    .line 9
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->get_store()Lorg/apache/xmlbeans/impl/values/TypeStore;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object p0
+
+    .line 13
+    sget-object v1, Lorg/openxmlformats/schemas/drawingml/x2006/main/impl/CTShapePropertiesImpl;->NOFILL$6:Ljavax/xml/namespace/QName;
+
+    .line 14
+    .line 15
+    const/4 v2, 0x0
+
+    .line 16
+    invoke-interface {p0, v1, v2}, Lorg/apache/xmlbeans/impl/values/TypeStore;->remove_element(Ljavax/xml/namespace/QName;I)V
+
+    .line 17
+    .line 18
+    .line 19
+    monitor-exit v0
+
+    .line 20
+    return-void
+
+    .line 21
+    :catchall_0
+    move-exception p0
+
+    .line 22
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 23
+    throw p0
+.end method
+
+.method public unsetPattFill()V
+    .locals 3
+
+    .line 1
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->monitor()Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    monitor-enter v0
+
+    .line 6
+    :try_start_0
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->check_orphaned()V
+
+    .line 7
+    .line 8
+    .line 9
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->get_store()Lorg/apache/xmlbeans/impl/values/TypeStore;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object p0
+
+    .line 13
+    sget-object v1, Lorg/openxmlformats/schemas/drawingml/x2006/main/impl/CTShapePropertiesImpl;->PATTFILL$14:Ljavax/xml/namespace/QName;
+
+    .line 14
+    .line 15
+    const/4 v2, 0x0
+
+    .line 16
+    invoke-interface {p0, v1, v2}, Lorg/apache/xmlbeans/impl/values/TypeStore;->remove_element(Ljavax/xml/namespace/QName;I)V
+
+    .line 17
+    .line 18
+    .line 19
+    monitor-exit v0
+
+    .line 20
+    return-void
+
+    .line 21
+    :catchall_0
+    move-exception p0
+
+    .line 22
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 23
+    throw p0
+.end method
+
+.method public unsetPrstGeom()V
+    .locals 3
+
+    .line 1
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->monitor()Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    monitor-enter v0
+
+    .line 6
+    :try_start_0
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->check_orphaned()V
+
+    .line 7
+    .line 8
+    .line 9
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->get_store()Lorg/apache/xmlbeans/impl/values/TypeStore;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object p0
+
+    .line 13
+    sget-object v1, Lorg/openxmlformats/schemas/drawingml/x2006/main/impl/CTShapePropertiesImpl;->PRSTGEOM$4:Ljavax/xml/namespace/QName;
+
+    .line 14
+    .line 15
+    const/4 v2, 0x0
+
+    .line 16
+    invoke-interface {p0, v1, v2}, Lorg/apache/xmlbeans/impl/values/TypeStore;->remove_element(Ljavax/xml/namespace/QName;I)V
+
+    .line 17
+    .line 18
+    .line 19
+    monitor-exit v0
+
+    .line 20
+    return-void
+
+    .line 21
+    :catchall_0
+    move-exception p0
+
+    .line 22
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 23
+    throw p0
+.end method
+
+.method public unsetScene3D()V
+    .locals 3
+
+    .line 1
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->monitor()Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    monitor-enter v0
+
+    .line 6
+    :try_start_0
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->check_orphaned()V
+
+    .line 7
+    .line 8
+    .line 9
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->get_store()Lorg/apache/xmlbeans/impl/values/TypeStore;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object p0
+
+    .line 13
+    sget-object v1, Lorg/openxmlformats/schemas/drawingml/x2006/main/impl/CTShapePropertiesImpl;->SCENE3D$24:Ljavax/xml/namespace/QName;
+
+    .line 14
+    .line 15
+    const/4 v2, 0x0
+
+    .line 16
+    invoke-interface {p0, v1, v2}, Lorg/apache/xmlbeans/impl/values/TypeStore;->remove_element(Ljavax/xml/namespace/QName;I)V
+
+    .line 17
+    .line 18
+    .line 19
+    monitor-exit v0
+
+    .line 20
+    return-void
+
+    .line 21
+    :catchall_0
+    move-exception p0
+
+    .line 22
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 23
+    throw p0
+.end method
+
+.method public unsetSolidFill()V
+    .locals 3
+
+    .line 1
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->monitor()Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    monitor-enter v0
+
+    .line 6
+    :try_start_0
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->check_orphaned()V
+
+    .line 7
+    .line 8
+    .line 9
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->get_store()Lorg/apache/xmlbeans/impl/values/TypeStore;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object p0
+
+    .line 13
+    sget-object v1, Lorg/openxmlformats/schemas/drawingml/x2006/main/impl/CTShapePropertiesImpl;->SOLIDFILL$8:Ljavax/xml/namespace/QName;
+
+    .line 14
+    .line 15
+    const/4 v2, 0x0
+
+    .line 16
+    invoke-interface {p0, v1, v2}, Lorg/apache/xmlbeans/impl/values/TypeStore;->remove_element(Ljavax/xml/namespace/QName;I)V
+
+    .line 17
+    .line 18
+    .line 19
+    monitor-exit v0
+
+    .line 20
+    return-void
+
+    .line 21
+    :catchall_0
+    move-exception p0
+
+    .line 22
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 23
+    throw p0
+.end method
+
+.method public unsetSp3D()V
+    .locals 3
+
+    .line 1
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->monitor()Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    monitor-enter v0
+
+    .line 6
+    :try_start_0
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->check_orphaned()V
+
+    .line 7
+    .line 8
+    .line 9
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->get_store()Lorg/apache/xmlbeans/impl/values/TypeStore;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object p0
+
+    .line 13
+    sget-object v1, Lorg/openxmlformats/schemas/drawingml/x2006/main/impl/CTShapePropertiesImpl;->SP3D$26:Ljavax/xml/namespace/QName;
+
+    .line 14
+    .line 15
+    const/4 v2, 0x0
+
+    .line 16
+    invoke-interface {p0, v1, v2}, Lorg/apache/xmlbeans/impl/values/TypeStore;->remove_element(Ljavax/xml/namespace/QName;I)V
+
+    .line 17
+    .line 18
+    .line 19
+    monitor-exit v0
+
+    .line 20
+    return-void
+
+    .line 21
+    :catchall_0
+    move-exception p0
+
+    .line 22
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 23
+    throw p0
+.end method
+
+.method public unsetXfrm()V
+    .locals 3
+
+    .line 1
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->monitor()Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    monitor-enter v0
+
+    .line 6
+    :try_start_0
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->check_orphaned()V
+
+    .line 7
+    .line 8
+    .line 9
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->get_store()Lorg/apache/xmlbeans/impl/values/TypeStore;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object p0
+
+    .line 13
+    sget-object v1, Lorg/openxmlformats/schemas/drawingml/x2006/main/impl/CTShapePropertiesImpl;->XFRM$0:Ljavax/xml/namespace/QName;
+
+    .line 14
+    .line 15
+    const/4 v2, 0x0
+
+    .line 16
+    invoke-interface {p0, v1, v2}, Lorg/apache/xmlbeans/impl/values/TypeStore;->remove_element(Ljavax/xml/namespace/QName;I)V
+
+    .line 17
+    .line 18
+    .line 19
+    monitor-exit v0
+
+    .line 20
+    return-void
+
+    .line 21
+    :catchall_0
+    move-exception p0
+
+    .line 22
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 23
+    throw p0
+.end method
+
+.method public xgetBwMode()Lorg/openxmlformats/schemas/drawingml/x2006/main/STBlackWhiteMode;
+    .locals 2
+
+    .line 1
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->monitor()Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    monitor-enter v0
+
+    .line 6
+    :try_start_0
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->check_orphaned()V
+
+    .line 7
+    .line 8
+    .line 9
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->get_store()Lorg/apache/xmlbeans/impl/values/TypeStore;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object p0
+
+    .line 13
+    sget-object v1, Lorg/openxmlformats/schemas/drawingml/x2006/main/impl/CTShapePropertiesImpl;->BWMODE$30:Ljavax/xml/namespace/QName;
+
+    .line 14
+    .line 15
+    invoke-interface {p0, v1}, Lorg/apache/xmlbeans/impl/values/TypeStore;->find_attribute_user(Ljavax/xml/namespace/QName;)Lorg/apache/xmlbeans/impl/values/TypeStoreUser;
+
+    .line 16
+    .line 17
+    .line 18
+    move-result-object p0
+
+    .line 19
+    check-cast p0, Lorg/openxmlformats/schemas/drawingml/x2006/main/STBlackWhiteMode;
+
+    .line 20
+    .line 21
+    monitor-exit v0
+
+    .line 22
+    return-object p0
+
+    .line 23
+    :catchall_0
+    move-exception p0
+
+    .line 24
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 25
+    throw p0
+.end method
+
+.method public xsetBwMode(Lorg/openxmlformats/schemas/drawingml/x2006/main/STBlackWhiteMode;)V
+    .locals 3
+
+    .line 1
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->monitor()Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    monitor-enter v0
+
+    .line 6
+    :try_start_0
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->check_orphaned()V
+
+    .line 7
+    .line 8
+    .line 9
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->get_store()Lorg/apache/xmlbeans/impl/values/TypeStore;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object v1
+
+    .line 13
+    sget-object v2, Lorg/openxmlformats/schemas/drawingml/x2006/main/impl/CTShapePropertiesImpl;->BWMODE$30:Ljavax/xml/namespace/QName;
+
+    .line 14
+    .line 15
+    invoke-interface {v1, v2}, Lorg/apache/xmlbeans/impl/values/TypeStore;->find_attribute_user(Ljavax/xml/namespace/QName;)Lorg/apache/xmlbeans/impl/values/TypeStoreUser;
+
+    .line 16
+    .line 17
+    .line 18
+    move-result-object v1
+
+    .line 19
+    check-cast v1, Lorg/openxmlformats/schemas/drawingml/x2006/main/STBlackWhiteMode;
+
+    .line 20
+    .line 21
+    if-nez v1, :cond_0
+
+    .line 22
+    .line 23
+    invoke-virtual {p0}, Lorg/apache/xmlbeans/impl/values/XmlObjectBase;->get_store()Lorg/apache/xmlbeans/impl/values/TypeStore;
+
+    .line 24
+    .line 25
+    .line 26
+    move-result-object p0
+
+    .line 27
+    invoke-interface {p0, v2}, Lorg/apache/xmlbeans/impl/values/TypeStore;->add_attribute_user(Ljavax/xml/namespace/QName;)Lorg/apache/xmlbeans/impl/values/TypeStoreUser;
+
+    .line 28
+    .line 29
+    .line 30
+    move-result-object p0
+
+    .line 31
+    move-object v1, p0
+
+    .line 32
+    check-cast v1, Lorg/openxmlformats/schemas/drawingml/x2006/main/STBlackWhiteMode;
+
+    .line 33
+    .line 34
+    :cond_0
+    invoke-interface {v1, p1}, Lorg/openxmlformats/schemas/drawingml/x2006/main/STBlackWhiteMode;->set(Lorg/apache/xmlbeans/XmlObject;)Lorg/apache/xmlbeans/XmlObject;
+
+    .line 35
+    .line 36
+    .line 37
+    monitor-exit v0
+
+    .line 38
+    return-void
+
+    .line 39
+    :catchall_0
+    move-exception p0
+
+    .line 40
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 41
+    throw p0
+.end method

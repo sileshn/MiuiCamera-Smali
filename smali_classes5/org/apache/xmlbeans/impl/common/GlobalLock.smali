@@ -1,0 +1,94 @@
+.class public Lorg/apache/xmlbeans/impl/common/GlobalLock;
+.super Ljava/lang/Object;
+.source "GlobalLock.java"
+
+
+# static fields
+.field private static final GLOBAL_MUTEX:Lorg/apache/xmlbeans/impl/common/Mutex;
+
+
+# direct methods
+.method public static constructor <clinit>()V
+    .locals 1
+
+    .line 1
+    new-instance v0, Lorg/apache/xmlbeans/impl/common/Mutex;
+
+    .line 2
+    .line 3
+    invoke-direct {v0}, Lorg/apache/xmlbeans/impl/common/Mutex;-><init>()V
+
+    .line 4
+    .line 5
+    .line 6
+    sput-object v0, Lorg/apache/xmlbeans/impl/common/GlobalLock;->GLOBAL_MUTEX:Lorg/apache/xmlbeans/impl/common/Mutex;
+
+    .line 7
+    .line 8
+    return-void
+.end method
+
+.method public constructor <init>()V
+    .locals 0
+
+    .line 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 2
+    .line 3
+    .line 4
+    return-void
+.end method
+
+.method public static acquire()V
+    .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/InterruptedException;
+        }
+    .end annotation
+
+    .line 1
+    sget-object v0, Lorg/apache/xmlbeans/impl/common/GlobalLock;->GLOBAL_MUTEX:Lorg/apache/xmlbeans/impl/common/Mutex;
+
+    .line 2
+    .line 3
+    invoke-virtual {v0}, Lorg/apache/xmlbeans/impl/common/Mutex;->acquire()V
+
+    .line 4
+    .line 5
+    .line 6
+    return-void
+.end method
+
+.method public static release()V
+    .locals 1
+
+    .line 1
+    sget-object v0, Lorg/apache/xmlbeans/impl/common/GlobalLock;->GLOBAL_MUTEX:Lorg/apache/xmlbeans/impl/common/Mutex;
+
+    .line 2
+    .line 3
+    invoke-virtual {v0}, Lorg/apache/xmlbeans/impl/common/Mutex;->release()V
+
+    .line 4
+    .line 5
+    .line 6
+    return-void
+.end method
+
+.method public static tryToAcquire()V
+    .locals 1
+
+    .line 1
+    sget-object v0, Lorg/apache/xmlbeans/impl/common/GlobalLock;->GLOBAL_MUTEX:Lorg/apache/xmlbeans/impl/common/Mutex;
+
+    .line 2
+    .line 3
+    invoke-virtual {v0}, Lorg/apache/xmlbeans/impl/common/Mutex;->tryToAcquire()Z
+
+    .line 4
+    .line 5
+    .line 6
+    return-void
+.end method

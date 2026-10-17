@@ -1,0 +1,76 @@
+.class public Lcom/xiaomi/camera/device/CameraHandlerThread;
+.super Landroid/os/HandlerThread;
+.source "CameraHandlerThread.java"
+
+
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lcom/xiaomi/camera/device/CameraHandlerThread$CookieStore;,
+        Lcom/xiaomi/camera/device/CameraHandlerThread$Cookie;
+    }
+.end annotation
+
+
+# instance fields
+.field private final mCookieStore:Lcom/xiaomi/camera/device/CameraHandlerThread$CookieStore;
+
+
+# direct methods
+.method public constructor <init>()V
+    .locals 2
+
+    .line 1
+    const-class v0, Lcom/xiaomi/camera/device/CameraHandlerThread;
+
+    .line 2
+    .line 3
+    invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object v0
+
+    .line 7
+    const/4 v1, -0x2
+
+    .line 8
+    invoke-direct {p0, v0, v1}, Landroid/os/HandlerThread;-><init>(Ljava/lang/String;I)V
+
+    .line 9
+    .line 10
+    .line 11
+    new-instance v0, Lcom/xiaomi/camera/device/CameraHandlerThread$CookieStore;
+
+    .line 12
+    .line 13
+    const/4 v1, 0x0
+
+    .line 14
+    invoke-direct {v0, v1}, Lcom/xiaomi/camera/device/CameraHandlerThread$CookieStore;-><init>(Lcom/xiaomi/camera/device/CameraHandlerThread$1;)V
+
+    .line 15
+    .line 16
+    .line 17
+    iput-object v0, p0, Lcom/xiaomi/camera/device/CameraHandlerThread;->mCookieStore:Lcom/xiaomi/camera/device/CameraHandlerThread$CookieStore;
+
+    .line 18
+    .line 19
+    return-void
+.end method
+
+
+# virtual methods
+.method public getCookieStore()Lcom/xiaomi/camera/device/CameraHandlerThread$CookieStore;
+    .locals 0
+    .annotation build Landroidx/annotation/NonNull;
+    .end annotation
+
+    .line 1
+    iget-object p0, p0, Lcom/xiaomi/camera/device/CameraHandlerThread;->mCookieStore:Lcom/xiaomi/camera/device/CameraHandlerThread$CookieStore;
+
+    .line 2
+    .line 3
+    return-object p0
+.end method

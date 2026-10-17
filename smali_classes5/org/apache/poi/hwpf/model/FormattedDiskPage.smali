@@ -1,0 +1,131 @@
+.class public abstract Lorg/apache/poi/hwpf/model/FormattedDiskPage;
+.super Ljava/lang/Object;
+.source "FormattedDiskPage.java"
+
+
+# annotations
+.annotation runtime Lorg/apache/poi/util/Internal;
+.end annotation
+
+
+# instance fields
+.field protected _crun:I
+
+.field protected _fkp:[B
+
+.field protected _offset:I
+
+
+# direct methods
+.method public constructor <init>()V
+    .locals 0
+
+    .line 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+.method public constructor <init>([BI)V
+    .locals 1
+
+    .line 2
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    add-int/lit16 v0, p2, 0x1ff
+
+    .line 3
+    invoke-static {p1, v0}, Lorg/apache/poi/util/LittleEndian;->getUnsignedByte([BI)I
+
+    move-result v0
+
+    iput v0, p0, Lorg/apache/poi/hwpf/model/FormattedDiskPage;->_crun:I
+
+    .line 4
+    iput-object p1, p0, Lorg/apache/poi/hwpf/model/FormattedDiskPage;->_fkp:[B
+
+    .line 5
+    iput p2, p0, Lorg/apache/poi/hwpf/model/FormattedDiskPage;->_offset:I
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public getEnd(I)I
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lorg/apache/poi/hwpf/model/FormattedDiskPage;->_fkp:[B
+
+    .line 2
+    .line 3
+    iget p0, p0, Lorg/apache/poi/hwpf/model/FormattedDiskPage;->_offset:I
+
+    .line 4
+    .line 5
+    add-int/lit8 p1, p1, 0x1
+
+    .line 6
+    .line 7
+    mul-int/lit8 p1, p1, 0x4
+
+    .line 8
+    .line 9
+    add-int/2addr p0, p1
+
+    .line 10
+    invoke-static {v0, p0}, Lorg/apache/poi/util/LittleEndian;->getInt([BI)I
+
+    .line 11
+    .line 12
+    .line 13
+    move-result p0
+
+    .line 14
+    return p0
+.end method
+
+.method public abstract getGrpprl(I)[B
+.end method
+
+.method public getStart(I)I
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lorg/apache/poi/hwpf/model/FormattedDiskPage;->_fkp:[B
+
+    .line 2
+    .line 3
+    iget p0, p0, Lorg/apache/poi/hwpf/model/FormattedDiskPage;->_offset:I
+
+    .line 4
+    .line 5
+    mul-int/lit8 p1, p1, 0x4
+
+    .line 6
+    .line 7
+    add-int/2addr p0, p1
+
+    .line 8
+    invoke-static {v0, p0}, Lorg/apache/poi/util/LittleEndian;->getInt([BI)I
+
+    .line 9
+    .line 10
+    .line 11
+    move-result p0
+
+    .line 12
+    return p0
+.end method
+
+.method public size()I
+    .locals 0
+
+    .line 1
+    iget p0, p0, Lorg/apache/poi/hwpf/model/FormattedDiskPage;->_crun:I
+
+    .line 2
+    .line 3
+    return p0
+.end method

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="a_hour_ago">
+        <item quantity="one">1 time siden</item>
+        <item quantity="other">1 time siden</item>
+    </plurals>
+    <plurals name="abbrev_a_hour_ago">
+        <item quantity="one">1 time siden</item>
+        <item quantity="other">1 time siden</item>
+    </plurals>
+    <plurals name="abbrev_half_hour_ago">
+        <item quantity="one">En halv time siden</item>
+        <item quantity="other">En halv time siden</item>
+    </plurals>
+    <plurals name="abbrev_in_a_hour">
+        <item quantity="one">Om en time</item>
+        <item quantity="other">Om en time</item>
+    </plurals>
+    <plurals name="abbrev_in_half_hour">
+        <item quantity="one">Om en halv time</item>
+        <item quantity="other">Om en halv time</item>
+    </plurals>
+    <plurals name="abbrev_in_less_than_one_minute">
+        <item quantity="one">Omgående</item>
+        <item quantity="other">Omgående</item>
+    </plurals>
+    <plurals name="abbrev_in_num_minutes">
+        <item quantity="one">om 1 min</item>
+        <item quantity="other">om %d min</item>
+    </plurals>
+    <plurals name="abbrev_less_than_one_minute_ago">
+        <item quantity="one">Lige nu</item>
+        <item quantity="other">Lige nu</item>
+    </plurals>
+    <plurals name="abbrev_num_minutes_ago">
+        <item quantity="one">1 min siden</item>
+        <item quantity="other">%d min siden</item>
+    </plurals>
+    <plurals name="accessibility_auto_night_tip">
+        <item quantity="one">%d-sekund-timer til nattilstand</item>
+        <item quantity="other">%d-sekunders-timer til nattilstand</item>
+    </plurals>
+    <plurals name="accessibility_focus_face_detect">
+        <item quantity="one">Fokuseret. %d ansigt detekteret</item>
+        <item quantity="other">Fokuseret. %d ansigter detekteret</item>
+    </plurals>
+    <plurals name="accessibility_timer_burst_count">
+        <item quantity="one">%d foto er burst-foto</item>
+        <item quantity="other">%d fotos er burst-fotos</item>
+    </plurals>
+    <plurals name="accessibility_timer_burst_interval">
+        <item quantity="one">Interval: %d sekund</item>
+        <item quantity="other">Interval: %d sekunder</item>
+    </plurals>
+    <plurals name="accessibility_vv_duartion">
+        <item quantity="one">Varighed: %d sekund</item>
+        <item quantity="other">Varighed: %d sekunder</item>
+    </plurals>
+    <plurals name="clone_guide_tip2">
+        <item quantity="one">Du kan oprette op til %d klon ad gangen.</item>
+        <item quantity="other">Du kan oprette op til %d kloner ad gangen.</item>
+    </plurals>
+    <plurals name="exit_camera_hint">
+        <item quantity="one">&lt;Data>Kan ikke tilslutte til kameraet.&lt;br>Denne app lukkes om &lt;font color=#FFCE16>&lt;b>%1$d sek&lt;/b>&lt;/font>. Efter dette skal du vente et minut eller to og så prøve igen.&lt;/Data></item>
+        <item quantity="other">&lt;Data>Kan ikke tilslutte til kameraet.&lt;br>Denne app lukkes om &lt;font color=#FFCE16>&lt;b>%1$d sek&lt;/b>&lt;/font>. Efter dette skal du vente et minut eller to og så prøve igen.&lt;/Data></item>
+    </plurals>
+    <plurals name="exit_thermal_hint">
+        <item quantity="one">&lt;Data>Denne enhed er for varm nu.br>Denne app lukkes om &lt;font color=#FFCE16>&lt;b>%1$d sek&lt;/b>&lt;/font>. Nuværende fremskridt blev automatisk gemt.&lt;/Data></item>
+        <item quantity="other">&lt;Data>Denne enhed er for varm nu.br>Denne app lukkes om &lt;font color=#FFCE16>&lt;b>%1$d sek&lt;/b>&lt;/font>. Nuværende fremskridt blev automatisk gemt.&lt;/Data></item>
+    </plurals>
+    <plurals name="exit_version_hint">
+        <item quantity="one">&lt;Data>Den kameraversion, du bruger, er ikke kompatibel med din enhedsmodel.&lt;br>Appen lukker om &lt;font color=#FFCE16>&lt;b>%1$d sek&lt;/b>&lt;/font>. Afinstallér kameraopdateringer, og prøv igen.&lt;/Data></item>
+        <item quantity="other">&lt;Data>Den kameraversion, du bruger, er ikke kompatibel med din enhedsmodel.&lt;br>Appen lukker om &lt;font color=#FFCE16>&lt;b>%1$d sek&lt;/b>&lt;/font>. Afinstallér kameraopdateringer, og prøv igen.&lt;/Data></item>
+    </plurals>
+    <plurals name="exo_controls_fastforward_by_amount_description">
+        <item quantity="one">Spol %d sekund frem</item>
+        <item quantity="other">Spol %d sekunder frem</item>
+    </plurals>
+    <plurals name="exo_controls_rewind_by_amount_description">
+        <item quantity="one">Spol %d sekund tilbage</item>
+        <item quantity="other">Spol %d sekunder tilbage</item>
+    </plurals>
+    <plurals name="fastmotion_pro_min_unit">
+        <item quantity="one">%1$d min</item>
+        <item quantity="other">%1$d min</item>
+    </plurals>
+    <plurals name="fastmotion_pro_sec_unit">
+        <item quantity="one">%1$d sek.</item>
+        <item quantity="other">%1$d sek.</item>
+    </plurals>
+    <plurals name="half_hour_ago">
+        <item quantity="one">En halv time siden</item>
+        <item quantity="other">En halv time siden</item>
+    </plurals>
+    <plurals name="in_a_hour">
+        <item quantity="one">Om 1 time</item>
+        <item quantity="other">Om 1 time</item>
+    </plurals>
+    <plurals name="in_half_hour">
+        <item quantity="one">Om en halv time</item>
+        <item quantity="other">Om en halv time</item>
+    </plurals>
+    <plurals name="in_less_than_one_minute">
+        <item quantity="one">Omgående</item>
+        <item quantity="other">Omgående</item>
+    </plurals>
+    <plurals name="in_num_minutes">
+        <item quantity="one">om 1 minut</item>
+        <item quantity="other">om %d minutter</item>
+    </plurals>
+    <plurals name="less_than_one_minute_ago">
+        <item quantity="one">Lige nu</item>
+        <item quantity="other">Lige nu</item>
+    </plurals>
+    <plurals name="live_workspace_delete_dialog_title">
+        <item quantity="one">Slet %1$d kladde?</item>
+        <item quantity="other">Slet %1$d kladder?</item>
+    </plurals>
+    <plurals name="miuix_appcompat_items_selected">
+        <item quantity="one">%d emne valgt</item>
+        <item quantity="other">%d emner valgt</item>
+    </plurals>
+    <plurals name="num_minutes_ago">
+        <item quantity="one">1 minut siden</item>
+        <item quantity="other">%d minutter siden</item>
+    </plurals>
+    <plurals name="pad_ccc_temperature_warning_msg">
+        <item quantity="one">Din enhed er overophedet. Kamera lukkes om %d sekund. Dine fotos og videoer gemmes automatisk.</item>
+        <item quantity="other">Din enhed er overophedet. Kamera lukkes om %d sekunder. Dine fotos og videoer gemmes automatisk.</item>
+    </plurals>
+    <plurals name="pref_camera_fastmotion_duration_unit">
+        <item quantity="one">%1$s min.</item>
+        <item quantity="other">%1$s min.</item>
+    </plurals>
+    <plurals name="pref_live_duration_prompt">
+        <item quantity="one">Optag %d sekund</item>
+        <item quantity="other">Optag %d sekunder</item>
+    </plurals>
+    <plurals name="timefreeze_guide_tip1">
+        <item quantity="one">Du kan optage time freeze-videoer med kun %d emne.</item>
+        <item quantity="other">Du kan optage time freeze-videoer med op til %d emner.</item>
+    </plurals>
+    <plurals name="timer_burst_setting_total_count">
+        <item quantity="one">%1$s billede</item>
+        <item quantity="other">%1$s billeder</item>
+    </plurals>
+    <plurals name="toast_burst_snap_finished_summary">
+        <item quantity="one">Serieoptagelse færdig. Der blev taget %1$s foto.</item>
+        <item quantity="other">Serieoptagelse færdig. Der blev taget %1$s fotos.</item>
+    </plurals>
+</resources>

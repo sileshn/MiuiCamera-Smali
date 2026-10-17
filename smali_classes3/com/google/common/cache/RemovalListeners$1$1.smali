@@ -1,0 +1,71 @@
+.class Lcom/google/common/cache/RemovalListeners$1$1;
+.super Ljava/lang/Object;
+.source "RemovalListeners.java"
+
+# interfaces
+.implements Ljava/lang/Runnable;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/google/common/cache/RemovalListeners$1;->onRemoval(Lcom/google/common/cache/RemovalNotification;)V
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x1
+    name = null
+.end annotation
+
+
+# instance fields
+.field final synthetic this$0:Lcom/google/common/cache/RemovalListeners$1;
+
+.field final synthetic val$notification:Lcom/google/common/cache/RemovalNotification;
+
+
+# direct methods
+.method public constructor <init>(Lcom/google/common/cache/RemovalListeners$1;Lcom/google/common/cache/RemovalNotification;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/google/common/cache/RemovalListeners$1$1;->this$0:Lcom/google/common/cache/RemovalListeners$1;
+
+    .line 2
+    .line 3
+    iput-object p2, p0, Lcom/google/common/cache/RemovalListeners$1$1;->val$notification:Lcom/google/common/cache/RemovalNotification;
+
+    .line 4
+    .line 5
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 6
+    .line 7
+    .line 8
+    return-void
+.end method
+
+
+# virtual methods
+.method public run()V
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/google/common/cache/RemovalListeners$1$1;->this$0:Lcom/google/common/cache/RemovalListeners$1;
+
+    .line 2
+    .line 3
+    iget-object v0, v0, Lcom/google/common/cache/RemovalListeners$1;->val$listener:Lcom/google/common/cache/RemovalListener;
+
+    .line 4
+    .line 5
+    iget-object p0, p0, Lcom/google/common/cache/RemovalListeners$1$1;->val$notification:Lcom/google/common/cache/RemovalNotification;
+
+    .line 6
+    .line 7
+    invoke-interface {v0, p0}, Lcom/google/common/cache/RemovalListener;->onRemoval(Lcom/google/common/cache/RemovalNotification;)V
+
+    .line 8
+    .line 9
+    .line 10
+    return-void
+.end method

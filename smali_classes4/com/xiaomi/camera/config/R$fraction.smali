@@ -1,0 +1,33 @@
+.class public final Lcom/xiaomi/camera/config/R$fraction;
+.super Ljava/lang/Object;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/xiaomi/camera/config/R;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x19
+    name = "fraction"
+.end annotation
+
+
+# static fields
+.field public static final drop_down_anim_pivot_x:I = 0x7f0a0000
+
+.field public static final immersion_menu_anim_pivot_x:I = 0x7f0a0001
+
+
+# direct methods
+.method private constructor <init>()V
+    .locals 0
+
+    .line 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 2
+    .line 3
+    .line 4
+    return-void
+.end method

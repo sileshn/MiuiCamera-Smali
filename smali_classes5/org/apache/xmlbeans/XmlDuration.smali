@@ -1,0 +1,65 @@
+.class public interface abstract Lorg/apache/xmlbeans/XmlDuration;
+.super Ljava/lang/Object;
+.source "XmlDuration.java"
+
+# interfaces
+.implements Lorg/apache/xmlbeans/XmlAnySimpleType;
+
+
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lorg/apache/xmlbeans/XmlDuration$Factory;
+    }
+.end annotation
+
+
+# static fields
+.field public static final type:Lorg/apache/xmlbeans/SchemaType;
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .locals 2
+
+    .line 1
+    invoke-static {}, Lorg/apache/xmlbeans/XmlBeans;->getBuiltinTypeSystem()Lorg/apache/xmlbeans/SchemaTypeSystem;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    const-string v1, "_BI_duration"
+
+    .line 6
+    .line 7
+    invoke-interface {v0, v1}, Lorg/apache/xmlbeans/SchemaTypeSystem;->typeForHandle(Ljava/lang/String;)Lorg/apache/xmlbeans/SchemaType;
+
+    .line 8
+    .line 9
+    .line 10
+    move-result-object v0
+
+    .line 11
+    sput-object v0, Lorg/apache/xmlbeans/XmlDuration;->type:Lorg/apache/xmlbeans/SchemaType;
+
+    .line 12
+    .line 13
+    return-void
+.end method
+
+
+# virtual methods
+.method public abstract gDurationValue()Lorg/apache/xmlbeans/GDuration;
+.end method
+
+.method public abstract getGDurationValue()Lorg/apache/xmlbeans/GDuration;
+.end method
+
+.method public abstract set(Lorg/apache/xmlbeans/GDurationSpecification;)V
+.end method
+
+.method public abstract setGDurationValue(Lorg/apache/xmlbeans/GDuration;)V
+.end method

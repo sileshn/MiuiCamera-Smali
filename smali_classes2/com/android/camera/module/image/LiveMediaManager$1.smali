@@ -1,0 +1,162 @@
+.class Lcom/android/camera/module/image/LiveMediaManager$1;
+.super Ljava/lang/Object;
+.source "LiveMediaManager.java"
+
+# interfaces
+.implements Lcom/android/camera/module/encoder/LiveMediaRecorder$EncoderListener;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/android/camera/module/image/LiveMediaManager;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x1
+    name = null
+.end annotation
+
+
+# instance fields
+.field final synthetic this$0:Lcom/android/camera/module/image/LiveMediaManager;
+
+
+# direct methods
+.method public constructor <init>(Lcom/android/camera/module/image/LiveMediaManager;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/android/camera/module/image/LiveMediaManager$1;->this$0:Lcom/android/camera/module/image/LiveMediaManager;
+
+    .line 2
+    .line 3
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 4
+    .line 5
+    .line 6
+    return-void
+.end method
+
+
+# virtual methods
+.method public onStop()V
+    .locals 1
+
+    .line 1
+    iget-object p0, p0, Lcom/android/camera/module/image/LiveMediaManager$1;->this$0:Lcom/android/camera/module/image/LiveMediaManager;
+
+    .line 2
+    .line 3
+    const/4 v0, 0x1
+
+    .line 4
+    invoke-virtual {p0, v0}, Lcom/android/camera/module/image/LiveMediaManager;->playVideoSound(Z)V
+
+    .line 5
+    .line 6
+    .line 7
+    return-void
+.end method
+
+.method public onStopped(Lcom/android/camera/module/encoder/MediaEncoder;Z)V
+    .locals 2
+
+    .line 1
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    .line 2
+    .line 3
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    .line 4
+    .line 5
+    .line 6
+    const-string v1, "onStopped: encoder="
+
+    .line 7
+    .line 8
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 9
+    .line 10
+    .line 11
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    .line 12
+    .line 13
+    .line 14
+    const-string p1, " muxerStopped:"
+
+    .line 15
+    .line 16
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 17
+    .line 18
+    .line 19
+    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    .line 20
+    .line 21
+    .line 22
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    .line 23
+    .line 24
+    .line 25
+    move-result-object p1
+
+    .line 26
+    const-string v0, "LiveMediaManager"
+
+    .line 27
+    .line 28
+    invoke-static {v0, p1}, Lcom/android/camera/log/Log;->v(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 29
+    .line 30
+    .line 31
+    if-eqz p2, :cond_0
+
+    .line 32
+    .line 33
+    iget-object p0, p0, Lcom/android/camera/module/image/LiveMediaManager$1;->this$0:Lcom/android/camera/module/image/LiveMediaManager;
+
+    .line 34
+    .line 35
+    const/4 p1, 0x1
+
+    .line 36
+    invoke-virtual {p0, p1}, Lcom/android/camera/module/image/LiveMediaManager;->executeSaveTask(Z)V
+
+    .line 37
+    .line 38
+    .line 39
+    :cond_0
+    return-void
+.end method
+
+.method public save(Landroid/net/Uri;Ljava/lang/String;Landroid/content/ContentValues;)V
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lcom/android/camera/module/image/LiveMediaManager$1;->this$0:Lcom/android/camera/module/image/LiveMediaManager;
+
+    invoke-virtual {p0, p1, p2, p3}, Lcom/android/camera/module/image/LiveMediaManager;->addSaveTask(Landroid/net/Uri;Ljava/lang/String;Landroid/content/ContentValues;)V
+
+    return-void
+.end method
+
+.method public save(Ljava/lang/String;Landroid/content/ContentValues;)V
+    .locals 0
+    .annotation build Lcom/android/camera/jacoco/JacocoForceIgnore;
+    .end annotation
+
+    .line 2
+    iget-object p0, p0, Lcom/android/camera/module/image/LiveMediaManager$1;->this$0:Lcom/android/camera/module/image/LiveMediaManager;
+
+    invoke-virtual {p0, p1, p2}, Lcom/android/camera/module/image/LiveMediaManager;->addSaveTask(Ljava/lang/String;Landroid/content/ContentValues;)V
+
+    return-void
+.end method

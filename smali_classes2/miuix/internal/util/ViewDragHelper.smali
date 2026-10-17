@@ -1,0 +1,5331 @@
+.class public Lmiuix/internal/util/ViewDragHelper;
+.super Ljava/lang/Object;
+.source "ViewDragHelper.java"
+
+
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lmiuix/internal/util/ViewDragHelper$Callback;
+    }
+.end annotation
+
+
+# static fields
+.field private static final BASE_SETTLE_DURATION:I = 0x100
+
+.field public static final DIRECTION_ALL:I = 0x3
+
+.field public static final DIRECTION_HORIZONTAL:I = 0x1
+
+.field public static final DIRECTION_VERTICAL:I = 0x2
+
+.field public static final EDGE_ALL:I = 0xf
+
+.field public static final EDGE_BOTTOM:I = 0x8
+
+.field public static final EDGE_LEFT:I = 0x1
+
+.field public static final EDGE_RIGHT:I = 0x2
+
+.field private static final EDGE_SIZE:I = 0x14
+
+.field public static final EDGE_TOP:I = 0x4
+
+.field public static final INVALID_POINTER:I = -0x1
+
+.field private static final MAX_SETTLE_DURATION:I = 0x258
+
+.field public static final STATE_DRAGGING:I = 0x1
+
+.field public static final STATE_IDLE:I = 0x0
+
+.field public static final STATE_SETTLING:I = 0x2
+
+.field private static final TAG:Ljava/lang/String; = "ViewDragHelper"
+
+.field private static final sInterpolator:Landroid/view/animation/Interpolator;
+
+
+# instance fields
+.field private mActivePointerId:I
+
+.field private final mCallback:Lmiuix/internal/util/ViewDragHelper$Callback;
+
+.field private mCapturedView:Landroid/view/View;
+
+.field private mDragState:I
+
+.field private mEdgeDragsInProgress:[I
+
+.field private mEdgeDragsLocked:[I
+
+.field private mEdgeSize:I
+
+.field private mInitialEdgesTouched:[I
+
+.field private mInitialMotionX:[F
+
+.field private mInitialMotionY:[F
+
+.field private mLastMotionX:[F
+
+.field private mLastMotionY:[F
+
+.field private mMaxVelocity:F
+
+.field private mMinVelocity:F
+
+.field private final mParentView:Landroid/view/ViewGroup;
+
+.field private mPointersDown:I
+
+.field private mReleaseInProgress:Z
+
+.field private mScroller:Landroid/widget/Scroller;
+
+.field private final mSetIdleRunnable:Ljava/lang/Runnable;
+
+.field private mTouchSlop:I
+
+.field private mTrackingEdges:I
+
+.field private mVelocityTracker:Landroid/view/VelocityTracker;
+
+
+# direct methods
+.method public static constructor <clinit>()V
+    .locals 1
+
+    .line 1
+    new-instance v0, Lmiuix/internal/util/ViewDragHelper$1;
+
+    .line 2
+    .line 3
+    invoke-direct {v0}, Lmiuix/internal/util/ViewDragHelper$1;-><init>()V
+
+    .line 4
+    .line 5
+    .line 6
+    sput-object v0, Lmiuix/internal/util/ViewDragHelper;->sInterpolator:Landroid/view/animation/Interpolator;
+
+    .line 7
+    .line 8
+    return-void
+.end method
+
+.method private constructor <init>(Landroid/content/Context;Landroid/view/ViewGroup;Lmiuix/internal/util/ViewDragHelper$Callback;)V
+    .locals 1
+
+    .line 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 2
+    .line 3
+    .line 4
+    const/4 v0, -0x1
+
+    .line 5
+    iput v0, p0, Lmiuix/internal/util/ViewDragHelper;->mActivePointerId:I
+
+    .line 6
+    .line 7
+    new-instance v0, Lmiuix/internal/util/ViewDragHelper$2;
+
+    .line 8
+    .line 9
+    invoke-direct {v0, p0}, Lmiuix/internal/util/ViewDragHelper$2;-><init>(Lmiuix/internal/util/ViewDragHelper;)V
+
+    .line 10
+    .line 11
+    .line 12
+    iput-object v0, p0, Lmiuix/internal/util/ViewDragHelper;->mSetIdleRunnable:Ljava/lang/Runnable;
+
+    .line 13
+    .line 14
+    if-eqz p2, :cond_1
+
+    .line 15
+    .line 16
+    if-eqz p3, :cond_0
+
+    .line 17
+    .line 18
+    iput-object p2, p0, Lmiuix/internal/util/ViewDragHelper;->mParentView:Landroid/view/ViewGroup;
+
+    .line 19
+    .line 20
+    iput-object p3, p0, Lmiuix/internal/util/ViewDragHelper;->mCallback:Lmiuix/internal/util/ViewDragHelper$Callback;
+
+    .line 21
+    .line 22
+    invoke-static {p1}, Landroid/view/ViewConfiguration;->get(Landroid/content/Context;)Landroid/view/ViewConfiguration;
+
+    .line 23
+    .line 24
+    .line 25
+    move-result-object p2
+
+    .line 26
+    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    .line 27
+    .line 28
+    .line 29
+    move-result-object p3
+
+    .line 30
+    invoke-virtual {p3}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+
+    .line 31
+    .line 32
+    .line 33
+    move-result-object p3
+
+    .line 34
+    iget p3, p3, Landroid/util/DisplayMetrics;->density:F
+
+    .line 35
+    .line 36
+    const/high16 v0, 0x41a00000    # 20.0f
+
+    .line 37
+    .line 38
+    mul-float/2addr p3, v0
+
+    .line 39
+    const/high16 v0, 0x3f000000    # 0.5f
+
+    .line 40
+    .line 41
+    add-float/2addr p3, v0
+
+    .line 42
+    float-to-int p3, p3
+
+    .line 43
+    iput p3, p0, Lmiuix/internal/util/ViewDragHelper;->mEdgeSize:I
+
+    .line 44
+    .line 45
+    invoke-virtual {p2}, Landroid/view/ViewConfiguration;->getScaledTouchSlop()I
+
+    .line 46
+    .line 47
+    .line 48
+    move-result p3
+
+    .line 49
+    iput p3, p0, Lmiuix/internal/util/ViewDragHelper;->mTouchSlop:I
+
+    .line 50
+    .line 51
+    invoke-virtual {p2}, Landroid/view/ViewConfiguration;->getScaledMaximumFlingVelocity()I
+
+    .line 52
+    .line 53
+    .line 54
+    move-result p3
+
+    .line 55
+    int-to-float p3, p3
+
+    .line 56
+    iput p3, p0, Lmiuix/internal/util/ViewDragHelper;->mMaxVelocity:F
+
+    .line 57
+    .line 58
+    invoke-virtual {p2}, Landroid/view/ViewConfiguration;->getScaledMinimumFlingVelocity()I
+
+    .line 59
+    .line 60
+    .line 61
+    move-result p2
+
+    .line 62
+    int-to-float p2, p2
+
+    .line 63
+    iput p2, p0, Lmiuix/internal/util/ViewDragHelper;->mMinVelocity:F
+
+    .line 64
+    .line 65
+    new-instance p2, Landroid/widget/Scroller;
+
+    .line 66
+    .line 67
+    sget-object p3, Lmiuix/internal/util/ViewDragHelper;->sInterpolator:Landroid/view/animation/Interpolator;
+
+    .line 68
+    .line 69
+    invoke-direct {p2, p1, p3}, Landroid/widget/Scroller;-><init>(Landroid/content/Context;Landroid/view/animation/Interpolator;)V
+
+    .line 70
+    .line 71
+    .line 72
+    iput-object p2, p0, Lmiuix/internal/util/ViewDragHelper;->mScroller:Landroid/widget/Scroller;
+
+    .line 73
+    .line 74
+    return-void
+
+    .line 75
+    :cond_0
+    new-instance p0, Ljava/lang/IllegalArgumentException;
+
+    .line 76
+    .line 77
+    const-string p1, "Callback may not be null"
+
+    .line 78
+    .line 79
+    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    .line 80
+    .line 81
+    .line 82
+    throw p0
+
+    .line 83
+    :cond_1
+    new-instance p0, Ljava/lang/IllegalArgumentException;
+
+    .line 84
+    .line 85
+    const-string p1, "Parent view may not be null"
+
+    .line 86
+    .line 87
+    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    .line 88
+    .line 89
+    .line 90
+    throw p0
+.end method
+
+.method private checkNewEdgeDrag(FFII)Z
+    .locals 3
+
+    .line 1
+    invoke-static {p1}, Ljava/lang/Math;->abs(F)F
+
+    .line 2
+    .line 3
+    .line 4
+    move-result p1
+
+    .line 5
+    invoke-static {p2}, Ljava/lang/Math;->abs(F)F
+
+    .line 6
+    .line 7
+    .line 8
+    move-result p2
+
+    .line 9
+    iget-object v0, p0, Lmiuix/internal/util/ViewDragHelper;->mInitialEdgesTouched:[I
+
+    .line 10
+    .line 11
+    aget v0, v0, p3
+
+    .line 12
+    .line 13
+    and-int/2addr v0, p4
+
+    .line 14
+    const/4 v1, 0x0
+
+    .line 15
+    if-ne v0, p4, :cond_2
+
+    .line 16
+    .line 17
+    iget v0, p0, Lmiuix/internal/util/ViewDragHelper;->mTrackingEdges:I
+
+    .line 18
+    .line 19
+    and-int/2addr v0, p4
+
+    .line 20
+    if-eqz v0, :cond_2
+
+    .line 21
+    .line 22
+    iget-object v0, p0, Lmiuix/internal/util/ViewDragHelper;->mEdgeDragsLocked:[I
+
+    .line 23
+    .line 24
+    aget v0, v0, p3
+
+    .line 25
+    .line 26
+    and-int/2addr v0, p4
+
+    .line 27
+    if-eq v0, p4, :cond_2
+
+    .line 28
+    .line 29
+    iget-object v0, p0, Lmiuix/internal/util/ViewDragHelper;->mEdgeDragsInProgress:[I
+
+    .line 30
+    .line 31
+    aget v0, v0, p3
+
+    .line 32
+    .line 33
+    and-int/2addr v0, p4
+
+    .line 34
+    if-eq v0, p4, :cond_2
+
+    .line 35
+    .line 36
+    iget v0, p0, Lmiuix/internal/util/ViewDragHelper;->mTouchSlop:I
+
+    .line 37
+    .line 38
+    int-to-float v2, v0
+
+    .line 39
+    cmpg-float v2, p1, v2
+
+    .line 40
+    .line 41
+    if-gtz v2, :cond_0
+
+    .line 42
+    .line 43
+    int-to-float v0, v0
+
+    .line 44
+    cmpg-float v0, p2, v0
+
+    .line 45
+    .line 46
+    if-gtz v0, :cond_0
+
+    .line 47
+    .line 48
+    goto :goto_0
+
+    .line 49
+    :cond_0
+    const/high16 v0, 0x3f000000    # 0.5f
+
+    .line 50
+    .line 51
+    mul-float/2addr p2, v0
+
+    .line 52
+    cmpg-float p2, p1, p2
+
+    .line 53
+    .line 54
+    if-gez p2, :cond_1
+
+    .line 55
+    .line 56
+    iget-object p2, p0, Lmiuix/internal/util/ViewDragHelper;->mCallback:Lmiuix/internal/util/ViewDragHelper$Callback;
+
+    .line 57
+    .line 58
+    invoke-virtual {p2, p4}, Lmiuix/internal/util/ViewDragHelper$Callback;->onEdgeLock(I)Z
+
+    .line 59
+    .line 60
+    .line 61
+    move-result p2
+
+    .line 62
+    if-eqz p2, :cond_1
+
+    .line 63
+    .line 64
+    iget-object p0, p0, Lmiuix/internal/util/ViewDragHelper;->mEdgeDragsLocked:[I
+
+    .line 65
+    .line 66
+    aget p1, p0, p3
+
+    .line 67
+    .line 68
+    or-int/2addr p1, p4
+
+    .line 69
+    aput p1, p0, p3
+
+    .line 70
+    .line 71
+    return v1
+
+    .line 72
+    :cond_1
+    iget-object p2, p0, Lmiuix/internal/util/ViewDragHelper;->mEdgeDragsInProgress:[I
+
+    .line 73
+    .line 74
+    aget p2, p2, p3
+
+    .line 75
+    .line 76
+    and-int/2addr p2, p4
+
+    .line 77
+    if-nez p2, :cond_2
+
+    .line 78
+    .line 79
+    iget p0, p0, Lmiuix/internal/util/ViewDragHelper;->mTouchSlop:I
+
+    .line 80
+    .line 81
+    int-to-float p0, p0
+
+    .line 82
+    cmpl-float p0, p1, p0
+
+    .line 83
+    .line 84
+    if-lez p0, :cond_2
+
+    .line 85
+    .line 86
+    const/4 v1, 0x1
+
+    .line 87
+    :cond_2
+    :goto_0
+    return v1
+.end method
+
+.method private checkTouchSlop(Landroid/view/View;FF)Z
+    .locals 4
+
+    const/4 v0, 0x0
+
+    if-nez p1, :cond_0
+
+    return v0
+
+    .line 1
+    :cond_0
+    iget-object v1, p0, Lmiuix/internal/util/ViewDragHelper;->mCallback:Lmiuix/internal/util/ViewDragHelper$Callback;
+
+    invoke-virtual {v1, p1}, Lmiuix/internal/util/ViewDragHelper$Callback;->getViewHorizontalDragRange(Landroid/view/View;)I
+
+    move-result v1
+
+    const/4 v2, 0x1
+
+    if-lez v1, :cond_1
+
+    move v1, v2
+
+    goto :goto_0
+
+    :cond_1
+    move v1, v0
+
+    .line 2
+    :goto_0
+    iget-object v3, p0, Lmiuix/internal/util/ViewDragHelper;->mCallback:Lmiuix/internal/util/ViewDragHelper$Callback;
+
+    invoke-virtual {v3, p1}, Lmiuix/internal/util/ViewDragHelper$Callback;->getViewVerticalDragRange(Landroid/view/View;)I
+
+    move-result p1
+
+    if-lez p1, :cond_2
+
+    move p1, v2
+
+    goto :goto_1
+
+    :cond_2
+    move p1, v0
+
+    :goto_1
+    if-eqz v1, :cond_4
+
+    if-eqz p1, :cond_4
+
+    mul-float/2addr p2, p2
+
+    mul-float/2addr p3, p3
+
+    add-float/2addr p2, p3
+
+    .line 3
+    iget p0, p0, Lmiuix/internal/util/ViewDragHelper;->mTouchSlop:I
+
+    mul-int/2addr p0, p0
+
+    int-to-float p0, p0
+
+    cmpl-float p0, p2, p0
+
+    if-lez p0, :cond_3
+
+    move v0, v2
+
+    :cond_3
+    return v0
+
+    :cond_4
+    if-eqz v1, :cond_6
+
+    .line 4
+    invoke-static {p3}, Ljava/lang/Math;->abs(F)F
+
+    move-result p1
+
+    iget p3, p0, Lmiuix/internal/util/ViewDragHelper;->mTouchSlop:I
+
+    int-to-float p3, p3
+
+    cmpg-float p1, p1, p3
+
+    if-gez p1, :cond_5
+
+    invoke-static {p2}, Ljava/lang/Math;->abs(F)F
+
+    move-result p1
+
+    iget p0, p0, Lmiuix/internal/util/ViewDragHelper;->mTouchSlop:I
+
+    int-to-float p0, p0
+
+    cmpl-float p0, p1, p0
+
+    if-lez p0, :cond_5
+
+    move v0, v2
+
+    :cond_5
+    return v0
+
+    :cond_6
+    if-eqz p1, :cond_7
+
+    .line 5
+    invoke-static {p2}, Ljava/lang/Math;->abs(F)F
+
+    move-result p1
+
+    iget p2, p0, Lmiuix/internal/util/ViewDragHelper;->mTouchSlop:I
+
+    int-to-float p2, p2
+
+    cmpg-float p1, p1, p2
+
+    if-gez p1, :cond_7
+
+    invoke-static {p3}, Ljava/lang/Math;->abs(F)F
+
+    move-result p1
+
+    iget p0, p0, Lmiuix/internal/util/ViewDragHelper;->mTouchSlop:I
+
+    int-to-float p0, p0
+
+    cmpl-float p0, p1, p0
+
+    if-lez p0, :cond_7
+
+    move v0, v2
+
+    :cond_7
+    return v0
+.end method
+
+.method private clampMag(FFF)F
+    .locals 1
+
+    .line 2
+    invoke-static {p1}, Ljava/lang/Math;->abs(F)F
+
+    move-result p0
+
+    cmpg-float p2, p0, p2
+
+    const/4 v0, 0x0
+
+    if-gez p2, :cond_0
+
+    return v0
+
+    :cond_0
+    cmpl-float p0, p0, p3
+
+    if-lez p0, :cond_2
+
+    cmpl-float p0, p1, v0
+
+    if-lez p0, :cond_1
+
+    goto :goto_0
+
+    :cond_1
+    neg-float p3, p3
+
+    :goto_0
+    return p3
+
+    :cond_2
+    return p1
+.end method
+
+.method private clampMag(III)I
+    .locals 0
+
+    .line 1
+    invoke-static {p1}, Ljava/lang/Math;->abs(I)I
+
+    move-result p0
+
+    if-ge p0, p2, :cond_0
+
+    const/4 p0, 0x0
+
+    return p0
+
+    :cond_0
+    if-le p0, p3, :cond_2
+
+    if-lez p1, :cond_1
+
+    goto :goto_0
+
+    :cond_1
+    neg-int p3, p3
+
+    :goto_0
+    return p3
+
+    :cond_2
+    return p1
+.end method
+
+.method private clearMotionHistory()V
+    .locals 2
+
+    .line 1
+    iget-object v0, p0, Lmiuix/internal/util/ViewDragHelper;->mInitialMotionX:[F
+
+    if-nez v0, :cond_0
+
+    return-void
+
+    :cond_0
+    const/4 v1, 0x0
+
+    .line 2
+    invoke-static {v0, v1}, Ljava/util/Arrays;->fill([FF)V
+
+    .line 3
+    iget-object v0, p0, Lmiuix/internal/util/ViewDragHelper;->mInitialMotionY:[F
+
+    invoke-static {v0, v1}, Ljava/util/Arrays;->fill([FF)V
+
+    .line 4
+    iget-object v0, p0, Lmiuix/internal/util/ViewDragHelper;->mLastMotionX:[F
+
+    invoke-static {v0, v1}, Ljava/util/Arrays;->fill([FF)V
+
+    .line 5
+    iget-object v0, p0, Lmiuix/internal/util/ViewDragHelper;->mLastMotionY:[F
+
+    invoke-static {v0, v1}, Ljava/util/Arrays;->fill([FF)V
+
+    .line 6
+    iget-object v0, p0, Lmiuix/internal/util/ViewDragHelper;->mInitialEdgesTouched:[I
+
+    const/4 v1, 0x0
+
+    invoke-static {v0, v1}, Ljava/util/Arrays;->fill([II)V
+
+    .line 7
+    iget-object v0, p0, Lmiuix/internal/util/ViewDragHelper;->mEdgeDragsInProgress:[I
+
+    invoke-static {v0, v1}, Ljava/util/Arrays;->fill([II)V
+
+    .line 8
+    iget-object v0, p0, Lmiuix/internal/util/ViewDragHelper;->mEdgeDragsLocked:[I
+
+    invoke-static {v0, v1}, Ljava/util/Arrays;->fill([II)V
+
+    .line 9
+    iput v1, p0, Lmiuix/internal/util/ViewDragHelper;->mPointersDown:I
+
+    return-void
+.end method
+
+.method private clearMotionHistory(I)V
+    .locals 2
+
+    .line 10
+    iget-object v0, p0, Lmiuix/internal/util/ViewDragHelper;->mInitialMotionX:[F
+
+    if-eqz v0, :cond_1
+
+    invoke-virtual {p0, p1}, Lmiuix/internal/util/ViewDragHelper;->isPointerDown(I)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    goto :goto_0
+
+    .line 11
+    :cond_0
+    iget-object v0, p0, Lmiuix/internal/util/ViewDragHelper;->mInitialMotionX:[F
+
+    const/4 v1, 0x0
+
+    aput v1, v0, p1
+
+    .line 12
+    iget-object v0, p0, Lmiuix/internal/util/ViewDragHelper;->mInitialMotionY:[F
+
+    aput v1, v0, p1
+
+    .line 13
+    iget-object v0, p0, Lmiuix/internal/util/ViewDragHelper;->mLastMotionX:[F
+
+    aput v1, v0, p1
+
+    .line 14
+    iget-object v0, p0, Lmiuix/internal/util/ViewDragHelper;->mLastMotionY:[F
+
+    aput v1, v0, p1
+
+    .line 15
+    iget-object v0, p0, Lmiuix/internal/util/ViewDragHelper;->mInitialEdgesTouched:[I
+
+    const/4 v1, 0x0
+
+    aput v1, v0, p1
+
+    .line 16
+    iget-object v0, p0, Lmiuix/internal/util/ViewDragHelper;->mEdgeDragsInProgress:[I
+
+    aput v1, v0, p1
+
+    .line 17
+    iget-object v0, p0, Lmiuix/internal/util/ViewDragHelper;->mEdgeDragsLocked:[I
+
+    aput v1, v0, p1
+
+    .line 18
+    iget v0, p0, Lmiuix/internal/util/ViewDragHelper;->mPointersDown:I
+
+    const/4 v1, 0x1
+
+    shl-int p1, v1, p1
+
+    not-int p1, p1
+
+    and-int/2addr p1, v0
+
+    iput p1, p0, Lmiuix/internal/util/ViewDragHelper;->mPointersDown:I
+
+    :cond_1
+    :goto_0
+    return-void
+.end method
+
+.method private computeAxisDuration(III)I
+    .locals 4
+
+    .line 1
+    const/4 v0, 0x0
+
+    .line 2
+    if-nez p1, :cond_0
+
+    .line 3
+    .line 4
+    return v0
+
+    .line 5
+    :cond_0
+    iget-object v1, p0, Lmiuix/internal/util/ViewDragHelper;->mParentView:Landroid/view/ViewGroup;
+
+    .line 6
+    .line 7
+    invoke-virtual {v1}, Landroid/view/View;->getWidth()I
+
+    .line 8
+    .line 9
+    .line 10
+    move-result v1
+
+    .line 11
+    div-int/lit8 v2, v1, 0x2
+
+    .line 12
+    .line 13
+    invoke-static {p1}, Ljava/lang/Math;->abs(I)I
+
+    .line 14
+    .line 15
+    .line 16
+    move-result v3
+
+    .line 17
+    int-to-float v3, v3
+
+    .line 18
+    int-to-float v1, v1
+
+    .line 19
+    div-float/2addr v3, v1
+
+    .line 20
+    const/high16 v1, 0x3f800000    # 1.0f
+
+    .line 21
+    .line 22
+    invoke-static {v1, v3}, Ljava/lang/Math;->min(FF)F
+
+    .line 23
+    .line 24
+    .line 25
+    move-result v3
+
+    .line 26
+    int-to-float v2, v2
+
+    .line 27
+    invoke-direct {p0, v3}, Lmiuix/internal/util/ViewDragHelper;->distanceInfluenceForSnapDuration(F)F
+
+    .line 28
+    .line 29
+    .line 30
+    move-result p0
+
+    .line 31
+    mul-float/2addr p0, v2
+
+    .line 32
+    add-float/2addr v2, p0
+
+    .line 33
+    invoke-static {p2}, Ljava/lang/Math;->abs(I)I
+
+    .line 34
+    .line 35
+    .line 36
+    move-result p0
+
+    .line 37
+    if-lez p0, :cond_1
+
+    .line 38
+    .line 39
+    int-to-float p0, p0
+
+    .line 40
+    div-float/2addr v2, p0
+
+    .line 41
+    invoke-static {v2}, Ljava/lang/Math;->abs(F)F
+
+    .line 42
+    .line 43
+    .line 44
+    move-result p0
+
+    .line 45
+    const/high16 p1, 0x447a0000    # 1000.0f
+
+    .line 46
+    .line 47
+    mul-float/2addr p0, p1
+
+    .line 48
+    invoke-static {p0}, Ljava/lang/Math;->round(F)I
+
+    .line 49
+    .line 50
+    .line 51
+    move-result p0
+
+    .line 52
+    mul-int/lit8 v0, p0, 0x4
+
+    .line 53
+    .line 54
+    goto :goto_0
+
+    .line 55
+    :cond_1
+    if-nez p3, :cond_2
+
+    .line 56
+    .line 57
+    goto :goto_0
+
+    .line 58
+    :cond_2
+    invoke-static {p1}, Ljava/lang/Math;->abs(I)I
+
+    .line 59
+    .line 60
+    .line 61
+    move-result p0
+
+    .line 62
+    int-to-float p0, p0
+
+    .line 63
+    int-to-float p1, p3
+
+    .line 64
+    div-float/2addr p0, p1
+
+    .line 65
+    add-float/2addr p0, v1
+
+    .line 66
+    const/high16 p1, 0x43800000    # 256.0f
+
+    .line 67
+    .line 68
+    mul-float/2addr p0, p1
+
+    .line 69
+    float-to-int v0, p0
+
+    .line 70
+    :goto_0
+    const/16 p0, 0x258
+
+    .line 71
+    .line 72
+    invoke-static {v0, p0}, Ljava/lang/Math;->min(II)I
+
+    .line 73
+    .line 74
+    .line 75
+    move-result p0
+
+    .line 76
+    return p0
+.end method
+
+.method private computeSettleDuration(Landroid/view/View;IIII)I
+    .locals 6
+
+    .line 1
+    iget v0, p0, Lmiuix/internal/util/ViewDragHelper;->mMinVelocity:F
+
+    .line 2
+    .line 3
+    float-to-int v0, v0
+
+    .line 4
+    iget v1, p0, Lmiuix/internal/util/ViewDragHelper;->mMaxVelocity:F
+
+    .line 5
+    .line 6
+    float-to-int v1, v1
+
+    .line 7
+    invoke-direct {p0, p4, v0, v1}, Lmiuix/internal/util/ViewDragHelper;->clampMag(III)I
+
+    .line 8
+    .line 9
+    .line 10
+    move-result p4
+
+    .line 11
+    iget v0, p0, Lmiuix/internal/util/ViewDragHelper;->mMinVelocity:F
+
+    .line 12
+    .line 13
+    float-to-int v0, v0
+
+    .line 14
+    iget v1, p0, Lmiuix/internal/util/ViewDragHelper;->mMaxVelocity:F
+
+    .line 15
+    .line 16
+    float-to-int v1, v1
+
+    .line 17
+    invoke-direct {p0, p5, v0, v1}, Lmiuix/internal/util/ViewDragHelper;->clampMag(III)I
+
+    .line 18
+    .line 19
+    .line 20
+    move-result p5
+
+    .line 21
+    invoke-static {p2}, Ljava/lang/Math;->abs(I)I
+
+    .line 22
+    .line 23
+    .line 24
+    move-result v0
+
+    .line 25
+    invoke-static {p3}, Ljava/lang/Math;->abs(I)I
+
+    .line 26
+    .line 27
+    .line 28
+    move-result v1
+
+    .line 29
+    invoke-static {p4}, Ljava/lang/Math;->abs(I)I
+
+    .line 30
+    .line 31
+    .line 32
+    move-result v2
+
+    .line 33
+    invoke-static {p5}, Ljava/lang/Math;->abs(I)I
+
+    .line 34
+    .line 35
+    .line 36
+    move-result v3
+
+    .line 37
+    add-int v4, v2, v3
+
+    .line 38
+    .line 39
+    add-int v5, v0, v1
+
+    .line 40
+    .line 41
+    if-eqz p4, :cond_0
+
+    .line 42
+    .line 43
+    int-to-float v0, v2
+
+    .line 44
+    int-to-float v2, v4
+
+    .line 45
+    goto :goto_0
+
+    .line 46
+    :cond_0
+    int-to-float v0, v0
+
+    .line 47
+    int-to-float v2, v5
+
+    .line 48
+    :goto_0
+    div-float/2addr v0, v2
+
+    .line 49
+    if-eqz p5, :cond_1
+
+    .line 50
+    .line 51
+    int-to-float v1, v3
+
+    .line 52
+    int-to-float v2, v4
+
+    .line 53
+    goto :goto_1
+
+    .line 54
+    :cond_1
+    int-to-float v1, v1
+
+    .line 55
+    int-to-float v2, v5
+
+    .line 56
+    :goto_1
+    div-float/2addr v1, v2
+
+    .line 57
+    iget-object v2, p0, Lmiuix/internal/util/ViewDragHelper;->mCallback:Lmiuix/internal/util/ViewDragHelper$Callback;
+
+    .line 58
+    .line 59
+    invoke-virtual {v2, p1}, Lmiuix/internal/util/ViewDragHelper$Callback;->getViewHorizontalDragRange(Landroid/view/View;)I
+
+    .line 60
+    .line 61
+    .line 62
+    move-result v2
+
+    .line 63
+    invoke-direct {p0, p2, p4, v2}, Lmiuix/internal/util/ViewDragHelper;->computeAxisDuration(III)I
+
+    .line 64
+    .line 65
+    .line 66
+    move-result p2
+
+    .line 67
+    iget-object p4, p0, Lmiuix/internal/util/ViewDragHelper;->mCallback:Lmiuix/internal/util/ViewDragHelper$Callback;
+
+    .line 68
+    .line 69
+    invoke-virtual {p4, p1}, Lmiuix/internal/util/ViewDragHelper$Callback;->getViewVerticalDragRange(Landroid/view/View;)I
+
+    .line 70
+    .line 71
+    .line 72
+    move-result p1
+
+    .line 73
+    invoke-direct {p0, p3, p5, p1}, Lmiuix/internal/util/ViewDragHelper;->computeAxisDuration(III)I
+
+    .line 74
+    .line 75
+    .line 76
+    move-result p0
+
+    .line 77
+    int-to-float p1, p2
+
+    .line 78
+    mul-float/2addr p1, v0
+
+    .line 79
+    int-to-float p0, p0
+
+    .line 80
+    mul-float/2addr p0, v1
+
+    .line 81
+    add-float/2addr p1, p0
+
+    .line 82
+    float-to-int p0, p1
+
+    .line 83
+    return p0
+.end method
+
+.method public static create(Landroid/view/ViewGroup;FLmiuix/internal/util/ViewDragHelper$Callback;)Lmiuix/internal/util/ViewDragHelper;
+    .locals 1
+
+    .line 2
+    invoke-static {p0, p2}, Lmiuix/internal/util/ViewDragHelper;->create(Landroid/view/ViewGroup;Lmiuix/internal/util/ViewDragHelper$Callback;)Lmiuix/internal/util/ViewDragHelper;
+
+    move-result-object p0
+
+    .line 3
+    iget p2, p0, Lmiuix/internal/util/ViewDragHelper;->mTouchSlop:I
+
+    int-to-float p2, p2
+
+    const/high16 v0, 0x3f800000    # 1.0f
+
+    div-float/2addr v0, p1
+
+    mul-float/2addr p2, v0
+
+    float-to-int p1, p2
+
+    iput p1, p0, Lmiuix/internal/util/ViewDragHelper;->mTouchSlop:I
+
+    return-object p0
+.end method
+
+.method public static create(Landroid/view/ViewGroup;Lmiuix/internal/util/ViewDragHelper$Callback;)Lmiuix/internal/util/ViewDragHelper;
+    .locals 2
+
+    .line 1
+    new-instance v0, Lmiuix/internal/util/ViewDragHelper;
+
+    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1, p0, p1}, Lmiuix/internal/util/ViewDragHelper;-><init>(Landroid/content/Context;Landroid/view/ViewGroup;Lmiuix/internal/util/ViewDragHelper$Callback;)V
+
+    return-object v0
+.end method
+
+.method private dispatchViewReleased(FF)V
+    .locals 3
+
+    .line 1
+    const/4 v0, 0x1
+
+    .line 2
+    iput-boolean v0, p0, Lmiuix/internal/util/ViewDragHelper;->mReleaseInProgress:Z
+
+    .line 3
+    .line 4
+    iget-object v1, p0, Lmiuix/internal/util/ViewDragHelper;->mCallback:Lmiuix/internal/util/ViewDragHelper$Callback;
+
+    .line 5
+    .line 6
+    iget-object v2, p0, Lmiuix/internal/util/ViewDragHelper;->mCapturedView:Landroid/view/View;
+
+    .line 7
+    .line 8
+    invoke-virtual {v1, v2, p1, p2}, Lmiuix/internal/util/ViewDragHelper$Callback;->onViewReleased(Landroid/view/View;FF)V
+
+    .line 9
+    .line 10
+    .line 11
+    const/4 p1, 0x0
+
+    .line 12
+    iput-boolean p1, p0, Lmiuix/internal/util/ViewDragHelper;->mReleaseInProgress:Z
+
+    .line 13
+    .line 14
+    iget p2, p0, Lmiuix/internal/util/ViewDragHelper;->mDragState:I
+
+    .line 15
+    .line 16
+    if-ne p2, v0, :cond_0
+
+    .line 17
+    .line 18
+    invoke-virtual {p0, p1}, Lmiuix/internal/util/ViewDragHelper;->setDragState(I)V
+
+    .line 19
+    .line 20
+    .line 21
+    :cond_0
+    return-void
+.end method
+
+.method private distanceInfluenceForSnapDuration(F)F
+    .locals 2
+
+    .line 1
+    const/high16 p0, 0x3f000000    # 0.5f
+
+    .line 2
+    .line 3
+    sub-float/2addr p1, p0
+
+    .line 4
+    float-to-double p0, p1
+
+    .line 5
+    const-wide v0, 0x3fde28c7460698c7L    # 0.4712389167638204
+
+    .line 6
+    .line 7
+    .line 8
+    .line 9
+    .line 10
+    mul-double/2addr p0, v0
+
+    .line 11
+    double-to-float p0, p0
+
+    .line 12
+    float-to-double p0, p0
+
+    .line 13
+    invoke-static {p0, p1}, Ljava/lang/Math;->sin(D)D
+
+    .line 14
+    .line 15
+    .line 16
+    move-result-wide p0
+
+    .line 17
+    double-to-float p0, p0
+
+    .line 18
+    return p0
+.end method
+
+.method private dragTo(IIII)V
+    .locals 10
+
+    .line 1
+    iget-object v0, p0, Lmiuix/internal/util/ViewDragHelper;->mCapturedView:Landroid/view/View;
+
+    .line 2
+    .line 3
+    invoke-virtual {v0}, Landroid/view/View;->getLeft()I
+
+    .line 4
+    .line 5
+    .line 6
+    move-result v0
+
+    .line 7
+    iget-object v1, p0, Lmiuix/internal/util/ViewDragHelper;->mCapturedView:Landroid/view/View;
+
+    .line 8
+    .line 9
+    invoke-virtual {v1}, Landroid/view/View;->getTop()I
+
+    .line 10
+    .line 11
+    .line 12
+    move-result v1
+
+    .line 13
+    if-eqz p3, :cond_0
+
+    .line 14
+    .line 15
+    iget-object v2, p0, Lmiuix/internal/util/ViewDragHelper;->mCallback:Lmiuix/internal/util/ViewDragHelper$Callback;
+
+    .line 16
+    .line 17
+    iget-object v3, p0, Lmiuix/internal/util/ViewDragHelper;->mCapturedView:Landroid/view/View;
+
+    .line 18
+    .line 19
+    invoke-virtual {v2, v3, p1, p3}, Lmiuix/internal/util/ViewDragHelper$Callback;->clampViewPositionHorizontal(Landroid/view/View;II)I
+
+    .line 20
+    .line 21
+    .line 22
+    move-result p1
+
+    .line 23
+    iget-object v2, p0, Lmiuix/internal/util/ViewDragHelper;->mCapturedView:Landroid/view/View;
+
+    .line 24
+    .line 25
+    sub-int v3, p1, v0
+
+    .line 26
+    .line 27
+    invoke-virtual {v2, v3}, Landroid/view/View;->offsetLeftAndRight(I)V
+
+    .line 28
+    .line 29
+    .line 30
+    :cond_0
+    move v6, p1
+
+    .line 31
+    if-eqz p4, :cond_1
+
+    .line 32
+    .line 33
+    iget-object p1, p0, Lmiuix/internal/util/ViewDragHelper;->mCallback:Lmiuix/internal/util/ViewDragHelper$Callback;
+
+    .line 34
+    .line 35
+    iget-object v2, p0, Lmiuix/internal/util/ViewDragHelper;->mCapturedView:Landroid/view/View;
+
+    .line 36
+    .line 37
+    invoke-virtual {p1, v2, p2, p4}, Lmiuix/internal/util/ViewDragHelper$Callback;->clampViewPositionVertical(Landroid/view/View;II)I
+
+    .line 38
+    .line 39
+    .line 40
+    move-result p2
+
+    .line 41
+    iget-object p1, p0, Lmiuix/internal/util/ViewDragHelper;->mCapturedView:Landroid/view/View;
+
+    .line 42
+    .line 43
+    sub-int v2, p2, v1
+
+    .line 44
+    .line 45
+    invoke-virtual {p1, v2}, Landroid/view/View;->offsetTopAndBottom(I)V
+
+    .line 46
+    .line 47
+    .line 48
+    :cond_1
+    move v7, p2
+
+    .line 49
+    if-nez p3, :cond_2
+
+    .line 50
+    .line 51
+    if-eqz p4, :cond_3
+
+    .line 52
+    .line 53
+    :cond_2
+    sub-int v8, v6, v0
+
+    .line 54
+    .line 55
+    sub-int v9, v7, v1
+
+    .line 56
+    .line 57
+    iget-object v4, p0, Lmiuix/internal/util/ViewDragHelper;->mCallback:Lmiuix/internal/util/ViewDragHelper$Callback;
+
+    .line 58
+    .line 59
+    iget-object v5, p0, Lmiuix/internal/util/ViewDragHelper;->mCapturedView:Landroid/view/View;
+
+    .line 60
+    .line 61
+    invoke-virtual/range {v4 .. v9}, Lmiuix/internal/util/ViewDragHelper$Callback;->onViewPositionChanged(Landroid/view/View;IIII)V
+
+    .line 62
+    .line 63
+    .line 64
+    :cond_3
+    return-void
+.end method
+
+.method private ensureMotionHistorySizeForId(I)V
+    .locals 9
+
+    .line 1
+    iget-object v0, p0, Lmiuix/internal/util/ViewDragHelper;->mInitialMotionX:[F
+
+    .line 2
+    .line 3
+    if-eqz v0, :cond_0
+
+    .line 4
+    .line 5
+    array-length v1, v0
+
+    .line 6
+    if-gt v1, p1, :cond_2
+
+    .line 7
+    .line 8
+    :cond_0
+    add-int/lit8 p1, p1, 0x1
+
+    .line 9
+    .line 10
+    new-array v1, p1, [F
+
+    .line 11
+    .line 12
+    new-array v2, p1, [F
+
+    .line 13
+    .line 14
+    new-array v3, p1, [F
+
+    .line 15
+    .line 16
+    new-array v4, p1, [F
+
+    .line 17
+    .line 18
+    new-array v5, p1, [I
+
+    .line 19
+    .line 20
+    new-array v6, p1, [I
+
+    .line 21
+    .line 22
+    new-array p1, p1, [I
+
+    .line 23
+    .line 24
+    if-eqz v0, :cond_1
+
+    .line 25
+    .line 26
+    array-length v7, v0
+
+    .line 27
+    const/4 v8, 0x0
+
+    .line 28
+    invoke-static {v0, v8, v1, v8, v7}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+
+    .line 29
+    .line 30
+    .line 31
+    iget-object v0, p0, Lmiuix/internal/util/ViewDragHelper;->mInitialMotionY:[F
+
+    .line 32
+    .line 33
+    array-length v7, v0
+
+    .line 34
+    invoke-static {v0, v8, v2, v8, v7}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+
+    .line 35
+    .line 36
+    .line 37
+    iget-object v0, p0, Lmiuix/internal/util/ViewDragHelper;->mLastMotionX:[F
+
+    .line 38
+    .line 39
+    array-length v7, v0
+
+    .line 40
+    invoke-static {v0, v8, v3, v8, v7}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+
+    .line 41
+    .line 42
+    .line 43
+    iget-object v0, p0, Lmiuix/internal/util/ViewDragHelper;->mLastMotionY:[F
+
+    .line 44
+    .line 45
+    array-length v7, v0
+
+    .line 46
+    invoke-static {v0, v8, v4, v8, v7}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+
+    .line 47
+    .line 48
+    .line 49
+    iget-object v0, p0, Lmiuix/internal/util/ViewDragHelper;->mInitialEdgesTouched:[I
+
+    .line 50
+    .line 51
+    array-length v7, v0
+
+    .line 52
+    invoke-static {v0, v8, v5, v8, v7}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+
+    .line 53
+    .line 54
+    .line 55
+    iget-object v0, p0, Lmiuix/internal/util/ViewDragHelper;->mEdgeDragsInProgress:[I
+
+    .line 56
+    .line 57
+    array-length v7, v0
+
+    .line 58
+    invoke-static {v0, v8, v6, v8, v7}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+
+    .line 59
+    .line 60
+    .line 61
+    iget-object v0, p0, Lmiuix/internal/util/ViewDragHelper;->mEdgeDragsLocked:[I
+
+    .line 62
+    .line 63
+    array-length v7, v0
+
+    .line 64
+    invoke-static {v0, v8, p1, v8, v7}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+
+    .line 65
+    .line 66
+    .line 67
+    :cond_1
+    iput-object v1, p0, Lmiuix/internal/util/ViewDragHelper;->mInitialMotionX:[F
+
+    .line 68
+    .line 69
+    iput-object v2, p0, Lmiuix/internal/util/ViewDragHelper;->mInitialMotionY:[F
+
+    .line 70
+    .line 71
+    iput-object v3, p0, Lmiuix/internal/util/ViewDragHelper;->mLastMotionX:[F
+
+    .line 72
+    .line 73
+    iput-object v4, p0, Lmiuix/internal/util/ViewDragHelper;->mLastMotionY:[F
+
+    .line 74
+    .line 75
+    iput-object v5, p0, Lmiuix/internal/util/ViewDragHelper;->mInitialEdgesTouched:[I
+
+    .line 76
+    .line 77
+    iput-object v6, p0, Lmiuix/internal/util/ViewDragHelper;->mEdgeDragsInProgress:[I
+
+    .line 78
+    .line 79
+    iput-object p1, p0, Lmiuix/internal/util/ViewDragHelper;->mEdgeDragsLocked:[I
+
+    .line 80
+    .line 81
+    :cond_2
+    return-void
+.end method
+
+.method private forceSettleCapturedViewAt(IIII)Z
+    .locals 10
+
+    .line 1
+    iget-object v0, p0, Lmiuix/internal/util/ViewDragHelper;->mCapturedView:Landroid/view/View;
+
+    .line 2
+    .line 3
+    invoke-virtual {v0}, Landroid/view/View;->getLeft()I
+
+    .line 4
+    .line 5
+    .line 6
+    move-result v2
+
+    .line 7
+    iget-object v0, p0, Lmiuix/internal/util/ViewDragHelper;->mCapturedView:Landroid/view/View;
+
+    .line 8
+    .line 9
+    invoke-virtual {v0}, Landroid/view/View;->getTop()I
+
+    .line 10
+    .line 11
+    .line 12
+    move-result v3
+
+    .line 13
+    sub-int/2addr p1, v2
+
+    .line 14
+    sub-int/2addr p2, v3
+
+    .line 15
+    if-nez p1, :cond_0
+
+    .line 16
+    .line 17
+    if-nez p2, :cond_0
+
+    .line 18
+    .line 19
+    iget-object p1, p0, Lmiuix/internal/util/ViewDragHelper;->mScroller:Landroid/widget/Scroller;
+
+    .line 20
+    .line 21
+    invoke-virtual {p1}, Landroid/widget/Scroller;->abortAnimation()V
+
+    .line 22
+    .line 23
+    .line 24
+    const/4 p1, 0x0
+
+    .line 25
+    invoke-virtual {p0, p1}, Lmiuix/internal/util/ViewDragHelper;->setDragState(I)V
+
+    .line 26
+    .line 27
+    .line 28
+    return p1
+
+    .line 29
+    :cond_0
+    iget-object v5, p0, Lmiuix/internal/util/ViewDragHelper;->mCapturedView:Landroid/view/View;
+
+    .line 30
+    .line 31
+    move-object v4, p0
+
+    .line 32
+    move v6, p1
+
+    .line 33
+    move v7, p2
+
+    .line 34
+    move v8, p3
+
+    .line 35
+    move v9, p4
+
+    .line 36
+    invoke-direct/range {v4 .. v9}, Lmiuix/internal/util/ViewDragHelper;->computeSettleDuration(Landroid/view/View;IIII)I
+
+    .line 37
+    .line 38
+    .line 39
+    move-result v6
+
+    .line 40
+    iget-object v1, p0, Lmiuix/internal/util/ViewDragHelper;->mScroller:Landroid/widget/Scroller;
+
+    .line 41
+    .line 42
+    move v4, p1
+
+    .line 43
+    move v5, p2
+
+    .line 44
+    invoke-virtual/range {v1 .. v6}, Landroid/widget/Scroller;->startScroll(IIIII)V
+
+    .line 45
+    .line 46
+    .line 47
+    const/4 p1, 0x2
+
+    .line 48
+    invoke-virtual {p0, p1}, Lmiuix/internal/util/ViewDragHelper;->setDragState(I)V
+
+    .line 49
+    .line 50
+    .line 51
+    const/4 p0, 0x1
+
+    .line 52
+    return p0
+.end method
+
+.method private getEdgesTouched(II)I
+    .locals 3
+
+    .line 1
+    iget-object v0, p0, Lmiuix/internal/util/ViewDragHelper;->mParentView:Landroid/view/ViewGroup;
+
+    .line 2
+    .line 3
+    invoke-virtual {v0}, Landroid/view/View;->getLeft()I
+
+    .line 4
+    .line 5
+    .line 6
+    move-result v0
+
+    .line 7
+    iget v1, p0, Lmiuix/internal/util/ViewDragHelper;->mEdgeSize:I
+
+    .line 8
+    .line 9
+    add-int/2addr v0, v1
+
+    .line 10
+    if-ge p1, v0, :cond_0
+
+    .line 11
+    .line 12
+    const/4 v0, 0x1
+
+    .line 13
+    goto :goto_0
+
+    .line 14
+    :cond_0
+    const/4 v0, 0x0
+
+    .line 15
+    :goto_0
+    iget-object v1, p0, Lmiuix/internal/util/ViewDragHelper;->mParentView:Landroid/view/ViewGroup;
+
+    .line 16
+    .line 17
+    invoke-virtual {v1}, Landroid/view/View;->getTop()I
+
+    .line 18
+    .line 19
+    .line 20
+    move-result v1
+
+    .line 21
+    iget v2, p0, Lmiuix/internal/util/ViewDragHelper;->mEdgeSize:I
+
+    .line 22
+    .line 23
+    add-int/2addr v1, v2
+
+    .line 24
+    if-ge p2, v1, :cond_1
+
+    .line 25
+    .line 26
+    or-int/lit8 v0, v0, 0x4
+
+    .line 27
+    .line 28
+    :cond_1
+    iget-object v1, p0, Lmiuix/internal/util/ViewDragHelper;->mParentView:Landroid/view/ViewGroup;
+
+    .line 29
+    .line 30
+    invoke-virtual {v1}, Landroid/view/View;->getRight()I
+
+    .line 31
+    .line 32
+    .line 33
+    move-result v1
+
+    .line 34
+    iget v2, p0, Lmiuix/internal/util/ViewDragHelper;->mEdgeSize:I
+
+    .line 35
+    .line 36
+    sub-int/2addr v1, v2
+
+    .line 37
+    if-le p1, v1, :cond_2
+
+    .line 38
+    .line 39
+    or-int/lit8 v0, v0, 0x2
+
+    .line 40
+    .line 41
+    :cond_2
+    iget-object p1, p0, Lmiuix/internal/util/ViewDragHelper;->mParentView:Landroid/view/ViewGroup;
+
+    .line 42
+    .line 43
+    invoke-virtual {p1}, Landroid/view/View;->getBottom()I
+
+    .line 44
+    .line 45
+    .line 46
+    move-result p1
+
+    .line 47
+    iget p0, p0, Lmiuix/internal/util/ViewDragHelper;->mEdgeSize:I
+
+    .line 48
+    .line 49
+    sub-int/2addr p1, p0
+
+    .line 50
+    if-le p2, p1, :cond_3
+
+    .line 51
+    .line 52
+    or-int/lit8 v0, v0, 0x8
+
+    .line 53
+    .line 54
+    :cond_3
+    return v0
+.end method
+
+.method private isValidPointerForActionMove(I)Z
+    .locals 1
+
+    .line 1
+    invoke-virtual {p0, p1}, Lmiuix/internal/util/ViewDragHelper;->isPointerDown(I)Z
+
+    .line 2
+    .line 3
+    .line 4
+    move-result p0
+
+    .line 5
+    if-nez p0, :cond_0
+
+    .line 6
+    .line 7
+    new-instance p0, Ljava/lang/StringBuilder;
+
+    .line 8
+    .line 9
+    invoke-direct {p0}, Ljava/lang/StringBuilder;-><init>()V
+
+    .line 10
+    .line 11
+    .line 12
+    const-string v0, "Ignoring pointerId="
+
+    .line 13
+    .line 14
+    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 15
+    .line 16
+    .line 17
+    invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    .line 18
+    .line 19
+    .line 20
+    const-string p1, " because ACTION_DOWN was not received for this pointer before ACTION_MOVE. It likely happened because  ViewDragHelper did not receive all the events in the event stream."
+
+    .line 21
+    .line 22
+    invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 23
+    .line 24
+    .line 25
+    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    .line 26
+    .line 27
+    .line 28
+    move-result-object p0
+
+    .line 29
+    const-string p1, "ViewDragHelper"
+
+    .line 30
+    .line 31
+    invoke-static {p1, p0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 32
+    .line 33
+    .line 34
+    const/4 p0, 0x0
+
+    .line 35
+    return p0
+
+    .line 36
+    :cond_0
+    const/4 p0, 0x1
+
+    .line 37
+    return p0
+.end method
+
+.method private releaseViewForPointerUp()V
+    .locals 4
+
+    .line 1
+    iget-object v0, p0, Lmiuix/internal/util/ViewDragHelper;->mVelocityTracker:Landroid/view/VelocityTracker;
+
+    .line 2
+    .line 3
+    const/16 v1, 0x3e8
+
+    .line 4
+    .line 5
+    iget v2, p0, Lmiuix/internal/util/ViewDragHelper;->mMaxVelocity:F
+
+    .line 6
+    .line 7
+    invoke-virtual {v0, v1, v2}, Landroid/view/VelocityTracker;->computeCurrentVelocity(IF)V
+
+    .line 8
+    .line 9
+    .line 10
+    iget-object v0, p0, Lmiuix/internal/util/ViewDragHelper;->mVelocityTracker:Landroid/view/VelocityTracker;
+
+    .line 11
+    .line 12
+    iget v1, p0, Lmiuix/internal/util/ViewDragHelper;->mActivePointerId:I
+
+    .line 13
+    .line 14
+    invoke-virtual {v0, v1}, Landroid/view/VelocityTracker;->getXVelocity(I)F
+
+    .line 15
+    .line 16
+    .line 17
+    move-result v0
+
+    .line 18
+    iget v1, p0, Lmiuix/internal/util/ViewDragHelper;->mMinVelocity:F
+
+    .line 19
+    .line 20
+    iget v2, p0, Lmiuix/internal/util/ViewDragHelper;->mMaxVelocity:F
+
+    .line 21
+    .line 22
+    invoke-direct {p0, v0, v1, v2}, Lmiuix/internal/util/ViewDragHelper;->clampMag(FFF)F
+
+    .line 23
+    .line 24
+    .line 25
+    move-result v0
+
+    .line 26
+    iget-object v1, p0, Lmiuix/internal/util/ViewDragHelper;->mVelocityTracker:Landroid/view/VelocityTracker;
+
+    .line 27
+    .line 28
+    iget v2, p0, Lmiuix/internal/util/ViewDragHelper;->mActivePointerId:I
+
+    .line 29
+    .line 30
+    invoke-virtual {v1, v2}, Landroid/view/VelocityTracker;->getYVelocity(I)F
+
+    .line 31
+    .line 32
+    .line 33
+    move-result v1
+
+    .line 34
+    iget v2, p0, Lmiuix/internal/util/ViewDragHelper;->mMinVelocity:F
+
+    .line 35
+    .line 36
+    iget v3, p0, Lmiuix/internal/util/ViewDragHelper;->mMaxVelocity:F
+
+    .line 37
+    .line 38
+    invoke-direct {p0, v1, v2, v3}, Lmiuix/internal/util/ViewDragHelper;->clampMag(FFF)F
+
+    .line 39
+    .line 40
+    .line 41
+    move-result v1
+
+    .line 42
+    invoke-direct {p0, v0, v1}, Lmiuix/internal/util/ViewDragHelper;->dispatchViewReleased(FF)V
+
+    .line 43
+    .line 44
+    .line 45
+    return-void
+.end method
+
+.method private reportNewEdgeDrags(FFI)V
+    .locals 2
+
+    .line 1
+    const/4 v0, 0x1
+
+    .line 2
+    invoke-direct {p0, p1, p2, p3, v0}, Lmiuix/internal/util/ViewDragHelper;->checkNewEdgeDrag(FFII)Z
+
+    .line 3
+    .line 4
+    .line 5
+    move-result v0
+
+    .line 6
+    const/4 v1, 0x4
+
+    .line 7
+    invoke-direct {p0, p2, p1, p3, v1}, Lmiuix/internal/util/ViewDragHelper;->checkNewEdgeDrag(FFII)Z
+
+    .line 8
+    .line 9
+    .line 10
+    move-result v1
+
+    .line 11
+    if-eqz v1, :cond_0
+
+    .line 12
+    .line 13
+    or-int/lit8 v0, v0, 0x4
+
+    .line 14
+    .line 15
+    :cond_0
+    const/4 v1, 0x2
+
+    .line 16
+    invoke-direct {p0, p1, p2, p3, v1}, Lmiuix/internal/util/ViewDragHelper;->checkNewEdgeDrag(FFII)Z
+
+    .line 17
+    .line 18
+    .line 19
+    move-result v1
+
+    .line 20
+    if-eqz v1, :cond_1
+
+    .line 21
+    .line 22
+    or-int/lit8 v0, v0, 0x2
+
+    .line 23
+    .line 24
+    :cond_1
+    const/16 v1, 0x8
+
+    .line 25
+    .line 26
+    invoke-direct {p0, p2, p1, p3, v1}, Lmiuix/internal/util/ViewDragHelper;->checkNewEdgeDrag(FFII)Z
+
+    .line 27
+    .line 28
+    .line 29
+    move-result p1
+
+    .line 30
+    if-eqz p1, :cond_2
+
+    .line 31
+    .line 32
+    or-int/lit8 v0, v0, 0x8
+
+    .line 33
+    .line 34
+    :cond_2
+    if-eqz v0, :cond_3
+
+    .line 35
+    .line 36
+    iget-object p1, p0, Lmiuix/internal/util/ViewDragHelper;->mEdgeDragsInProgress:[I
+
+    .line 37
+    .line 38
+    aget p2, p1, p3
+
+    .line 39
+    .line 40
+    or-int/2addr p2, v0
+
+    .line 41
+    aput p2, p1, p3
+
+    .line 42
+    .line 43
+    iget-object p0, p0, Lmiuix/internal/util/ViewDragHelper;->mCallback:Lmiuix/internal/util/ViewDragHelper$Callback;
+
+    .line 44
+    .line 45
+    invoke-virtual {p0, v0, p3}, Lmiuix/internal/util/ViewDragHelper$Callback;->onEdgeDragStarted(II)V
+
+    .line 46
+    .line 47
+    .line 48
+    :cond_3
+    return-void
+.end method
+
+.method private saveInitialMotion(FFI)V
+    .locals 2
+
+    .line 1
+    invoke-direct {p0, p3}, Lmiuix/internal/util/ViewDragHelper;->ensureMotionHistorySizeForId(I)V
+
+    .line 2
+    .line 3
+    .line 4
+    iget-object v0, p0, Lmiuix/internal/util/ViewDragHelper;->mInitialMotionX:[F
+
+    .line 5
+    .line 6
+    iget-object v1, p0, Lmiuix/internal/util/ViewDragHelper;->mLastMotionX:[F
+
+    .line 7
+    .line 8
+    aput p1, v1, p3
+
+    .line 9
+    .line 10
+    aput p1, v0, p3
+
+    .line 11
+    .line 12
+    iget-object v0, p0, Lmiuix/internal/util/ViewDragHelper;->mInitialMotionY:[F
+
+    .line 13
+    .line 14
+    iget-object v1, p0, Lmiuix/internal/util/ViewDragHelper;->mLastMotionY:[F
+
+    .line 15
+    .line 16
+    aput p2, v1, p3
+
+    .line 17
+    .line 18
+    aput p2, v0, p3
+
+    .line 19
+    .line 20
+    iget-object v0, p0, Lmiuix/internal/util/ViewDragHelper;->mInitialEdgesTouched:[I
+
+    .line 21
+    .line 22
+    float-to-int p1, p1
+
+    .line 23
+    float-to-int p2, p2
+
+    .line 24
+    invoke-direct {p0, p1, p2}, Lmiuix/internal/util/ViewDragHelper;->getEdgesTouched(II)I
+
+    .line 25
+    .line 26
+    .line 27
+    move-result p1
+
+    .line 28
+    aput p1, v0, p3
+
+    .line 29
+    .line 30
+    iget p1, p0, Lmiuix/internal/util/ViewDragHelper;->mPointersDown:I
+
+    .line 31
+    .line 32
+    const/4 p2, 0x1
+
+    .line 33
+    shl-int/2addr p2, p3
+
+    .line 34
+    or-int/2addr p1, p2
+
+    .line 35
+    iput p1, p0, Lmiuix/internal/util/ViewDragHelper;->mPointersDown:I
+
+    .line 36
+    .line 37
+    return-void
+.end method
+
+.method private saveLastMotion(Landroid/view/MotionEvent;)V
+    .locals 6
+
+    .line 1
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getPointerCount()I
+
+    .line 2
+    .line 3
+    .line 4
+    move-result v0
+
+    .line 5
+    const/4 v1, 0x0
+
+    .line 6
+    :goto_0
+    if-ge v1, v0, :cond_1
+
+    .line 7
+    .line 8
+    invoke-virtual {p1, v1}, Landroid/view/MotionEvent;->getPointerId(I)I
+
+    .line 9
+    .line 10
+    .line 11
+    move-result v2
+
+    .line 12
+    invoke-direct {p0, v2}, Lmiuix/internal/util/ViewDragHelper;->isValidPointerForActionMove(I)Z
+
+    .line 13
+    .line 14
+    .line 15
+    move-result v3
+
+    .line 16
+    if-nez v3, :cond_0
+
+    .line 17
+    .line 18
+    goto :goto_1
+
+    .line 19
+    :cond_0
+    invoke-virtual {p1, v1}, Landroid/view/MotionEvent;->getX(I)F
+
+    .line 20
+    .line 21
+    .line 22
+    move-result v3
+
+    .line 23
+    invoke-virtual {p1, v1}, Landroid/view/MotionEvent;->getY(I)F
+
+    .line 24
+    .line 25
+    .line 26
+    move-result v4
+
+    .line 27
+    iget-object v5, p0, Lmiuix/internal/util/ViewDragHelper;->mLastMotionX:[F
+
+    .line 28
+    .line 29
+    aput v3, v5, v2
+
+    .line 30
+    .line 31
+    iget-object v3, p0, Lmiuix/internal/util/ViewDragHelper;->mLastMotionY:[F
+
+    .line 32
+    .line 33
+    aput v4, v3, v2
+
+    .line 34
+    .line 35
+    :goto_1
+    add-int/lit8 v1, v1, 0x1
+
+    .line 36
+    .line 37
+    goto :goto_0
+
+    .line 38
+    :cond_1
+    return-void
+.end method
+
+
+# virtual methods
+.method public abort()V
+    .locals 9
+
+    .line 1
+    invoke-virtual {p0}, Lmiuix/internal/util/ViewDragHelper;->cancel()V
+
+    .line 2
+    .line 3
+    .line 4
+    iget v0, p0, Lmiuix/internal/util/ViewDragHelper;->mDragState:I
+
+    .line 5
+    .line 6
+    const/4 v1, 0x2
+
+    .line 7
+    if-ne v0, v1, :cond_0
+
+    .line 8
+    .line 9
+    iget-object v0, p0, Lmiuix/internal/util/ViewDragHelper;->mScroller:Landroid/widget/Scroller;
+
+    .line 10
+    .line 11
+    invoke-virtual {v0}, Landroid/widget/Scroller;->getCurrX()I
+
+    .line 12
+    .line 13
+    .line 14
+    move-result v0
+
+    .line 15
+    iget-object v1, p0, Lmiuix/internal/util/ViewDragHelper;->mScroller:Landroid/widget/Scroller;
+
+    .line 16
+    .line 17
+    invoke-virtual {v1}, Landroid/widget/Scroller;->getCurrY()I
+
+    .line 18
+    .line 19
+    .line 20
+    move-result v1
+
+    .line 21
+    iget-object v2, p0, Lmiuix/internal/util/ViewDragHelper;->mScroller:Landroid/widget/Scroller;
+
+    .line 22
+    .line 23
+    invoke-virtual {v2}, Landroid/widget/Scroller;->abortAnimation()V
+
+    .line 24
+    .line 25
+    .line 26
+    iget-object v2, p0, Lmiuix/internal/util/ViewDragHelper;->mScroller:Landroid/widget/Scroller;
+
+    .line 27
+    .line 28
+    invoke-virtual {v2}, Landroid/widget/Scroller;->getCurrX()I
+
+    .line 29
+    .line 30
+    .line 31
+    move-result v5
+
+    .line 32
+    iget-object v2, p0, Lmiuix/internal/util/ViewDragHelper;->mScroller:Landroid/widget/Scroller;
+
+    .line 33
+    .line 34
+    invoke-virtual {v2}, Landroid/widget/Scroller;->getCurrY()I
+
+    .line 35
+    .line 36
+    .line 37
+    move-result v6
+
+    .line 38
+    iget-object v3, p0, Lmiuix/internal/util/ViewDragHelper;->mCallback:Lmiuix/internal/util/ViewDragHelper$Callback;
+
+    .line 39
+    .line 40
+    iget-object v4, p0, Lmiuix/internal/util/ViewDragHelper;->mCapturedView:Landroid/view/View;
+
+    .line 41
+    .line 42
+    sub-int v7, v5, v0
+
+    .line 43
+    .line 44
+    sub-int v8, v6, v1
+
+    .line 45
+    .line 46
+    invoke-virtual/range {v3 .. v8}, Lmiuix/internal/util/ViewDragHelper$Callback;->onViewPositionChanged(Landroid/view/View;IIII)V
+
+    .line 47
+    .line 48
+    .line 49
+    :cond_0
+    const/4 v0, 0x0
+
+    .line 50
+    invoke-virtual {p0, v0}, Lmiuix/internal/util/ViewDragHelper;->setDragState(I)V
+
+    .line 51
+    .line 52
+    .line 53
+    return-void
+.end method
+
+.method public canScroll(Landroid/view/View;ZIIII)Z
+    .locals 13
+
+    .line 1
+    move-object v0, p1
+
+    .line 2
+    instance-of v1, v0, Landroid/view/ViewGroup;
+
+    .line 3
+    .line 4
+    const/4 v2, 0x1
+
+    .line 5
+    if-eqz v1, :cond_1
+
+    .line 6
+    .line 7
+    move-object v1, v0
+
+    .line 8
+    check-cast v1, Landroid/view/ViewGroup;
+
+    .line 9
+    .line 10
+    invoke-virtual {p1}, Landroid/view/View;->getScrollX()I
+
+    .line 11
+    .line 12
+    .line 13
+    move-result v3
+
+    .line 14
+    invoke-virtual {p1}, Landroid/view/View;->getScrollY()I
+
+    .line 15
+    .line 16
+    .line 17
+    move-result v4
+
+    .line 18
+    invoke-virtual {v1}, Landroid/view/ViewGroup;->getChildCount()I
+
+    .line 19
+    .line 20
+    .line 21
+    move-result v5
+
+    .line 22
+    sub-int/2addr v5, v2
+
+    .line 23
+    :goto_0
+    if-ltz v5, :cond_1
+
+    .line 24
+    .line 25
+    invoke-virtual {v1, v5}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
+
+    .line 26
+    .line 27
+    .line 28
+    move-result-object v7
+
+    .line 29
+    add-int v6, p5, v3
+
+    .line 30
+    .line 31
+    invoke-virtual {v7}, Landroid/view/View;->getLeft()I
+
+    .line 32
+    .line 33
+    .line 34
+    move-result v8
+
+    .line 35
+    if-lt v6, v8, :cond_0
+
+    .line 36
+    .line 37
+    invoke-virtual {v7}, Landroid/view/View;->getRight()I
+
+    .line 38
+    .line 39
+    .line 40
+    move-result v8
+
+    .line 41
+    if-ge v6, v8, :cond_0
+
+    .line 42
+    .line 43
+    add-int v8, p6, v4
+
+    .line 44
+    .line 45
+    invoke-virtual {v7}, Landroid/view/View;->getTop()I
+
+    .line 46
+    .line 47
+    .line 48
+    move-result v9
+
+    .line 49
+    if-lt v8, v9, :cond_0
+
+    .line 50
+    .line 51
+    invoke-virtual {v7}, Landroid/view/View;->getBottom()I
+
+    .line 52
+    .line 53
+    .line 54
+    move-result v9
+
+    .line 55
+    if-ge v8, v9, :cond_0
+
+    .line 56
+    .line 57
+    const/4 v9, 0x1
+
+    .line 58
+    invoke-virtual {v7}, Landroid/view/View;->getLeft()I
+
+    .line 59
+    .line 60
+    .line 61
+    move-result v10
+
+    .line 62
+    sub-int v11, v6, v10
+
+    .line 63
+    .line 64
+    invoke-virtual {v7}, Landroid/view/View;->getTop()I
+
+    .line 65
+    .line 66
+    .line 67
+    move-result v6
+
+    .line 68
+    sub-int v12, v8, v6
+
+    .line 69
+    .line 70
+    move-object v6, p0
+
+    .line 71
+    move v8, v9
+
+    .line 72
+    move/from16 v9, p3
+
+    .line 73
+    .line 74
+    move/from16 v10, p4
+
+    .line 75
+    .line 76
+    invoke-virtual/range {v6 .. v12}, Lmiuix/internal/util/ViewDragHelper;->canScroll(Landroid/view/View;ZIIII)Z
+
+    .line 77
+    .line 78
+    .line 79
+    move-result v6
+
+    .line 80
+    if-eqz v6, :cond_0
+
+    .line 81
+    .line 82
+    return v2
+
+    .line 83
+    :cond_0
+    add-int/lit8 v5, v5, -0x1
+
+    .line 84
+    .line 85
+    goto :goto_0
+
+    .line 86
+    :cond_1
+    if-eqz p2, :cond_2
+
+    .line 87
+    .line 88
+    move/from16 v1, p3
+
+    .line 89
+    .line 90
+    neg-int v1, v1
+
+    .line 91
+    invoke-virtual {p1, v1}, Landroid/view/View;->canScrollHorizontally(I)Z
+
+    .line 92
+    .line 93
+    .line 94
+    move-result v1
+
+    .line 95
+    if-nez v1, :cond_3
+
+    .line 96
+    .line 97
+    move/from16 v1, p4
+
+    .line 98
+    .line 99
+    neg-int v1, v1
+
+    .line 100
+    invoke-virtual {p1, v1}, Landroid/view/View;->canScrollVertically(I)Z
+
+    .line 101
+    .line 102
+    .line 103
+    move-result v0
+
+    .line 104
+    if-eqz v0, :cond_2
+
+    .line 105
+    .line 106
+    goto :goto_1
+
+    .line 107
+    :cond_2
+    const/4 v2, 0x0
+
+    .line 108
+    :cond_3
+    :goto_1
+    return v2
+.end method
+
+.method public cancel()V
+    .locals 1
+
+    .line 1
+    const/4 v0, -0x1
+
+    .line 2
+    iput v0, p0, Lmiuix/internal/util/ViewDragHelper;->mActivePointerId:I
+
+    .line 3
+    .line 4
+    invoke-direct {p0}, Lmiuix/internal/util/ViewDragHelper;->clearMotionHistory()V
+
+    .line 5
+    .line 6
+    .line 7
+    iget-object v0, p0, Lmiuix/internal/util/ViewDragHelper;->mVelocityTracker:Landroid/view/VelocityTracker;
+
+    .line 8
+    .line 9
+    if-eqz v0, :cond_0
+
+    .line 10
+    .line 11
+    invoke-virtual {v0}, Landroid/view/VelocityTracker;->recycle()V
+
+    .line 12
+    .line 13
+    .line 14
+    const/4 v0, 0x0
+
+    .line 15
+    iput-object v0, p0, Lmiuix/internal/util/ViewDragHelper;->mVelocityTracker:Landroid/view/VelocityTracker;
+
+    .line 16
+    .line 17
+    :cond_0
+    return-void
+.end method
+
+.method public captureChildView(Landroid/view/View;I)V
+    .locals 2
+
+    .line 1
+    invoke-virtual {p1}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    iget-object v1, p0, Lmiuix/internal/util/ViewDragHelper;->mParentView:Landroid/view/ViewGroup;
+
+    .line 6
+    .line 7
+    if-ne v0, v1, :cond_0
+
+    .line 8
+    .line 9
+    iput-object p1, p0, Lmiuix/internal/util/ViewDragHelper;->mCapturedView:Landroid/view/View;
+
+    .line 10
+    .line 11
+    iput p2, p0, Lmiuix/internal/util/ViewDragHelper;->mActivePointerId:I
+
+    .line 12
+    .line 13
+    iget-object v0, p0, Lmiuix/internal/util/ViewDragHelper;->mCallback:Lmiuix/internal/util/ViewDragHelper$Callback;
+
+    .line 14
+    .line 15
+    invoke-virtual {v0, p1, p2}, Lmiuix/internal/util/ViewDragHelper$Callback;->onViewCaptured(Landroid/view/View;I)V
+
+    .line 16
+    .line 17
+    .line 18
+    const/4 p1, 0x1
+
+    .line 19
+    invoke-virtual {p0, p1}, Lmiuix/internal/util/ViewDragHelper;->setDragState(I)V
+
+    .line 20
+    .line 21
+    .line 22
+    return-void
+
+    .line 23
+    :cond_0
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    .line 24
+    .line 25
+    new-instance p2, Ljava/lang/StringBuilder;
+
+    .line 26
+    .line 27
+    invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
+
+    .line 28
+    .line 29
+    .line 30
+    const-string v0, "captureChildView: parameter must be a descendant of the ViewDragHelper\'s tracked parent view ("
+
+    .line 31
+    .line 32
+    invoke-virtual {p2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 33
+    .line 34
+    .line 35
+    iget-object p0, p0, Lmiuix/internal/util/ViewDragHelper;->mParentView:Landroid/view/ViewGroup;
+
+    .line 36
+    .line 37
+    invoke-virtual {p2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    .line 38
+    .line 39
+    .line 40
+    const-string p0, ")"
+
+    .line 41
+    .line 42
+    invoke-virtual {p2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 43
+    .line 44
+    .line 45
+    invoke-virtual {p2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    .line 46
+    .line 47
+    .line 48
+    move-result-object p0
+
+    .line 49
+    invoke-direct {p1, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    .line 50
+    .line 51
+    .line 52
+    throw p1
+.end method
+
+.method public checkTouchSlop(I)Z
+    .locals 4
+
+    .line 6
+    iget-object v0, p0, Lmiuix/internal/util/ViewDragHelper;->mInitialMotionX:[F
+
+    array-length v0, v0
+
+    const/4 v1, 0x0
+
+    move v2, v1
+
+    :goto_0
+    if-ge v2, v0, :cond_1
+
+    .line 7
+    invoke-virtual {p0, p1, v2}, Lmiuix/internal/util/ViewDragHelper;->checkTouchSlop(II)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_0
+
+    const/4 p0, 0x1
+
+    return p0
+
+    :cond_0
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_0
+
+    :cond_1
+    return v1
+.end method
+
+.method public checkTouchSlop(II)Z
+    .locals 6
+
+    .line 8
+    invoke-virtual {p0, p2}, Lmiuix/internal/util/ViewDragHelper;->isPointerDown(I)Z
+
+    move-result v0
+
+    const/4 v1, 0x0
+
+    if-nez v0, :cond_0
+
+    return v1
+
+    :cond_0
+    and-int/lit8 v0, p1, 0x1
+
+    const/4 v2, 0x1
+
+    if-ne v0, v2, :cond_1
+
+    move v0, v2
+
+    goto :goto_0
+
+    :cond_1
+    move v0, v1
+
+    :goto_0
+    const/4 v3, 0x2
+
+    and-int/2addr p1, v3
+
+    if-ne p1, v3, :cond_2
+
+    move p1, v2
+
+    goto :goto_1
+
+    :cond_2
+    move p1, v1
+
+    .line 9
+    :goto_1
+    iget-object v3, p0, Lmiuix/internal/util/ViewDragHelper;->mLastMotionX:[F
+
+    aget v3, v3, p2
+
+    iget-object v4, p0, Lmiuix/internal/util/ViewDragHelper;->mInitialMotionX:[F
+
+    aget v4, v4, p2
+
+    sub-float/2addr v3, v4
+
+    .line 10
+    iget-object v4, p0, Lmiuix/internal/util/ViewDragHelper;->mLastMotionY:[F
+
+    aget v4, v4, p2
+
+    iget-object v5, p0, Lmiuix/internal/util/ViewDragHelper;->mInitialMotionY:[F
+
+    aget p2, v5, p2
+
+    sub-float/2addr v4, p2
+
+    if-eqz v0, :cond_4
+
+    if-eqz p1, :cond_4
+
+    mul-float/2addr v3, v3
+
+    mul-float/2addr v4, v4
+
+    add-float/2addr v3, v4
+
+    .line 11
+    iget p0, p0, Lmiuix/internal/util/ViewDragHelper;->mTouchSlop:I
+
+    mul-int/2addr p0, p0
+
+    int-to-float p0, p0
+
+    cmpl-float p0, v3, p0
+
+    if-lez p0, :cond_3
+
+    move v1, v2
+
+    :cond_3
+    return v1
+
+    :cond_4
+    if-eqz v0, :cond_6
+
+    .line 12
+    invoke-static {v3}, Ljava/lang/Math;->abs(F)F
+
+    move-result p1
+
+    iget p0, p0, Lmiuix/internal/util/ViewDragHelper;->mTouchSlop:I
+
+    int-to-float p0, p0
+
+    cmpl-float p0, p1, p0
+
+    if-lez p0, :cond_5
+
+    move v1, v2
+
+    :cond_5
+    return v1
+
+    :cond_6
+    if-eqz p1, :cond_7
+
+    .line 13
+    invoke-static {v4}, Ljava/lang/Math;->abs(F)F
+
+    move-result p1
+
+    iget p0, p0, Lmiuix/internal/util/ViewDragHelper;->mTouchSlop:I
+
+    int-to-float p0, p0
+
+    cmpl-float p0, p1, p0
+
+    if-lez p0, :cond_7
+
+    move v1, v2
+
+    :cond_7
+    return v1
+.end method
+
+.method public continueSettling(Z)Z
+    .locals 11
+
+    .line 1
+    iget v0, p0, Lmiuix/internal/util/ViewDragHelper;->mDragState:I
+
+    .line 2
+    .line 3
+    const/4 v1, 0x0
+
+    .line 4
+    const/4 v2, 0x2
+
+    .line 5
+    if-ne v0, v2, :cond_6
+
+    .line 6
+    .line 7
+    iget-object v0, p0, Lmiuix/internal/util/ViewDragHelper;->mScroller:Landroid/widget/Scroller;
+
+    .line 8
+    .line 9
+    invoke-virtual {v0}, Landroid/widget/Scroller;->computeScrollOffset()Z
+
+    .line 10
+    .line 11
+    .line 12
+    move-result v0
+
+    .line 13
+    iget-object v3, p0, Lmiuix/internal/util/ViewDragHelper;->mScroller:Landroid/widget/Scroller;
+
+    .line 14
+    .line 15
+    invoke-virtual {v3}, Landroid/widget/Scroller;->getCurrX()I
+
+    .line 16
+    .line 17
+    .line 18
+    move-result v3
+
+    .line 19
+    iget-object v4, p0, Lmiuix/internal/util/ViewDragHelper;->mScroller:Landroid/widget/Scroller;
+
+    .line 20
+    .line 21
+    invoke-virtual {v4}, Landroid/widget/Scroller;->getCurrY()I
+
+    .line 22
+    .line 23
+    .line 24
+    move-result v10
+
+    .line 25
+    iget-object v4, p0, Lmiuix/internal/util/ViewDragHelper;->mCapturedView:Landroid/view/View;
+
+    .line 26
+    .line 27
+    invoke-virtual {v4}, Landroid/view/View;->getLeft()I
+
+    .line 28
+    .line 29
+    .line 30
+    move-result v4
+
+    .line 31
+    sub-int v8, v3, v4
+
+    .line 32
+    .line 33
+    iget-object v4, p0, Lmiuix/internal/util/ViewDragHelper;->mCapturedView:Landroid/view/View;
+
+    .line 34
+    .line 35
+    invoke-virtual {v4}, Landroid/view/View;->getTop()I
+
+    .line 36
+    .line 37
+    .line 38
+    move-result v4
+
+    .line 39
+    sub-int v9, v10, v4
+
+    .line 40
+    .line 41
+    if-eqz v8, :cond_0
+
+    .line 42
+    .line 43
+    iget-object v4, p0, Lmiuix/internal/util/ViewDragHelper;->mCapturedView:Landroid/view/View;
+
+    .line 44
+    .line 45
+    invoke-virtual {v4, v8}, Landroid/view/View;->offsetLeftAndRight(I)V
+
+    .line 46
+    .line 47
+    .line 48
+    :cond_0
+    if-eqz v9, :cond_1
+
+    .line 49
+    .line 50
+    iget-object v4, p0, Lmiuix/internal/util/ViewDragHelper;->mCapturedView:Landroid/view/View;
+
+    .line 51
+    .line 52
+    invoke-virtual {v4, v9}, Landroid/view/View;->offsetTopAndBottom(I)V
+
+    .line 53
+    .line 54
+    .line 55
+    :cond_1
+    if-nez v8, :cond_2
+
+    .line 56
+    .line 57
+    if-eqz v9, :cond_3
+
+    .line 58
+    .line 59
+    :cond_2
+    iget-object v4, p0, Lmiuix/internal/util/ViewDragHelper;->mCallback:Lmiuix/internal/util/ViewDragHelper$Callback;
+
+    .line 60
+    .line 61
+    iget-object v5, p0, Lmiuix/internal/util/ViewDragHelper;->mCapturedView:Landroid/view/View;
+
+    .line 62
+    .line 63
+    move v6, v3
+
+    .line 64
+    move v7, v10
+
+    .line 65
+    invoke-virtual/range {v4 .. v9}, Lmiuix/internal/util/ViewDragHelper$Callback;->onViewPositionChanged(Landroid/view/View;IIII)V
+
+    .line 66
+    .line 67
+    .line 68
+    :cond_3
+    if-eqz v0, :cond_4
+
+    .line 69
+    .line 70
+    iget-object v4, p0, Lmiuix/internal/util/ViewDragHelper;->mScroller:Landroid/widget/Scroller;
+
+    .line 71
+    .line 72
+    invoke-virtual {v4}, Landroid/widget/Scroller;->getFinalX()I
+
+    .line 73
+    .line 74
+    .line 75
+    move-result v4
+
+    .line 76
+    if-ne v3, v4, :cond_4
+
+    .line 77
+    .line 78
+    iget-object v3, p0, Lmiuix/internal/util/ViewDragHelper;->mScroller:Landroid/widget/Scroller;
+
+    .line 79
+    .line 80
+    invoke-virtual {v3}, Landroid/widget/Scroller;->getFinalY()I
+
+    .line 81
+    .line 82
+    .line 83
+    move-result v3
+
+    .line 84
+    if-ne v10, v3, :cond_4
+
+    .line 85
+    .line 86
+    iget-object v0, p0, Lmiuix/internal/util/ViewDragHelper;->mScroller:Landroid/widget/Scroller;
+
+    .line 87
+    .line 88
+    invoke-virtual {v0}, Landroid/widget/Scroller;->abortAnimation()V
+
+    .line 89
+    .line 90
+    .line 91
+    iget-object v0, p0, Lmiuix/internal/util/ViewDragHelper;->mScroller:Landroid/widget/Scroller;
+
+    .line 92
+    .line 93
+    invoke-virtual {v0}, Landroid/widget/Scroller;->isFinished()Z
+
+    .line 94
+    .line 95
+    .line 96
+    move-result v0
+
+    .line 97
+    :cond_4
+    if-nez v0, :cond_6
+
+    .line 98
+    .line 99
+    if-eqz p1, :cond_5
+
+    .line 100
+    .line 101
+    iget-object p1, p0, Lmiuix/internal/util/ViewDragHelper;->mParentView:Landroid/view/ViewGroup;
+
+    .line 102
+    .line 103
+    iget-object v0, p0, Lmiuix/internal/util/ViewDragHelper;->mSetIdleRunnable:Ljava/lang/Runnable;
+
+    .line 104
+    .line 105
+    invoke-virtual {p1, v0}, Landroid/view/View;->post(Ljava/lang/Runnable;)Z
+
+    .line 106
+    .line 107
+    .line 108
+    goto :goto_0
+
+    .line 109
+    :cond_5
+    invoke-virtual {p0, v1}, Lmiuix/internal/util/ViewDragHelper;->setDragState(I)V
+
+    .line 110
+    .line 111
+    .line 112
+    :cond_6
+    :goto_0
+    iget p0, p0, Lmiuix/internal/util/ViewDragHelper;->mDragState:I
+
+    .line 113
+    .line 114
+    if-ne p0, v2, :cond_7
+
+    .line 115
+    .line 116
+    const/4 v1, 0x1
+
+    .line 117
+    :cond_7
+    return v1
+.end method
+
+.method public findTopChildUnder(II)Landroid/view/View;
+    .locals 3
+
+    .line 1
+    iget-object v0, p0, Lmiuix/internal/util/ViewDragHelper;->mParentView:Landroid/view/ViewGroup;
+
+    .line 2
+    .line 3
+    invoke-virtual {v0}, Landroid/view/ViewGroup;->getChildCount()I
+
+    .line 4
+    .line 5
+    .line 6
+    move-result v0
+
+    .line 7
+    add-int/lit8 v0, v0, -0x1
+
+    .line 8
+    .line 9
+    :goto_0
+    if-ltz v0, :cond_1
+
+    .line 10
+    .line 11
+    iget-object v1, p0, Lmiuix/internal/util/ViewDragHelper;->mParentView:Landroid/view/ViewGroup;
+
+    .line 12
+    .line 13
+    iget-object v2, p0, Lmiuix/internal/util/ViewDragHelper;->mCallback:Lmiuix/internal/util/ViewDragHelper$Callback;
+
+    .line 14
+    .line 15
+    invoke-virtual {v2, v0}, Lmiuix/internal/util/ViewDragHelper$Callback;->getOrderedChildIndex(I)I
+
+    .line 16
+    .line 17
+    .line 18
+    move-result v2
+
+    .line 19
+    invoke-virtual {v1, v2}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
+
+    .line 20
+    .line 21
+    .line 22
+    move-result-object v1
+
+    .line 23
+    invoke-virtual {v1}, Landroid/view/View;->getLeft()I
+
+    .line 24
+    .line 25
+    .line 26
+    move-result v2
+
+    .line 27
+    if-lt p1, v2, :cond_0
+
+    .line 28
+    .line 29
+    invoke-virtual {v1}, Landroid/view/View;->getRight()I
+
+    .line 30
+    .line 31
+    .line 32
+    move-result v2
+
+    .line 33
+    if-ge p1, v2, :cond_0
+
+    .line 34
+    .line 35
+    invoke-virtual {v1}, Landroid/view/View;->getTop()I
+
+    .line 36
+    .line 37
+    .line 38
+    move-result v2
+
+    .line 39
+    if-lt p2, v2, :cond_0
+
+    .line 40
+    .line 41
+    invoke-virtual {v1}, Landroid/view/View;->getBottom()I
+
+    .line 42
+    .line 43
+    .line 44
+    move-result v2
+
+    .line 45
+    if-ge p2, v2, :cond_0
+
+    .line 46
+    .line 47
+    return-object v1
+
+    .line 48
+    :cond_0
+    add-int/lit8 v0, v0, -0x1
+
+    .line 49
+    .line 50
+    goto :goto_0
+
+    .line 51
+    :cond_1
+    const/4 p0, 0x0
+
+    .line 52
+    return-object p0
+.end method
+
+.method public flingCapturedView(IIII)V
+    .locals 10
+
+    .line 1
+    iget-boolean v0, p0, Lmiuix/internal/util/ViewDragHelper;->mReleaseInProgress:Z
+
+    .line 2
+    .line 3
+    if-eqz v0, :cond_0
+
+    .line 4
+    .line 5
+    iget-object v1, p0, Lmiuix/internal/util/ViewDragHelper;->mScroller:Landroid/widget/Scroller;
+
+    .line 6
+    .line 7
+    iget-object v0, p0, Lmiuix/internal/util/ViewDragHelper;->mCapturedView:Landroid/view/View;
+
+    .line 8
+    .line 9
+    invoke-virtual {v0}, Landroid/view/View;->getLeft()I
+
+    .line 10
+    .line 11
+    .line 12
+    move-result v2
+
+    .line 13
+    iget-object v0, p0, Lmiuix/internal/util/ViewDragHelper;->mCapturedView:Landroid/view/View;
+
+    .line 14
+    .line 15
+    invoke-virtual {v0}, Landroid/view/View;->getTop()I
+
+    .line 16
+    .line 17
+    .line 18
+    move-result v3
+
+    .line 19
+    iget-object v0, p0, Lmiuix/internal/util/ViewDragHelper;->mVelocityTracker:Landroid/view/VelocityTracker;
+
+    .line 20
+    .line 21
+    iget v4, p0, Lmiuix/internal/util/ViewDragHelper;->mActivePointerId:I
+
+    .line 22
+    .line 23
+    invoke-virtual {v0, v4}, Landroid/view/VelocityTracker;->getXVelocity(I)F
+
+    .line 24
+    .line 25
+    .line 26
+    move-result v0
+
+    .line 27
+    float-to-int v4, v0
+
+    .line 28
+    iget-object v0, p0, Lmiuix/internal/util/ViewDragHelper;->mVelocityTracker:Landroid/view/VelocityTracker;
+
+    .line 29
+    .line 30
+    iget v5, p0, Lmiuix/internal/util/ViewDragHelper;->mActivePointerId:I
+
+    .line 31
+    .line 32
+    invoke-virtual {v0, v5}, Landroid/view/VelocityTracker;->getYVelocity(I)F
+
+    .line 33
+    .line 34
+    .line 35
+    move-result v0
+
+    .line 36
+    float-to-int v5, v0
+
+    .line 37
+    move v6, p1
+
+    .line 38
+    move v7, p3
+
+    .line 39
+    move v8, p2
+
+    .line 40
+    move v9, p4
+
+    .line 41
+    invoke-virtual/range {v1 .. v9}, Landroid/widget/Scroller;->fling(IIIIIIII)V
+
+    .line 42
+    .line 43
+    .line 44
+    const/4 p1, 0x2
+
+    .line 45
+    invoke-virtual {p0, p1}, Lmiuix/internal/util/ViewDragHelper;->setDragState(I)V
+
+    .line 46
+    .line 47
+    .line 48
+    return-void
+
+    .line 49
+    :cond_0
+    new-instance p0, Ljava/lang/IllegalStateException;
+
+    .line 50
+    .line 51
+    const-string p1, "Cannot flingCapturedView outside of a call to Callback#onViewReleased"
+
+    .line 52
+    .line 53
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    .line 54
+    .line 55
+    .line 56
+    throw p0
+.end method
+
+.method public getActivePointerId()I
+    .locals 0
+
+    .line 1
+    iget p0, p0, Lmiuix/internal/util/ViewDragHelper;->mActivePointerId:I
+
+    .line 2
+    .line 3
+    return p0
+.end method
+
+.method public getCapturedView()Landroid/view/View;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lmiuix/internal/util/ViewDragHelper;->mCapturedView:Landroid/view/View;
+
+    .line 2
+    .line 3
+    return-object p0
+.end method
+
+.method public getEdgeSize()I
+    .locals 0
+
+    .line 1
+    iget p0, p0, Lmiuix/internal/util/ViewDragHelper;->mEdgeSize:I
+
+    .line 2
+    .line 3
+    return p0
+.end method
+
+.method public getMinVelocity()F
+    .locals 0
+
+    .line 1
+    iget p0, p0, Lmiuix/internal/util/ViewDragHelper;->mMinVelocity:F
+
+    .line 2
+    .line 3
+    return p0
+.end method
+
+.method public getTouchSlop()I
+    .locals 0
+
+    .line 1
+    iget p0, p0, Lmiuix/internal/util/ViewDragHelper;->mTouchSlop:I
+
+    .line 2
+    .line 3
+    return p0
+.end method
+
+.method public getViewDragState()I
+    .locals 0
+
+    .line 1
+    iget p0, p0, Lmiuix/internal/util/ViewDragHelper;->mDragState:I
+
+    .line 2
+    .line 3
+    return p0
+.end method
+
+.method public isCapturedViewUnder(II)Z
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lmiuix/internal/util/ViewDragHelper;->mCapturedView:Landroid/view/View;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0, v0, p1, p2}, Lmiuix/internal/util/ViewDragHelper;->isViewUnder(Landroid/view/View;II)Z
+
+    .line 4
+    .line 5
+    .line 6
+    move-result p0
+
+    .line 7
+    return p0
+.end method
+
+.method public isEdgeTouched(I)Z
+    .locals 4
+
+    .line 1
+    iget-object v0, p0, Lmiuix/internal/util/ViewDragHelper;->mInitialEdgesTouched:[I
+
+    array-length v0, v0
+
+    const/4 v1, 0x0
+
+    move v2, v1
+
+    :goto_0
+    if-ge v2, v0, :cond_1
+
+    .line 2
+    invoke-virtual {p0, p1, v2}, Lmiuix/internal/util/ViewDragHelper;->isEdgeTouched(II)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_0
+
+    const/4 p0, 0x1
+
+    return p0
+
+    :cond_0
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_0
+
+    :cond_1
+    return v1
+.end method
+
+.method public isEdgeTouched(II)Z
+    .locals 1
+
+    .line 3
+    invoke-virtual {p0, p2}, Lmiuix/internal/util/ViewDragHelper;->isPointerDown(I)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object p0, p0, Lmiuix/internal/util/ViewDragHelper;->mInitialEdgesTouched:[I
+
+    aget p0, p0, p2
+
+    and-int/2addr p0, p1
+
+    if-eqz p0, :cond_0
+
+    const/4 p0, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    :goto_0
+    return p0
+.end method
+
+.method public isPointerDown(I)Z
+    .locals 1
+
+    .line 1
+    iget p0, p0, Lmiuix/internal/util/ViewDragHelper;->mPointersDown:I
+
+    .line 2
+    .line 3
+    const/4 v0, 0x1
+
+    .line 4
+    shl-int p1, v0, p1
+
+    .line 5
+    .line 6
+    and-int/2addr p0, p1
+
+    .line 7
+    if-eqz p0, :cond_0
+
+    .line 8
+    .line 9
+    goto :goto_0
+
+    .line 10
+    :cond_0
+    const/4 v0, 0x0
+
+    .line 11
+    :goto_0
+    return v0
+.end method
+
+.method public isViewUnder(Landroid/view/View;II)Z
+    .locals 0
+
+    .line 1
+    if-eqz p1, :cond_0
+
+    .line 2
+    .line 3
+    invoke-virtual {p1}, Landroid/view/View;->getLeft()I
+
+    .line 4
+    .line 5
+    .line 6
+    move-result p0
+
+    .line 7
+    if-lt p2, p0, :cond_0
+
+    .line 8
+    .line 9
+    invoke-virtual {p1}, Landroid/view/View;->getRight()I
+
+    .line 10
+    .line 11
+    .line 12
+    move-result p0
+
+    .line 13
+    if-ge p2, p0, :cond_0
+
+    .line 14
+    .line 15
+    invoke-virtual {p1}, Landroid/view/View;->getTop()I
+
+    .line 16
+    .line 17
+    .line 18
+    move-result p0
+
+    .line 19
+    if-lt p3, p0, :cond_0
+
+    .line 20
+    .line 21
+    invoke-virtual {p1}, Landroid/view/View;->getBottom()I
+
+    .line 22
+    .line 23
+    .line 24
+    move-result p0
+
+    .line 25
+    if-ge p3, p0, :cond_0
+
+    .line 26
+    .line 27
+    const/4 p0, 0x1
+
+    .line 28
+    goto :goto_0
+
+    .line 29
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 30
+    :goto_0
+    return p0
+.end method
+
+.method public processTouchEvent(Landroid/view/MotionEvent;)V
+    .locals 9
+
+    .line 1
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionMasked()I
+
+    .line 2
+    .line 3
+    .line 4
+    move-result v0
+
+    .line 5
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionIndex()I
+
+    .line 6
+    .line 7
+    .line 8
+    move-result v1
+
+    .line 9
+    if-nez v0, :cond_0
+
+    .line 10
+    .line 11
+    invoke-virtual {p0}, Lmiuix/internal/util/ViewDragHelper;->cancel()V
+
+    .line 12
+    .line 13
+    .line 14
+    :cond_0
+    iget-object v2, p0, Lmiuix/internal/util/ViewDragHelper;->mVelocityTracker:Landroid/view/VelocityTracker;
+
+    .line 15
+    .line 16
+    if-nez v2, :cond_1
+
+    .line 17
+    .line 18
+    invoke-static {}, Landroid/view/VelocityTracker;->obtain()Landroid/view/VelocityTracker;
+
+    .line 19
+    .line 20
+    .line 21
+    move-result-object v2
+
+    .line 22
+    iput-object v2, p0, Lmiuix/internal/util/ViewDragHelper;->mVelocityTracker:Landroid/view/VelocityTracker;
+
+    .line 23
+    .line 24
+    :cond_1
+    iget-object v2, p0, Lmiuix/internal/util/ViewDragHelper;->mVelocityTracker:Landroid/view/VelocityTracker;
+
+    .line 25
+    .line 26
+    invoke-virtual {v2, p1}, Landroid/view/VelocityTracker;->addMovement(Landroid/view/MotionEvent;)V
+
+    .line 27
+    .line 28
+    .line 29
+    const/4 v2, 0x0
+
+    .line 30
+    if-eqz v0, :cond_14
+
+    .line 31
+    .line 32
+    const/4 v3, 0x1
+
+    .line 33
+    if-eq v0, v3, :cond_12
+
+    .line 34
+    .line 35
+    const/4 v4, 0x2
+
+    .line 36
+    if-eq v0, v4, :cond_b
+
+    .line 37
+    .line 38
+    const/4 v4, 0x3
+
+    .line 39
+    if-eq v0, v4, :cond_9
+
+    .line 40
+    .line 41
+    const/4 v4, 0x5
+
+    .line 42
+    if-eq v0, v4, :cond_7
+
+    .line 43
+    .line 44
+    const/4 v4, 0x6
+
+    .line 45
+    if-eq v0, v4, :cond_2
+
+    .line 46
+    .line 47
+    goto/16 :goto_6
+
+    .line 48
+    .line 49
+    :cond_2
+    invoke-virtual {p1, v1}, Landroid/view/MotionEvent;->getPointerId(I)I
+
+    .line 50
+    .line 51
+    .line 52
+    move-result v0
+
+    .line 53
+    iget v1, p0, Lmiuix/internal/util/ViewDragHelper;->mDragState:I
+
+    .line 54
+    .line 55
+    if-ne v1, v3, :cond_6
+
+    .line 56
+    .line 57
+    iget v1, p0, Lmiuix/internal/util/ViewDragHelper;->mActivePointerId:I
+
+    .line 58
+    .line 59
+    if-ne v0, v1, :cond_6
+
+    .line 60
+    .line 61
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getPointerCount()I
+
+    .line 62
+    .line 63
+    .line 64
+    move-result v1
+
+    .line 65
+    :goto_0
+    const/4 v3, -0x1
+
+    .line 66
+    if-ge v2, v1, :cond_5
+
+    .line 67
+    .line 68
+    invoke-virtual {p1, v2}, Landroid/view/MotionEvent;->getPointerId(I)I
+
+    .line 69
+    .line 70
+    .line 71
+    move-result v4
+
+    .line 72
+    iget v5, p0, Lmiuix/internal/util/ViewDragHelper;->mActivePointerId:I
+
+    .line 73
+    .line 74
+    if-ne v4, v5, :cond_3
+
+    .line 75
+    .line 76
+    goto :goto_1
+
+    .line 77
+    :cond_3
+    invoke-virtual {p1, v2}, Landroid/view/MotionEvent;->getX(I)F
+
+    .line 78
+    .line 79
+    .line 80
+    move-result v5
+
+    .line 81
+    invoke-virtual {p1, v2}, Landroid/view/MotionEvent;->getY(I)F
+
+    .line 82
+    .line 83
+    .line 84
+    move-result v6
+
+    .line 85
+    float-to-int v5, v5
+
+    .line 86
+    float-to-int v6, v6
+
+    .line 87
+    invoke-virtual {p0, v5, v6}, Lmiuix/internal/util/ViewDragHelper;->findTopChildUnder(II)Landroid/view/View;
+
+    .line 88
+    .line 89
+    .line 90
+    move-result-object v5
+
+    .line 91
+    iget-object v6, p0, Lmiuix/internal/util/ViewDragHelper;->mCapturedView:Landroid/view/View;
+
+    .line 92
+    .line 93
+    if-ne v5, v6, :cond_4
+
+    .line 94
+    .line 95
+    invoke-virtual {p0, v6, v4}, Lmiuix/internal/util/ViewDragHelper;->tryCaptureViewForDrag(Landroid/view/View;I)Z
+
+    .line 96
+    .line 97
+    .line 98
+    move-result v4
+
+    .line 99
+    if-eqz v4, :cond_4
+
+    .line 100
+    .line 101
+    iget p1, p0, Lmiuix/internal/util/ViewDragHelper;->mActivePointerId:I
+
+    .line 102
+    .line 103
+    goto :goto_2
+
+    .line 104
+    :cond_4
+    :goto_1
+    add-int/lit8 v2, v2, 0x1
+
+    .line 105
+    .line 106
+    goto :goto_0
+
+    .line 107
+    :cond_5
+    move p1, v3
+
+    .line 108
+    :goto_2
+    if-ne p1, v3, :cond_6
+
+    .line 109
+    .line 110
+    invoke-direct {p0}, Lmiuix/internal/util/ViewDragHelper;->releaseViewForPointerUp()V
+
+    .line 111
+    .line 112
+    .line 113
+    :cond_6
+    invoke-direct {p0, v0}, Lmiuix/internal/util/ViewDragHelper;->clearMotionHistory(I)V
+
+    .line 114
+    .line 115
+    .line 116
+    goto/16 :goto_6
+
+    .line 117
+    .line 118
+    :cond_7
+    invoke-virtual {p1, v1}, Landroid/view/MotionEvent;->getPointerId(I)I
+
+    .line 119
+    .line 120
+    .line 121
+    move-result v0
+
+    .line 122
+    invoke-virtual {p1, v1}, Landroid/view/MotionEvent;->getX(I)F
+
+    .line 123
+    .line 124
+    .line 125
+    move-result v2
+
+    .line 126
+    invoke-virtual {p1, v1}, Landroid/view/MotionEvent;->getY(I)F
+
+    .line 127
+    .line 128
+    .line 129
+    move-result p1
+
+    .line 130
+    invoke-direct {p0, v2, p1, v0}, Lmiuix/internal/util/ViewDragHelper;->saveInitialMotion(FFI)V
+
+    .line 131
+    .line 132
+    .line 133
+    iget v1, p0, Lmiuix/internal/util/ViewDragHelper;->mDragState:I
+
+    .line 134
+    .line 135
+    if-nez v1, :cond_8
+
+    .line 136
+    .line 137
+    float-to-int v1, v2
+
+    .line 138
+    float-to-int p1, p1
+
+    .line 139
+    invoke-virtual {p0, v1, p1}, Lmiuix/internal/util/ViewDragHelper;->findTopChildUnder(II)Landroid/view/View;
+
+    .line 140
+    .line 141
+    .line 142
+    move-result-object p1
+
+    .line 143
+    invoke-virtual {p0, p1, v0}, Lmiuix/internal/util/ViewDragHelper;->tryCaptureViewForDrag(Landroid/view/View;I)Z
+
+    .line 144
+    .line 145
+    .line 146
+    iget-object p1, p0, Lmiuix/internal/util/ViewDragHelper;->mInitialEdgesTouched:[I
+
+    .line 147
+    .line 148
+    aget p1, p1, v0
+
+    .line 149
+    .line 150
+    iget v1, p0, Lmiuix/internal/util/ViewDragHelper;->mTrackingEdges:I
+
+    .line 151
+    .line 152
+    and-int v2, p1, v1
+
+    .line 153
+    .line 154
+    if-eqz v2, :cond_15
+
+    .line 155
+    .line 156
+    iget-object p0, p0, Lmiuix/internal/util/ViewDragHelper;->mCallback:Lmiuix/internal/util/ViewDragHelper$Callback;
+
+    .line 157
+    .line 158
+    and-int/2addr p1, v1
+
+    .line 159
+    invoke-virtual {p0, p1, v0}, Lmiuix/internal/util/ViewDragHelper$Callback;->onEdgeTouched(II)V
+
+    .line 160
+    .line 161
+    .line 162
+    goto/16 :goto_6
+
+    .line 163
+    .line 164
+    :cond_8
+    float-to-int v1, v2
+
+    .line 165
+    float-to-int p1, p1
+
+    .line 166
+    invoke-virtual {p0, v1, p1}, Lmiuix/internal/util/ViewDragHelper;->isCapturedViewUnder(II)Z
+
+    .line 167
+    .line 168
+    .line 169
+    move-result p1
+
+    .line 170
+    if-eqz p1, :cond_15
+
+    .line 171
+    .line 172
+    iget-object p1, p0, Lmiuix/internal/util/ViewDragHelper;->mCapturedView:Landroid/view/View;
+
+    .line 173
+    .line 174
+    invoke-virtual {p0, p1, v0}, Lmiuix/internal/util/ViewDragHelper;->tryCaptureViewForDrag(Landroid/view/View;I)Z
+
+    .line 175
+    .line 176
+    .line 177
+    goto/16 :goto_6
+
+    .line 178
+    .line 179
+    :cond_9
+    iget p1, p0, Lmiuix/internal/util/ViewDragHelper;->mDragState:I
+
+    .line 180
+    .line 181
+    if-ne p1, v3, :cond_a
+
+    .line 182
+    .line 183
+    const/4 p1, 0x0
+
+    .line 184
+    invoke-direct {p0, p1, p1}, Lmiuix/internal/util/ViewDragHelper;->dispatchViewReleased(FF)V
+
+    .line 185
+    .line 186
+    .line 187
+    :cond_a
+    invoke-virtual {p0}, Lmiuix/internal/util/ViewDragHelper;->cancel()V
+
+    .line 188
+    .line 189
+    .line 190
+    goto/16 :goto_6
+
+    .line 191
+    .line 192
+    :cond_b
+    iget v0, p0, Lmiuix/internal/util/ViewDragHelper;->mDragState:I
+
+    .line 193
+    .line 194
+    if-ne v0, v3, :cond_d
+
+    .line 195
+    .line 196
+    iget v0, p0, Lmiuix/internal/util/ViewDragHelper;->mActivePointerId:I
+
+    .line 197
+    .line 198
+    invoke-direct {p0, v0}, Lmiuix/internal/util/ViewDragHelper;->isValidPointerForActionMove(I)Z
+
+    .line 199
+    .line 200
+    .line 201
+    move-result v0
+
+    .line 202
+    if-nez v0, :cond_c
+
+    .line 203
+    .line 204
+    goto/16 :goto_6
+
+    .line 205
+    .line 206
+    :cond_c
+    iget v0, p0, Lmiuix/internal/util/ViewDragHelper;->mActivePointerId:I
+
+    .line 207
+    .line 208
+    invoke-virtual {p1, v0}, Landroid/view/MotionEvent;->findPointerIndex(I)I
+
+    .line 209
+    .line 210
+    .line 211
+    move-result v0
+
+    .line 212
+    if-ltz v0, :cond_15
+
+    .line 213
+    .line 214
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getPointerCount()I
+
+    .line 215
+    .line 216
+    .line 217
+    move-result v1
+
+    .line 218
+    if-ge v0, v1, :cond_15
+
+    .line 219
+    .line 220
+    invoke-virtual {p1, v0}, Landroid/view/MotionEvent;->getX(I)F
+
+    .line 221
+    .line 222
+    .line 223
+    move-result v1
+
+    .line 224
+    invoke-virtual {p1, v0}, Landroid/view/MotionEvent;->getY(I)F
+
+    .line 225
+    .line 226
+    .line 227
+    move-result v0
+
+    .line 228
+    iget-object v2, p0, Lmiuix/internal/util/ViewDragHelper;->mLastMotionX:[F
+
+    .line 229
+    .line 230
+    iget v3, p0, Lmiuix/internal/util/ViewDragHelper;->mActivePointerId:I
+
+    .line 231
+    .line 232
+    aget v2, v2, v3
+
+    .line 233
+    .line 234
+    sub-float/2addr v1, v2
+
+    .line 235
+    float-to-int v1, v1
+
+    .line 236
+    iget-object v2, p0, Lmiuix/internal/util/ViewDragHelper;->mLastMotionY:[F
+
+    .line 237
+    .line 238
+    aget v2, v2, v3
+
+    .line 239
+    .line 240
+    sub-float/2addr v0, v2
+
+    .line 241
+    float-to-int v0, v0
+
+    .line 242
+    iget-object v2, p0, Lmiuix/internal/util/ViewDragHelper;->mCapturedView:Landroid/view/View;
+
+    .line 243
+    .line 244
+    invoke-virtual {v2}, Landroid/view/View;->getLeft()I
+
+    .line 245
+    .line 246
+    .line 247
+    move-result v2
+
+    .line 248
+    add-int/2addr v2, v1
+
+    .line 249
+    iget-object v3, p0, Lmiuix/internal/util/ViewDragHelper;->mCapturedView:Landroid/view/View;
+
+    .line 250
+    .line 251
+    invoke-virtual {v3}, Landroid/view/View;->getTop()I
+
+    .line 252
+    .line 253
+    .line 254
+    move-result v3
+
+    .line 255
+    add-int/2addr v3, v0
+
+    .line 256
+    invoke-direct {p0, v2, v3, v1, v0}, Lmiuix/internal/util/ViewDragHelper;->dragTo(IIII)V
+
+    .line 257
+    .line 258
+    .line 259
+    invoke-direct {p0, p1}, Lmiuix/internal/util/ViewDragHelper;->saveLastMotion(Landroid/view/MotionEvent;)V
+
+    .line 260
+    .line 261
+    .line 262
+    goto/16 :goto_6
+
+    .line 263
+    .line 264
+    :cond_d
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getPointerCount()I
+
+    .line 265
+    .line 266
+    .line 267
+    move-result v0
+
+    .line 268
+    :goto_3
+    if-ge v2, v0, :cond_11
+
+    .line 269
+    .line 270
+    invoke-virtual {p1, v2}, Landroid/view/MotionEvent;->getPointerId(I)I
+
+    .line 271
+    .line 272
+    .line 273
+    move-result v1
+
+    .line 274
+    invoke-direct {p0, v1}, Lmiuix/internal/util/ViewDragHelper;->isValidPointerForActionMove(I)Z
+
+    .line 275
+    .line 276
+    .line 277
+    move-result v4
+
+    .line 278
+    if-nez v4, :cond_e
+
+    .line 279
+    .line 280
+    goto :goto_4
+
+    .line 281
+    :cond_e
+    invoke-virtual {p1, v2}, Landroid/view/MotionEvent;->getX(I)F
+
+    .line 282
+    .line 283
+    .line 284
+    move-result v4
+
+    .line 285
+    invoke-virtual {p1, v2}, Landroid/view/MotionEvent;->getY(I)F
+
+    .line 286
+    .line 287
+    .line 288
+    move-result v5
+
+    .line 289
+    iget-object v6, p0, Lmiuix/internal/util/ViewDragHelper;->mInitialMotionX:[F
+
+    .line 290
+    .line 291
+    aget v6, v6, v1
+
+    .line 292
+    .line 293
+    sub-float v6, v4, v6
+
+    .line 294
+    .line 295
+    iget-object v7, p0, Lmiuix/internal/util/ViewDragHelper;->mInitialMotionY:[F
+
+    .line 296
+    .line 297
+    aget v7, v7, v1
+
+    .line 298
+    .line 299
+    sub-float v7, v5, v7
+
+    .line 300
+    .line 301
+    invoke-direct {p0, v6, v7, v1}, Lmiuix/internal/util/ViewDragHelper;->reportNewEdgeDrags(FFI)V
+
+    .line 302
+    .line 303
+    .line 304
+    iget v8, p0, Lmiuix/internal/util/ViewDragHelper;->mDragState:I
+
+    .line 305
+    .line 306
+    if-ne v8, v3, :cond_f
+
+    .line 307
+    .line 308
+    goto :goto_5
+
+    .line 309
+    :cond_f
+    float-to-int v4, v4
+
+    .line 310
+    float-to-int v5, v5
+
+    .line 311
+    invoke-virtual {p0, v4, v5}, Lmiuix/internal/util/ViewDragHelper;->findTopChildUnder(II)Landroid/view/View;
+
+    .line 312
+    .line 313
+    .line 314
+    move-result-object v4
+
+    .line 315
+    invoke-direct {p0, v4, v6, v7}, Lmiuix/internal/util/ViewDragHelper;->checkTouchSlop(Landroid/view/View;FF)Z
+
+    .line 316
+    .line 317
+    .line 318
+    move-result v5
+
+    .line 319
+    if-eqz v5, :cond_10
+
+    .line 320
+    .line 321
+    invoke-virtual {p0, v4, v1}, Lmiuix/internal/util/ViewDragHelper;->tryCaptureViewForDrag(Landroid/view/View;I)Z
+
+    .line 322
+    .line 323
+    .line 324
+    move-result v1
+
+    .line 325
+    if-eqz v1, :cond_10
+
+    .line 326
+    .line 327
+    goto :goto_5
+
+    .line 328
+    :cond_10
+    :goto_4
+    add-int/lit8 v2, v2, 0x1
+
+    .line 329
+    .line 330
+    goto :goto_3
+
+    .line 331
+    :cond_11
+    :goto_5
+    invoke-direct {p0, p1}, Lmiuix/internal/util/ViewDragHelper;->saveLastMotion(Landroid/view/MotionEvent;)V
+
+    .line 332
+    .line 333
+    .line 334
+    goto :goto_6
+
+    .line 335
+    :cond_12
+    iget p1, p0, Lmiuix/internal/util/ViewDragHelper;->mDragState:I
+
+    .line 336
+    .line 337
+    if-ne p1, v3, :cond_13
+
+    .line 338
+    .line 339
+    invoke-direct {p0}, Lmiuix/internal/util/ViewDragHelper;->releaseViewForPointerUp()V
+
+    .line 340
+    .line 341
+    .line 342
+    :cond_13
+    invoke-virtual {p0}, Lmiuix/internal/util/ViewDragHelper;->cancel()V
+
+    .line 343
+    .line 344
+    .line 345
+    goto :goto_6
+
+    .line 346
+    :cond_14
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
+
+    .line 347
+    .line 348
+    .line 349
+    move-result v0
+
+    .line 350
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
+
+    .line 351
+    .line 352
+    .line 353
+    move-result v1
+
+    .line 354
+    invoke-virtual {p1, v2}, Landroid/view/MotionEvent;->getPointerId(I)I
+
+    .line 355
+    .line 356
+    .line 357
+    move-result p1
+
+    .line 358
+    float-to-int v2, v0
+
+    .line 359
+    float-to-int v3, v1
+
+    .line 360
+    invoke-virtual {p0, v2, v3}, Lmiuix/internal/util/ViewDragHelper;->findTopChildUnder(II)Landroid/view/View;
+
+    .line 361
+    .line 362
+    .line 363
+    move-result-object v2
+
+    .line 364
+    invoke-direct {p0, v0, v1, p1}, Lmiuix/internal/util/ViewDragHelper;->saveInitialMotion(FFI)V
+
+    .line 365
+    .line 366
+    .line 367
+    invoke-virtual {p0, v2, p1}, Lmiuix/internal/util/ViewDragHelper;->tryCaptureViewForDrag(Landroid/view/View;I)Z
+
+    .line 368
+    .line 369
+    .line 370
+    iget-object v0, p0, Lmiuix/internal/util/ViewDragHelper;->mInitialEdgesTouched:[I
+
+    .line 371
+    .line 372
+    aget v0, v0, p1
+
+    .line 373
+    .line 374
+    iget v1, p0, Lmiuix/internal/util/ViewDragHelper;->mTrackingEdges:I
+
+    .line 375
+    .line 376
+    and-int v2, v0, v1
+
+    .line 377
+    .line 378
+    if-eqz v2, :cond_15
+
+    .line 379
+    .line 380
+    iget-object p0, p0, Lmiuix/internal/util/ViewDragHelper;->mCallback:Lmiuix/internal/util/ViewDragHelper$Callback;
+
+    .line 381
+    .line 382
+    and-int/2addr v0, v1
+
+    .line 383
+    invoke-virtual {p0, v0, p1}, Lmiuix/internal/util/ViewDragHelper$Callback;->onEdgeTouched(II)V
+
+    .line 384
+    .line 385
+    .line 386
+    :cond_15
+    :goto_6
+    return-void
+.end method
+
+.method public setDragState(I)V
+    .locals 1
+
+    .line 1
+    iget v0, p0, Lmiuix/internal/util/ViewDragHelper;->mDragState:I
+
+    .line 2
+    .line 3
+    if-eq v0, p1, :cond_0
+
+    .line 4
+    .line 5
+    iput p1, p0, Lmiuix/internal/util/ViewDragHelper;->mDragState:I
+
+    .line 6
+    .line 7
+    iget-object v0, p0, Lmiuix/internal/util/ViewDragHelper;->mCallback:Lmiuix/internal/util/ViewDragHelper$Callback;
+
+    .line 8
+    .line 9
+    invoke-virtual {v0, p1}, Lmiuix/internal/util/ViewDragHelper$Callback;->onViewDragStateChanged(I)V
+
+    .line 10
+    .line 11
+    .line 12
+    if-nez p1, :cond_0
+
+    .line 13
+    .line 14
+    const/4 p1, 0x0
+
+    .line 15
+    iput-object p1, p0, Lmiuix/internal/util/ViewDragHelper;->mCapturedView:Landroid/view/View;
+
+    .line 16
+    .line 17
+    :cond_0
+    return-void
+.end method
+
+.method public setEdgeTrackingEnabled(I)V
+    .locals 0
+
+    .line 1
+    iput p1, p0, Lmiuix/internal/util/ViewDragHelper;->mTrackingEdges:I
+
+    .line 2
+    .line 3
+    return-void
+.end method
+
+.method public setMinVelocity(F)V
+    .locals 0
+
+    .line 1
+    iput p1, p0, Lmiuix/internal/util/ViewDragHelper;->mMinVelocity:F
+
+    .line 2
+    .line 3
+    return-void
+.end method
+
+.method public settleCapturedViewAt(II)Z
+    .locals 3
+
+    .line 1
+    iget-boolean v0, p0, Lmiuix/internal/util/ViewDragHelper;->mReleaseInProgress:Z
+
+    .line 2
+    .line 3
+    if-eqz v0, :cond_0
+
+    .line 4
+    .line 5
+    iget-object v0, p0, Lmiuix/internal/util/ViewDragHelper;->mVelocityTracker:Landroid/view/VelocityTracker;
+
+    .line 6
+    .line 7
+    iget v1, p0, Lmiuix/internal/util/ViewDragHelper;->mActivePointerId:I
+
+    .line 8
+    .line 9
+    invoke-virtual {v0, v1}, Landroid/view/VelocityTracker;->getXVelocity(I)F
+
+    .line 10
+    .line 11
+    .line 12
+    move-result v0
+
+    .line 13
+    float-to-int v0, v0
+
+    .line 14
+    iget-object v1, p0, Lmiuix/internal/util/ViewDragHelper;->mVelocityTracker:Landroid/view/VelocityTracker;
+
+    .line 15
+    .line 16
+    iget v2, p0, Lmiuix/internal/util/ViewDragHelper;->mActivePointerId:I
+
+    .line 17
+    .line 18
+    invoke-virtual {v1, v2}, Landroid/view/VelocityTracker;->getYVelocity(I)F
+
+    .line 19
+    .line 20
+    .line 21
+    move-result v1
+
+    .line 22
+    float-to-int v1, v1
+
+    .line 23
+    invoke-direct {p0, p1, p2, v0, v1}, Lmiuix/internal/util/ViewDragHelper;->forceSettleCapturedViewAt(IIII)Z
+
+    .line 24
+    .line 25
+    .line 26
+    move-result p0
+
+    .line 27
+    return p0
+
+    .line 28
+    :cond_0
+    new-instance p0, Ljava/lang/IllegalStateException;
+
+    .line 29
+    .line 30
+    const-string p1, "Cannot settleCapturedViewAt outside of a call to Callback#onViewReleased"
+
+    .line 31
+    .line 32
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    .line 33
+    .line 34
+    .line 35
+    throw p0
+.end method
+
+.method public shouldInterceptTouchEvent(Landroid/view/MotionEvent;)Z
+    .locals 10
+
+    .line 1
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionMasked()I
+
+    .line 2
+    .line 3
+    .line 4
+    move-result v0
+
+    .line 5
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionIndex()I
+
+    .line 6
+    .line 7
+    .line 8
+    move-result v1
+
+    .line 9
+    if-nez v0, :cond_0
+
+    .line 10
+    .line 11
+    invoke-virtual {p0}, Lmiuix/internal/util/ViewDragHelper;->cancel()V
+
+    .line 12
+    .line 13
+    .line 14
+    :cond_0
+    iget-object v2, p0, Lmiuix/internal/util/ViewDragHelper;->mVelocityTracker:Landroid/view/VelocityTracker;
+
+    .line 15
+    .line 16
+    if-nez v2, :cond_1
+
+    .line 17
+    .line 18
+    invoke-static {}, Landroid/view/VelocityTracker;->obtain()Landroid/view/VelocityTracker;
+
+    .line 19
+    .line 20
+    .line 21
+    move-result-object v2
+
+    .line 22
+    iput-object v2, p0, Lmiuix/internal/util/ViewDragHelper;->mVelocityTracker:Landroid/view/VelocityTracker;
+
+    .line 23
+    .line 24
+    :cond_1
+    iget-object v2, p0, Lmiuix/internal/util/ViewDragHelper;->mVelocityTracker:Landroid/view/VelocityTracker;
+
+    .line 25
+    .line 26
+    invoke-virtual {v2, p1}, Landroid/view/VelocityTracker;->addMovement(Landroid/view/MotionEvent;)V
+
+    .line 27
+    .line 28
+    .line 29
+    const/4 v2, 0x0
+
+    .line 30
+    const/4 v3, 0x2
+
+    .line 31
+    const/4 v4, 0x1
+
+    .line 32
+    if-eqz v0, :cond_b
+
+    .line 33
+    .line 34
+    if-eq v0, v4, :cond_a
+
+    .line 35
+    .line 36
+    if-eq v0, v3, :cond_5
+
+    .line 37
+    .line 38
+    const/4 v5, 0x3
+
+    .line 39
+    if-eq v0, v5, :cond_a
+
+    .line 40
+    .line 41
+    const/4 v5, 0x5
+
+    .line 42
+    if-eq v0, v5, :cond_3
+
+    .line 43
+    .line 44
+    const/4 v3, 0x6
+
+    .line 45
+    if-eq v0, v3, :cond_2
+
+    .line 46
+    .line 47
+    goto/16 :goto_3
+
+    .line 48
+    .line 49
+    :cond_2
+    invoke-virtual {p1, v1}, Landroid/view/MotionEvent;->getPointerId(I)I
+
+    .line 50
+    .line 51
+    .line 52
+    move-result p1
+
+    .line 53
+    invoke-direct {p0, p1}, Lmiuix/internal/util/ViewDragHelper;->clearMotionHistory(I)V
+
+    .line 54
+    .line 55
+    .line 56
+    goto/16 :goto_3
+
+    .line 57
+    .line 58
+    :cond_3
+    invoke-virtual {p1, v1}, Landroid/view/MotionEvent;->getPointerId(I)I
+
+    .line 59
+    .line 60
+    .line 61
+    move-result v0
+
+    .line 62
+    invoke-virtual {p1, v1}, Landroid/view/MotionEvent;->getX(I)F
+
+    .line 63
+    .line 64
+    .line 65
+    move-result v5
+
+    .line 66
+    invoke-virtual {p1, v1}, Landroid/view/MotionEvent;->getY(I)F
+
+    .line 67
+    .line 68
+    .line 69
+    move-result p1
+
+    .line 70
+    invoke-direct {p0, v5, p1, v0}, Lmiuix/internal/util/ViewDragHelper;->saveInitialMotion(FFI)V
+
+    .line 71
+    .line 72
+    .line 73
+    iget v1, p0, Lmiuix/internal/util/ViewDragHelper;->mDragState:I
+
+    .line 74
+    .line 75
+    if-nez v1, :cond_4
+
+    .line 76
+    .line 77
+    iget-object p1, p0, Lmiuix/internal/util/ViewDragHelper;->mInitialEdgesTouched:[I
+
+    .line 78
+    .line 79
+    aget p1, p1, v0
+
+    .line 80
+    .line 81
+    iget v1, p0, Lmiuix/internal/util/ViewDragHelper;->mTrackingEdges:I
+
+    .line 82
+    .line 83
+    and-int v3, p1, v1
+
+    .line 84
+    .line 85
+    if-eqz v3, :cond_d
+
+    .line 86
+    .line 87
+    iget-object v3, p0, Lmiuix/internal/util/ViewDragHelper;->mCallback:Lmiuix/internal/util/ViewDragHelper$Callback;
+
+    .line 88
+    .line 89
+    and-int/2addr p1, v1
+
+    .line 90
+    invoke-virtual {v3, p1, v0}, Lmiuix/internal/util/ViewDragHelper$Callback;->onEdgeTouched(II)V
+
+    .line 91
+    .line 92
+    .line 93
+    goto/16 :goto_3
+
+    .line 94
+    .line 95
+    :cond_4
+    if-ne v1, v3, :cond_d
+
+    .line 96
+    .line 97
+    float-to-int v1, v5
+
+    .line 98
+    float-to-int p1, p1
+
+    .line 99
+    invoke-virtual {p0, v1, p1}, Lmiuix/internal/util/ViewDragHelper;->findTopChildUnder(II)Landroid/view/View;
+
+    .line 100
+    .line 101
+    .line 102
+    move-result-object p1
+
+    .line 103
+    iget-object v1, p0, Lmiuix/internal/util/ViewDragHelper;->mCapturedView:Landroid/view/View;
+
+    .line 104
+    .line 105
+    if-ne p1, v1, :cond_d
+
+    .line 106
+    .line 107
+    invoke-virtual {p0, p1, v0}, Lmiuix/internal/util/ViewDragHelper;->tryCaptureViewForDrag(Landroid/view/View;I)Z
+
+    .line 108
+    .line 109
+    .line 110
+    goto/16 :goto_3
+
+    .line 111
+    .line 112
+    :cond_5
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getPointerCount()I
+
+    .line 113
+    .line 114
+    .line 115
+    move-result v0
+
+    .line 116
+    move v1, v2
+
+    .line 117
+    :goto_0
+    if-ge v1, v0, :cond_9
+
+    .line 118
+    .line 119
+    invoke-virtual {p1, v1}, Landroid/view/MotionEvent;->getPointerId(I)I
+
+    .line 120
+    .line 121
+    .line 122
+    move-result v3
+
+    .line 123
+    invoke-direct {p0, v3}, Lmiuix/internal/util/ViewDragHelper;->isValidPointerForActionMove(I)Z
+
+    .line 124
+    .line 125
+    .line 126
+    move-result v5
+
+    .line 127
+    if-nez v5, :cond_6
+
+    .line 128
+    .line 129
+    goto :goto_1
+
+    .line 130
+    :cond_6
+    invoke-virtual {p1, v1}, Landroid/view/MotionEvent;->getX(I)F
+
+    .line 131
+    .line 132
+    .line 133
+    move-result v5
+
+    .line 134
+    invoke-virtual {p1, v1}, Landroid/view/MotionEvent;->getY(I)F
+
+    .line 135
+    .line 136
+    .line 137
+    move-result v6
+
+    .line 138
+    iget-object v7, p0, Lmiuix/internal/util/ViewDragHelper;->mInitialMotionX:[F
+
+    .line 139
+    .line 140
+    aget v7, v7, v3
+
+    .line 141
+    .line 142
+    sub-float v7, v5, v7
+
+    .line 143
+    .line 144
+    iget-object v8, p0, Lmiuix/internal/util/ViewDragHelper;->mInitialMotionY:[F
+
+    .line 145
+    .line 146
+    aget v8, v8, v3
+
+    .line 147
+    .line 148
+    sub-float v8, v6, v8
+
+    .line 149
+    .line 150
+    invoke-direct {p0, v7, v8, v3}, Lmiuix/internal/util/ViewDragHelper;->reportNewEdgeDrags(FFI)V
+
+    .line 151
+    .line 152
+    .line 153
+    iget v9, p0, Lmiuix/internal/util/ViewDragHelper;->mDragState:I
+
+    .line 154
+    .line 155
+    if-ne v9, v4, :cond_7
+
+    .line 156
+    .line 157
+    goto :goto_2
+
+    .line 158
+    :cond_7
+    float-to-int v5, v5
+
+    .line 159
+    float-to-int v6, v6
+
+    .line 160
+    invoke-virtual {p0, v5, v6}, Lmiuix/internal/util/ViewDragHelper;->findTopChildUnder(II)Landroid/view/View;
+
+    .line 161
+    .line 162
+    .line 163
+    move-result-object v5
+
+    .line 164
+    if-eqz v5, :cond_8
+
+    .line 165
+    .line 166
+    invoke-direct {p0, v5, v7, v8}, Lmiuix/internal/util/ViewDragHelper;->checkTouchSlop(Landroid/view/View;FF)Z
+
+    .line 167
+    .line 168
+    .line 169
+    move-result v6
+
+    .line 170
+    if-eqz v6, :cond_8
+
+    .line 171
+    .line 172
+    invoke-virtual {p0, v5, v3}, Lmiuix/internal/util/ViewDragHelper;->tryCaptureViewForDrag(Landroid/view/View;I)Z
+
+    .line 173
+    .line 174
+    .line 175
+    move-result v3
+
+    .line 176
+    if-eqz v3, :cond_8
+
+    .line 177
+    .line 178
+    goto :goto_2
+
+    .line 179
+    :cond_8
+    :goto_1
+    add-int/lit8 v1, v1, 0x1
+
+    .line 180
+    .line 181
+    goto :goto_0
+
+    .line 182
+    :cond_9
+    :goto_2
+    invoke-direct {p0, p1}, Lmiuix/internal/util/ViewDragHelper;->saveLastMotion(Landroid/view/MotionEvent;)V
+
+    .line 183
+    .line 184
+    .line 185
+    goto :goto_3
+
+    .line 186
+    :cond_a
+    invoke-virtual {p0}, Lmiuix/internal/util/ViewDragHelper;->cancel()V
+
+    .line 187
+    .line 188
+    .line 189
+    goto :goto_3
+
+    .line 190
+    :cond_b
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
+
+    .line 191
+    .line 192
+    .line 193
+    move-result v0
+
+    .line 194
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
+
+    .line 195
+    .line 196
+    .line 197
+    move-result v1
+
+    .line 198
+    invoke-virtual {p1, v2}, Landroid/view/MotionEvent;->getPointerId(I)I
+
+    .line 199
+    .line 200
+    .line 201
+    move-result p1
+
+    .line 202
+    invoke-direct {p0, v0, v1, p1}, Lmiuix/internal/util/ViewDragHelper;->saveInitialMotion(FFI)V
+
+    .line 203
+    .line 204
+    .line 205
+    float-to-int v0, v0
+
+    .line 206
+    float-to-int v1, v1
+
+    .line 207
+    invoke-virtual {p0, v0, v1}, Lmiuix/internal/util/ViewDragHelper;->findTopChildUnder(II)Landroid/view/View;
+
+    .line 208
+    .line 209
+    .line 210
+    move-result-object v0
+
+    .line 211
+    iget-object v1, p0, Lmiuix/internal/util/ViewDragHelper;->mCapturedView:Landroid/view/View;
+
+    .line 212
+    .line 213
+    if-ne v0, v1, :cond_c
+
+    .line 214
+    .line 215
+    iget v1, p0, Lmiuix/internal/util/ViewDragHelper;->mDragState:I
+
+    .line 216
+    .line 217
+    if-ne v1, v3, :cond_c
+
+    .line 218
+    .line 219
+    invoke-virtual {p0, v0, p1}, Lmiuix/internal/util/ViewDragHelper;->tryCaptureViewForDrag(Landroid/view/View;I)Z
+
+    .line 220
+    .line 221
+    .line 222
+    :cond_c
+    iget-object v0, p0, Lmiuix/internal/util/ViewDragHelper;->mInitialEdgesTouched:[I
+
+    .line 223
+    .line 224
+    aget v0, v0, p1
+
+    .line 225
+    .line 226
+    iget v1, p0, Lmiuix/internal/util/ViewDragHelper;->mTrackingEdges:I
+
+    .line 227
+    .line 228
+    and-int v3, v0, v1
+
+    .line 229
+    .line 230
+    if-eqz v3, :cond_d
+
+    .line 231
+    .line 232
+    iget-object v3, p0, Lmiuix/internal/util/ViewDragHelper;->mCallback:Lmiuix/internal/util/ViewDragHelper$Callback;
+
+    .line 233
+    .line 234
+    and-int/2addr v0, v1
+
+    .line 235
+    invoke-virtual {v3, v0, p1}, Lmiuix/internal/util/ViewDragHelper$Callback;->onEdgeTouched(II)V
+
+    .line 236
+    .line 237
+    .line 238
+    :cond_d
+    :goto_3
+    iget p0, p0, Lmiuix/internal/util/ViewDragHelper;->mDragState:I
+
+    .line 239
+    .line 240
+    if-ne p0, v4, :cond_e
+
+    .line 241
+    .line 242
+    move v2, v4
+
+    .line 243
+    :cond_e
+    return v2
+.end method
+
+.method public smoothSlideViewTo(Landroid/view/View;II)Z
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lmiuix/internal/util/ViewDragHelper;->mCapturedView:Landroid/view/View;
+
+    .line 2
+    .line 3
+    const/4 p1, -0x1
+
+    .line 4
+    iput p1, p0, Lmiuix/internal/util/ViewDragHelper;->mActivePointerId:I
+
+    .line 5
+    .line 6
+    const/4 p1, 0x0
+
+    .line 7
+    invoke-direct {p0, p2, p3, p1, p1}, Lmiuix/internal/util/ViewDragHelper;->forceSettleCapturedViewAt(IIII)Z
+
+    .line 8
+    .line 9
+    .line 10
+    move-result p0
+
+    .line 11
+    return p0
+.end method
+
+.method public tryCaptureViewForDrag(Landroid/view/View;I)Z
+    .locals 2
+
+    .line 1
+    iget-object v0, p0, Lmiuix/internal/util/ViewDragHelper;->mCapturedView:Landroid/view/View;
+
+    .line 2
+    .line 3
+    const/4 v1, 0x1
+
+    .line 4
+    if-ne p1, v0, :cond_0
+
+    .line 5
+    .line 6
+    iget v0, p0, Lmiuix/internal/util/ViewDragHelper;->mActivePointerId:I
+
+    .line 7
+    .line 8
+    if-ne v0, p2, :cond_0
+
+    .line 9
+    .line 10
+    return v1
+
+    .line 11
+    :cond_0
+    if-eqz p1, :cond_1
+
+    .line 12
+    .line 13
+    iget-object v0, p0, Lmiuix/internal/util/ViewDragHelper;->mCallback:Lmiuix/internal/util/ViewDragHelper$Callback;
+
+    .line 14
+    .line 15
+    invoke-virtual {v0, p1, p2}, Lmiuix/internal/util/ViewDragHelper$Callback;->tryCaptureView(Landroid/view/View;I)Z
+
+    .line 16
+    .line 17
+    .line 18
+    move-result v0
+
+    .line 19
+    if-eqz v0, :cond_1
+
+    .line 20
+    .line 21
+    iput p2, p0, Lmiuix/internal/util/ViewDragHelper;->mActivePointerId:I
+
+    .line 22
+    .line 23
+    invoke-virtual {p0, p1, p2}, Lmiuix/internal/util/ViewDragHelper;->captureChildView(Landroid/view/View;I)V
+
+    .line 24
+    .line 25
+    .line 26
+    return v1
+
+    .line 27
+    :cond_1
+    const/4 p0, 0x0
+
+    .line 28
+    return p0
+.end method

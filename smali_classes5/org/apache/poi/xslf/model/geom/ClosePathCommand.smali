@@ -1,0 +1,34 @@
+.class public Lorg/apache/poi/xslf/model/geom/ClosePathCommand;
+.super Ljava/lang/Object;
+.source "ClosePathCommand.java"
+
+# interfaces
+.implements Lorg/apache/poi/xslf/model/geom/PathCommand;
+
+
+# direct methods
+.method public constructor <init>()V
+    .locals 0
+
+    .line 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 2
+    .line 3
+    .line 4
+    return-void
+.end method
+
+
+# virtual methods
+.method public execute(Ljava/awt/geom/GeneralPath;Lorg/apache/poi/xslf/model/geom/Context;)V
+    .locals 0
+
+    .line 1
+    invoke-virtual {p1}, Ljava/awt/geom/GeneralPath;->closePath()V
+
+    .line 2
+    .line 3
+    .line 4
+    return-void
+.end method

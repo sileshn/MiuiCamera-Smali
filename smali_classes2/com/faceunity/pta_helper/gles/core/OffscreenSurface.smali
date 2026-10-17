@@ -1,0 +1,36 @@
+.class public Lcom/faceunity/pta_helper/gles/core/OffscreenSurface;
+.super Lcom/faceunity/pta_helper/gles/core/EglSurfaceBase;
+.source "OffscreenSurface.java"
+
+
+# direct methods
+.method public constructor <init>(Lcom/faceunity/pta_helper/gles/core/EglCore;II)V
+    .locals 0
+
+    .line 1
+    invoke-direct {p0, p1}, Lcom/faceunity/pta_helper/gles/core/EglSurfaceBase;-><init>(Lcom/faceunity/pta_helper/gles/core/EglCore;)V
+
+    .line 2
+    .line 3
+    .line 4
+    invoke-virtual {p0, p2, p3}, Lcom/faceunity/pta_helper/gles/core/EglSurfaceBase;->createOffscreenSurface(II)V
+
+    .line 5
+    .line 6
+    .line 7
+    return-void
+.end method
+
+
+# virtual methods
+.method public release()V
+    .locals 0
+
+    .line 1
+    invoke-virtual {p0}, Lcom/faceunity/pta_helper/gles/core/EglSurfaceBase;->releaseEglSurface()V
+
+    .line 2
+    .line 3
+    .line 4
+    return-void
+.end method

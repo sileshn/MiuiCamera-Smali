@@ -1,0 +1,40 @@
+.class Lorg/apache/xmlbeans/impl/store/Xobj$AttrIdXobj;
+.super Lorg/apache/xmlbeans/impl/store/Xobj$AttrXobj;
+.source "Xobj.java"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lorg/apache/xmlbeans/impl/store/Xobj;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x9
+    name = "AttrIdXobj"
+.end annotation
+
+
+# direct methods
+.method public constructor <init>(Lorg/apache/xmlbeans/impl/store/Locale;Ljavax/xml/namespace/QName;)V
+    .locals 0
+
+    .line 1
+    invoke-direct {p0, p1, p2}, Lorg/apache/xmlbeans/impl/store/Xobj$AttrXobj;-><init>(Lorg/apache/xmlbeans/impl/store/Locale;Ljavax/xml/namespace/QName;)V
+
+    .line 2
+    .line 3
+    .line 4
+    return-void
+.end method
+
+
+# virtual methods
+.method public isId()Z
+    .locals 0
+
+    .line 1
+    const/4 p0, 0x1
+
+    .line 2
+    return p0
+.end method

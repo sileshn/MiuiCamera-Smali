@@ -1,0 +1,234 @@
+.class public abstract Lcom/xiaomi/magicvideoskymediacodec/EglBase;
+.super Ljava/lang/Object;
+.source "EglBase.java"
+
+
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lcom/xiaomi/magicvideoskymediacodec/EglBase$Context;
+    }
+.end annotation
+
+
+# static fields
+.field static final CONFIG_PLAIN:[I
+
+.field private static final EGL_OPENGL_ES2_BIT:I = 0x4
+
+.field public static final lock:Ljava/lang/Object;
+
+
+# direct methods
+.method public static constructor <clinit>()V
+    .locals 1
+
+    .line 1
+    new-instance v0, Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    .line 4
+    .line 5
+    .line 6
+    sput-object v0, Lcom/xiaomi/magicvideoskymediacodec/EglBase;->lock:Ljava/lang/Object;
+
+    .line 7
+    .line 8
+    const/16 v0, 0xf
+
+    .line 9
+    .line 10
+    new-array v0, v0, [I
+
+    .line 11
+    .line 12
+    fill-array-data v0, :array_0
+
+    .line 13
+    .line 14
+    .line 15
+    sput-object v0, Lcom/xiaomi/magicvideoskymediacodec/EglBase;->CONFIG_PLAIN:[I
+
+    .line 16
+    .line 17
+    return-void
+
+    .line 18
+    nop
+
+    .line 19
+    :array_0
+    .array-data 4
+        0x3033
+        0x4
+        0x3024
+        0x8
+        0x3023
+        0x8
+        0x3022
+        0x8
+        0x3021
+        0x8
+        0x3025
+        0x8
+        0x3040
+        0x4
+        0x3038
+    .end array-data
+.end method
+
+.method public constructor <init>()V
+    .locals 0
+
+    .line 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 2
+    .line 3
+    .line 4
+    return-void
+.end method
+
+.method public static create()Lcom/xiaomi/magicvideoskymediacodec/EglBase;
+    .locals 2
+
+    const/4 v0, 0x0
+
+    .line 2
+    sget-object v1, Lcom/xiaomi/magicvideoskymediacodec/EglBase;->CONFIG_PLAIN:[I
+
+    invoke-static {v0, v1}, Lcom/xiaomi/magicvideoskymediacodec/EglBase;->create(Lcom/xiaomi/magicvideoskymediacodec/EglBase$Context;[I)Lcom/xiaomi/magicvideoskymediacodec/EglBase;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public static create(Lcom/xiaomi/magicvideoskymediacodec/EglBase$Context;)Lcom/xiaomi/magicvideoskymediacodec/EglBase;
+    .locals 1
+
+    .line 3
+    sget-object v0, Lcom/xiaomi/magicvideoskymediacodec/EglBase;->CONFIG_PLAIN:[I
+
+    invoke-static {p0, v0}, Lcom/xiaomi/magicvideoskymediacodec/EglBase;->create(Lcom/xiaomi/magicvideoskymediacodec/EglBase$Context;[I)Lcom/xiaomi/magicvideoskymediacodec/EglBase;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static create(Lcom/xiaomi/magicvideoskymediacodec/EglBase$Context;[I)Lcom/xiaomi/magicvideoskymediacodec/EglBase;
+    .locals 1
+
+    .line 1
+    invoke-static {}, Lcom/xiaomi/magicvideoskymediacodec/EglBase14;->isEGL14Supported()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    instance-of v0, p0, Lcom/xiaomi/magicvideoskymediacodec/EglBase10$Context;
+
+    if-nez v0, :cond_0
+
+    new-instance v0, Lcom/xiaomi/magicvideoskymediacodec/EglBase14;
+
+    check-cast p0, Lcom/xiaomi/magicvideoskymediacodec/EglBase14$Context;
+
+    invoke-direct {v0, p0, p1}, Lcom/xiaomi/magicvideoskymediacodec/EglBase14;-><init>(Lcom/xiaomi/magicvideoskymediacodec/EglBase14$Context;[I)V
+
+    goto :goto_0
+
+    :cond_0
+    new-instance v0, Lcom/xiaomi/magicvideoskymediacodec/EglBase10;
+
+    check-cast p0, Lcom/xiaomi/magicvideoskymediacodec/EglBase10$Context;
+
+    invoke-direct {v0, p0, p1}, Lcom/xiaomi/magicvideoskymediacodec/EglBase10;-><init>(Lcom/xiaomi/magicvideoskymediacodec/EglBase10$Context;[I)V
+
+    :goto_0
+    return-object v0
+.end method
+
+.method public static getCurrentContext()Lcom/xiaomi/magicvideoskymediacodec/EglBase$Context;
+    .locals 1
+
+    .line 1
+    invoke-static {}, Lcom/xiaomi/magicvideoskymediacodec/EglBase14;->isEGL14Supported()Z
+
+    .line 2
+    .line 3
+    .line 4
+    move-result v0
+
+    .line 5
+    if-eqz v0, :cond_0
+
+    .line 6
+    .line 7
+    invoke-static {}, Lcom/xiaomi/magicvideoskymediacodec/EglBase14;->getCurrentContext14()Lcom/xiaomi/magicvideoskymediacodec/EglBase$Context;
+
+    .line 8
+    .line 9
+    .line 10
+    move-result-object v0
+
+    .line 11
+    return-object v0
+
+    .line 12
+    :cond_0
+    invoke-static {}, Lcom/xiaomi/magicvideoskymediacodec/EglBase10;->getCurrentContext10()Lcom/xiaomi/magicvideoskymediacodec/EglBase$Context;
+
+    .line 13
+    .line 14
+    .line 15
+    move-result-object v0
+
+    .line 16
+    return-object v0
+.end method
+
+
+# virtual methods
+.method public abstract createPbufferSurface(II)V
+.end method
+
+.method public abstract createSurface(Landroid/graphics/SurfaceTexture;)V
+.end method
+
+.method public abstract createSurface(Landroid/view/Surface;)V
+.end method
+
+.method public abstract detachCurrent()V
+.end method
+
+.method public abstract getEglBaseContext()Lcom/xiaomi/magicvideoskymediacodec/EglBase$Context;
+.end method
+
+.method public abstract getSurfaceHeight()I
+.end method
+
+.method public abstract getSurfaceWidth()I
+.end method
+
+.method public abstract hasSurface()Z
+.end method
+
+.method public abstract makeCurrent()V
+.end method
+
+.method public abstract release()V
+.end method
+
+.method public abstract releaseSuface()V
+.end method
+
+.method public abstract setPresentTime(J)V
+.end method
+
+.method public abstract swapBuffers()V
+.end method

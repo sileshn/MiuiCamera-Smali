@@ -1,0 +1,73 @@
+.class public abstract Lcom/faceunity/pta_helper/gif/GifImageIterator;
+.super Ljava/lang/Object;
+.source "GifImageIterator.java"
+
+# interfaces
+.implements Ljava/util/Iterator;
+
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Object;",
+        "Ljava/util/Iterator<",
+        "Lcom/faceunity/pta_helper/gif/GifImage;",
+        ">;"
+    }
+.end annotation
+
+
+# direct methods
+.method public constructor <init>()V
+    .locals 0
+
+    .line 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 2
+    .line 3
+    .line 4
+    return-void
+.end method
+
+
+# virtual methods
+.method public abstract close()V
+.end method
+
+.method public abstract hasNext()Z
+.end method
+
+.method public abstract next()Lcom/faceunity/pta_helper/gif/GifImage;
+.end method
+
+.method public bridge synthetic next()Ljava/lang/Object;
+    .locals 0
+
+    .line 1
+    invoke-virtual {p0}, Lcom/faceunity/pta_helper/gif/GifImageIterator;->next()Lcom/faceunity/pta_helper/gif/GifImage;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object p0
+
+    .line 5
+    return-object p0
+.end method
+
+.method public remove()V
+    .locals 0
+
+    .line 1
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
+
+    .line 2
+    .line 3
+    invoke-direct {p0}, Ljava/lang/UnsupportedOperationException;-><init>()V
+
+    .line 4
+    .line 5
+    .line 6
+    throw p0
+.end method

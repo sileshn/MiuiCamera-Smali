@@ -1,0 +1,56 @@
+.class public final synthetic Lo00O0oOo/o0000Ooo;
+.super Ljava/lang/Object;
+.source "R8$$SyntheticClass"
+
+# interfaces
+.implements Lo00O0oOo/oO00000;
+
+
+# instance fields
+.field public final synthetic OooO00o:Lo00O0oOo/o00O0OO0;
+
+.field public final synthetic OooO0O0:D
+
+
+# direct methods
+.method public synthetic constructor <init>(Lo00O0oOo/o00O0OO0;D)V
+    .locals 0
+
+    .line 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 2
+    .line 3
+    .line 4
+    iput-object p1, p0, Lo00O0oOo/o0000Ooo;->OooO00o:Lo00O0oOo/o00O0OO0;
+
+    .line 5
+    .line 6
+    iput-wide p2, p0, Lo00O0oOo/o0000Ooo;->OooO0O0:D
+
+    .line 7
+    .line 8
+    return-void
+.end method
+
+
+# virtual methods
+.method public final run()V
+    .locals 3
+
+    .line 1
+    iget-object v0, p0, Lo00O0oOo/o0000Ooo;->OooO00o:Lo00O0oOo/o00O0OO0;
+
+    .line 2
+    .line 3
+    iget-wide v1, p0, Lo00O0oOo/o0000Ooo;->OooO0O0:D
+
+    .line 4
+    .line 5
+    invoke-static {v0, v1, v2}, Lo00O0oOo/o000OO0O;->OooOOoo(Lo00O0oOo/o00O0OO0;D)V
+
+    .line 6
+    .line 7
+    .line 8
+    return-void
+.end method

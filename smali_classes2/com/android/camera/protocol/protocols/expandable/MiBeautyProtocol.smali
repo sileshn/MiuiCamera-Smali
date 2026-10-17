@@ -1,0 +1,137 @@
+.class public interface abstract Lcom/android/camera/protocol/protocols/expandable/MiBeautyProtocol;
+.super Ljava/lang/Object;
+.source "MiBeautyProtocol.java"
+
+# interfaces
+.implements Lcom/android/camera/protocol/protocols/expandable/Expandable;
+.implements Lcom/android/camera/protocol/protocols/MenuSwitch;
+
+
+# direct methods
+.method public static impl()Ljava/util/Optional;
+    .locals 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/Optional<",
+            "Lcom/android/camera/protocol/protocols/expandable/MiBeautyProtocol;",
+            ">;"
+        }
+    .end annotation
+
+    .line 1
+    invoke-static {}, Lcom/android/camera/protocol/ModeCoordinatorImpl;->getInstance()Lcom/android/camera/protocol/ModeCoordinatorImpl;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    const-class v1, Lcom/android/camera/protocol/protocols/expandable/MiBeautyProtocol;
+
+    .line 6
+    .line 7
+    invoke-virtual {v0, v1}, Lcom/android/camera/protocol/ModeCoordinatorImpl;->getAttachProtocol2(Ljava/lang/Class;)Ljava/util/Optional;
+
+    .line 8
+    .line 9
+    .line 10
+    move-result-object v0
+
+    .line 11
+    return-object v0
+.end method
+
+.method public static impl2()Lcom/android/camera/protocol/protocols/expandable/MiBeautyProtocol;
+    .locals 2
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+
+    .line 1
+    invoke-static {}, Lcom/android/camera/protocol/ModeCoordinatorImpl;->getInstance()Lcom/android/camera/protocol/ModeCoordinatorImpl;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    const-class v1, Lcom/android/camera/protocol/protocols/expandable/MiBeautyProtocol;
+
+    .line 6
+    .line 7
+    invoke-virtual {v0, v1}, Lcom/android/camera/protocol/ModeCoordinatorImpl;->getAttachProtocol(Ljava/lang/Class;)Lcom/android/camera/protocol/BaseProtocol;
+
+    .line 8
+    .line 9
+    .line 10
+    move-result-object v0
+
+    .line 11
+    check-cast v0, Lcom/android/camera/protocol/protocols/expandable/MiBeautyProtocol;
+
+    .line 12
+    .line 13
+    return-object v0
+.end method
+
+
+# virtual methods
+.method public abstract dismiss(I)V
+.end method
+
+.method public abstract getDistanceForWM()I
+.end method
+
+.method public abstract getSupportedBeautyItems(Ljava/lang/String;Z)Ljava/util/List;
+    .param p1    # Ljava/lang/String;
+        .annotation build Lcom/android/camera/data/data/runing/ComponentRunningShine$ShineType;
+        .end annotation
+    .end param
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/String;",
+            "Z)",
+            "Ljava/util/List<",
+            "Lcom/android/camera/data/data/TypeItem;",
+            ">;"
+        }
+    .end annotation
+.end method
+
+.method public abstract handleMutexSpecifyBeautyType(Ljava/lang/String;Z)V
+    .param p1    # Ljava/lang/String;
+        .annotation build Lcom/android/camera/data/data/runing/ComponentRunningShine$ShineType;
+        .end annotation
+    .end param
+.end method
+
+.method public abstract isBeautyPanelShow()Z
+.end method
+
+.method public abstract isSkinColorShow()Z
+.end method
+
+.method public abstract onBeautyModeChange()V
+.end method
+
+.method public abstract onStateChanged()V
+.end method
+
+.method public abstract oneKeyCloseMutexSpecifyBeautyType(Ljava/lang/String;)V
+    .param p1    # Ljava/lang/String;
+        .annotation build Lcom/android/camera/data/data/runing/ComponentRunningShine$ShineType;
+        .end annotation
+    .end param
+.end method
+
+.method public abstract resetBeauty()V
+.end method
+
+.method public abstract showWithoutAnim()V
+.end method
+
+.method public abstract updateBeautyMutex()V
+.end method

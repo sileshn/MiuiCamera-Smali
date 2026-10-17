@@ -1,0 +1,53 @@
+.class Lorg/apache/xmlbeans/impl/store/Xobj$SoapBodyElementXobj;
+.super Lorg/apache/xmlbeans/impl/store/Xobj$SoapElementXobj;
+.source "Xobj.java"
+
+# interfaces
+.implements Lorg/apache/xmlbeans/impl/soap/SOAPBodyElement;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lorg/apache/xmlbeans/impl/store/Xobj;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x9
+    name = "SoapBodyElementXobj"
+.end annotation
+
+
+# direct methods
+.method public constructor <init>(Lorg/apache/xmlbeans/impl/store/Locale;Ljavax/xml/namespace/QName;)V
+    .locals 0
+
+    .line 1
+    invoke-direct {p0, p1, p2}, Lorg/apache/xmlbeans/impl/store/Xobj$SoapElementXobj;-><init>(Lorg/apache/xmlbeans/impl/store/Locale;Ljavax/xml/namespace/QName;)V
+
+    .line 2
+    .line 3
+    .line 4
+    return-void
+.end method
+
+
+# virtual methods
+.method public newNode(Lorg/apache/xmlbeans/impl/store/Locale;)Lorg/apache/xmlbeans/impl/store/Xobj;
+    .locals 1
+
+    .line 1
+    new-instance v0, Lorg/apache/xmlbeans/impl/store/Xobj$SoapBodyElementXobj;
+
+    .line 2
+    .line 3
+    iget-object p0, p0, Lorg/apache/xmlbeans/impl/store/Xobj;->_name:Ljavax/xml/namespace/QName;
+
+    .line 4
+    .line 5
+    invoke-direct {v0, p1, p0}, Lorg/apache/xmlbeans/impl/store/Xobj$SoapBodyElementXobj;-><init>(Lorg/apache/xmlbeans/impl/store/Locale;Ljavax/xml/namespace/QName;)V
+
+    .line 6
+    .line 7
+    .line 8
+    return-object v0
+.end method

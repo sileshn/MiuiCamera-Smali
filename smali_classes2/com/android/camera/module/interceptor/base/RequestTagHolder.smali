@@ -1,0 +1,102 @@
+.class public Lcom/android/camera/module/interceptor/base/RequestTagHolder;
+.super Ljava/lang/Object;
+.source "RequestTagHolder.java"
+
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "<T:",
+        "Ljava/lang/Object;",
+        ">",
+        "Ljava/lang/Object;"
+    }
+.end annotation
+
+
+# instance fields
+.field private nativeTag:Landroid/hardware/camera2/CaptureRequest$Key;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Landroid/hardware/camera2/CaptureRequest$Key<",
+            "TT;>;"
+        }
+    .end annotation
+.end field
+
+.field private value:Ljava/lang/Object;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "TT;"
+        }
+    .end annotation
+.end field
+
+
+# direct methods
+.method public constructor <init>(Landroid/hardware/camera2/CaptureRequest$Key;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroid/hardware/camera2/CaptureRequest$Key<",
+            "TT;>;)V"
+        }
+    .end annotation
+
+    .line 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 2
+    .line 3
+    .line 4
+    iput-object p1, p0, Lcom/android/camera/module/interceptor/base/RequestTagHolder;->nativeTag:Landroid/hardware/camera2/CaptureRequest$Key;
+
+    .line 5
+    .line 6
+    return-void
+.end method
+
+
+# virtual methods
+.method public getValue()Ljava/lang/Object;
+    .locals 0
+    .annotation build Landroidx/annotation/Nullable;
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()TT;"
+        }
+    .end annotation
+
+    .line 1
+    iget-object p0, p0, Lcom/android/camera/module/interceptor/base/RequestTagHolder;->value:Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    return-object p0
+.end method
+
+.method public parseCaptureRequest(Landroid/hardware/camera2/CaptureRequest;)V
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lcom/android/camera/module/interceptor/base/RequestTagHolder;->nativeTag:Landroid/hardware/camera2/CaptureRequest$Key;
+
+    .line 2
+    .line 3
+    invoke-virtual {p1, v0}, Landroid/hardware/camera2/CaptureRequest;->get(Landroid/hardware/camera2/CaptureRequest$Key;)Ljava/lang/Object;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object p1
+
+    .line 7
+    iput-object p1, p0, Lcom/android/camera/module/interceptor/base/RequestTagHolder;->value:Ljava/lang/Object;
+
+    .line 8
+    .line 9
+    return-void
+.end method

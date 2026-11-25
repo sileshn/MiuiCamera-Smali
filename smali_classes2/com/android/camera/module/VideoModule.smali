@@ -11539,6 +11539,21 @@
         type = 0x0
     .end annotation
 
+    # redwood: front camera video breaks with EIS, keep it off there
+    iget-object v0, p0, Lcom/android/camera/module/BaseModule;->mCameraManager:Lcom/android/camera/module/common/ModuleCameraManagerInterface;
+
+    invoke-interface {v0}, Lcom/android/camera/module/common/ModuleCameraManagerInterface;->isFrontCamera()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_redwood_rear_eis
+
+    const/4 v0, 0x0
+
+    return v0
+
+    :cond_redwood_rear_eis
+
     .line 1
     iget-object v0, p0, Lcom/android/camera/module/VideoBase;->mUserRecordSetting:Lcom/android/camera/module/video/UserRecordSetting;
 

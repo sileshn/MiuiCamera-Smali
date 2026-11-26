@@ -715,7 +715,8 @@
     .line 54
     :cond_3
     :goto_0
-    const v0, 0x8009
+    # redwood: VIDEO_BEAUTY (0x8009) aborts the HAL on front video, use normal mode
+    const/4 v0, 0x0
 
     .line 55
     .line 56
